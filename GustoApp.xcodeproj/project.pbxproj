@@ -12,6 +12,10 @@
 		E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */; };
 		E34AF7D128F5FA6C00FFE597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */; };
 		E34AF7D428F5FA6C00FFE597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */; };
+		E3AEBD1F28FDD8700078BB70 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AEBD1E28FDD8700078BB70 /* RecipeCard.swift */; };
+		E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3CC28FE40E000EB7B27 /* MainView.swift */; };
+		E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3D028FF97F200EB7B27 /* RecipeCard2.swift */; };
+		E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3D2290065B500EB7B27 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3AEBD1E28FDD8700078BB70 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
+		E3ECA3CC28FE40E000EB7B27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E3ECA3D028FF97F200EB7B27 /* RecipeCard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard2.swift; sourceTree = "<group>"; };
+		E3ECA3D2290065B500EB7B27 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +54,9 @@
 		E31AF6C428FDB724002DE056 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E3ECA3CC28FE40E000EB7B27 /* MainView.swift */,
 				E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */,
+				E3ECA3D2290065B500EB7B27 /* TabBarView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -54,6 +64,8 @@
 		E31AF6C628FDB742002DE056 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E3AEBD1E28FDD8700078BB70 /* RecipeCard.swift */,
+				E3ECA3D028FF97F200EB7B27 /* RecipeCard2.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -173,7 +185,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */,
+				E3AEBD1F28FDD8700078BB70 /* RecipeCard.swift in Sources */,
+				E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */,
+				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
+				E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */,
 				E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
