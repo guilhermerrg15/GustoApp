@@ -25,7 +25,7 @@ struct Recipe: Identifiable{
     let level : Level.RawValue
 //    let datePublished: String
 }
-
+/*
 extension Recipe{
     public static let all : [Recipe] = [
     Recipe(name: "Macarrão com Bolonhesa",
@@ -52,7 +52,8 @@ extension Recipe{
            ingredients: "Strogonoff:\n 100g de peito de frango cortado em cubos ou tiras\n 1/4 de cebola picada\n 1/2 dente de alho picado\n 1/2 colher de sopa de manteiga\n 1/2 caixa de creme de leite\n 1 colher de sopa de mostarda (opcional)\n 1 colher de sopa de molho de tomate\n 2 colheres de sopa de ketchup\n 1 colher de chá de pimenta\n 1 colher de chá de sal\n Arroz:\n 2 colheres de sopa de azeit\n 1/2 dente de alho picad\n 1/4 de cebola picad\n 1/2 xícara de arro\n Água suficiente para cobrir o arroz\n extra:\n batata palha",
            level: "Básico"),
     
-    Recipe(name: "Bife com molho madeira", image: <#T##String#>, ingredients: <#T##String#>, level: <#T##Level.RawValue#>)
-    
-    ]
-}
+ Recipe(name: "Bife com molho madeira", image: , ingredients: <#T##String#>, level: <#T##Level.RawValue#>)
+                                                                                                  
+                                                                                                  ]
+                                                                                                  }
+*/

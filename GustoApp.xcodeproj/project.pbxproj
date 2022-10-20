@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A35DC2028FE2865004BFFFA /* FlowInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */; };
+		8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2928FF4ECA004BFFFA /* Cores.swift */; };
+		8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2B290086EF004BFFFA /* ReceitasView.swift */; };
 		E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31AF6D428FDB931002DE056 /* RecipeModel.swift */; };
 		E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */; };
 		E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowInterface.swift; sourceTree = "<group>"; };
+		8A35DC2928FF4ECA004BFFFA /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
+		8A35DC2B290086EF004BFFFA /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
 		E31AF6D428FDB931002DE056 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		E34AF7C928F5FA6B00FFE597 /* GustoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GustoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GustoAppApp.swift; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 				E31AF6C328FDB714002DE056 /* Views */,
 				E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */,
 				E34AF7D228F5FA6C00FFE597 /* Preview Content */,
+				8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */,
+				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
+				8A35DC2928FF4ECA004BFFFA /* Cores.swift */,
 			);
 			path = GustoApp;
 			sourceTree = "<group>";
@@ -172,8 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */,
 				E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
+				8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */,
+				8A35DC2028FE2865004BFFFA /* FlowInterface.swift in Sources */,
 				E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = LYWHM8UYDW;
+				DEVELOPMENT_TEAM = 67AYPRFZH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -332,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = LYWHM8UYDW;
+				DEVELOPMENT_TEAM = 67AYPRFZH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
