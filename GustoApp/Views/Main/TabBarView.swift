@@ -10,9 +10,17 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView{
-            MainView()
+            HomeView()
                 .tabItem {
-                    Label("Menu", systemImage: "house")
+                    Label("Home", systemImage: "house")
+                }
+            SearchView()
+                .tabItem {
+                    Label("Busca", systemImage: "magnifyingglass")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Conta", systemImage: "person")
                 }
         }
     }

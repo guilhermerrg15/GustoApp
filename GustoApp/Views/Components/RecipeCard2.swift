@@ -25,7 +25,8 @@ struct RecipeCard2: View {
                                     .foregroundColor(Color("ColorWine"))
                                     .multilineTextAlignment(.leading)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 10)
+                                    .padding(.leading, 15)
+                                    .padding(.top)
                                     
                             }.padding(.top,120)
                             VStack{
