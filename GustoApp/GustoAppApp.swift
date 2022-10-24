@@ -11,8 +11,8 @@ import SwiftUI
 struct GustoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ReceitasView()
+//            ReceitasView(recipe: Recipe.EasyRecipes[0])
+            SelectView()
         }
     }
 }
-

@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    //static let tex  = Color("txtTirarImportar")
-    //static let letratelarestauracao  = Color("letratelarestauracao")
-    //static let melhoriaQualidade  = Color("melhoriaQualidade")
+    static let corAmarela = Color("Color amarela")
+    static let corCinza = Color("Color cinza")
+    static let corRosa  = Color("Color rosa")
     static let corDeFundo  = Color("Color fundo")
     static let corTextoPasso  = Color("Color uva")
 
