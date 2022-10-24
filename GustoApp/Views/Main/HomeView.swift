@@ -1,8 +1,8 @@
 //
-//  RecipeList.swift
+//  HomeView.swift
 //  GustoApp
 //
-//  Created by Guilherme Gomes on 17/10/22.
+//  Created by Guilherme Gomes on 24/10/22.
 //
 
 import SwiftUI

@@ -45,12 +45,24 @@ struct RecipeCard2: View {
                     }
                 
             }
-            Image(recipe.image)
-                .resizable()
-                .frame(width: 222, height: 170, alignment: .top)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                .padding(.top,8)
+            ZStack(alignment: .topTrailing){
+                Image(recipe.image)
+                    .resizable()
+                    .frame(width: 222, height: 170, alignment: .top)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .padding(.top,8)
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color(red: 1, green: 247/255, blue: 238/255))
+                    .frame(width: UIScreen.main.bounds.width/10, height: UIScreen.main.bounds.height / 24 )
+                    .padding(.top, 20)
+                    .padding(.trailing, 10)
+                Image(systemName: "heart")
+                    .foregroundColor(Color("ColorWine"))
+                    .padding(.top, 26)
+                    .padding(.trailing, 14)
+                    .font(.system(size: 26))
+            }
         }
     }
     

@@ -2,7 +2,7 @@
 //  MainView.swift
 //  GustoApp
 //
-//  Created by Guilherme Gomes on 19/10/22.
+//  Created by Guilherme Gomes on 24/10/22.
 //
 
 import SwiftUI
