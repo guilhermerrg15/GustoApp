@@ -9,128 +9,114 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        
-        ZStack{
-            Color(red: 1, green: 247/255,blue: 238/255)
-                .ignoresSafeArea()
-            VStack{
-                ZStack{
-                    RoundedRectangle(cornerRadius: 0)
-                        .foregroundColor(.white)
-                        .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5 )
-                    HStack{
-                        ZStack(alignment: .bottomLeading){
-                            Image("profile")
-                                .resizable()
-                                .frame(width: 120, height: 120)
-                                .clipShape(Circle())
-                            Image(systemName: "pencil")
-                                .frame(width: 60, height: 30)
-                                .foregroundColor(.white)
-                                .background(.black)
-                                .clipShape(Circle())
-                        }
-                        VStack{
-                            Text("Pedro Henrique Rocha")
-                                .foregroundColor(Color("ColorWine"))
-                                .font(Font.custom("Futura",size: 20))
-                            Text("Nivel básico")
-                                .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                        }
-                    }
-                }
-                VStack(spacing: -20){
-                    ZStack(alignment: .leading){
-                        RoundedRectangle(cornerRadius: 20)
-                            .padding(.top,20)
+        NavigationView{
+            ZStack{
+                Color(red: 1, green: 247/255,blue: 238/255)
+                    .ignoresSafeArea()
+                VStack{
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 0)
                             .foregroundColor(.white)
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                            .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5 )
                         HStack{
-                            Image(systemName: "clock")
-                                .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                .font(.system(size: 35))
-                            Text("Histórico")
-                                .font(Font.custom("Futura",size: 27))
-                                .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                        }
-                        .padding(.leading)
-                        .padding(.top)
-                    } .padding(20)
-                    
-                    VStack(spacing: 0){
-                        ZStack(alignment: .leading){
-                            RoundedRectangle(cornerRadius: 20)
-                                .padding(.top,20)
-                                .foregroundColor(.white)
-                                .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                                .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
-                            HStack{
-                                Image(systemName: "person")
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    .font(.system(size: 35))
-                                Text("Editar Perfil")
-                                    .font(Font.custom("Futura",size: 27))
+                            ZStack(alignment: .bottomLeading){
+                                Image("profile")
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .clipShape(Circle())
+                                Image(systemName: "pencil")
+                                    .frame(width: 60, height: 30)
+                                    .foregroundColor(.white)
+                                    .background(.black)
+                                    .clipShape(Circle())
+                            }
+                            VStack{
+                                Text("Nome")
+                                    .foregroundColor(Color("ColorWine"))
+                                    .font(Font.custom("Futura",size: 20))
+                                Text("Nivel básico")
                                     .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
                             }
-                            .padding(.leading)
-                            .padding(.top)
-                        }
-                        ZStack(alignment: .leading){
-                            RoundedRectangle(cornerRadius: 20)
-                                .padding(.top,20)
-                                .foregroundColor(.white)
-                                .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                                .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
-                            HStack{
-                                Image(systemName: "questionmark.circle")
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    .font(.system(size: 35))
-                                Text("Ajuda")
-                                    .font(Font.custom("Futura",size: 27))
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                            }
-                            .padding(.leading)
-                            .padding(.top)
-                        }
-                        ZStack(alignment: .leading){
-                            RoundedRectangle(cornerRadius: 20)
-                                .padding(.top,20)
-                                .foregroundColor(.white)
-                                .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                                .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
-                            HStack{
-                                Image(systemName: "doc.text")
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    .font(.system(size: 35))
-                                Text("Termos de uso")
-                                    .font(Font.custom("Futura",size: 27))
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                            }
-                            .padding(.leading)
-                            .padding(.top)
-                        }
-                        ZStack(alignment: .leading){
-                            RoundedRectangle(cornerRadius: 20)
-                                .padding(.top,20)
-                                .foregroundColor(.white)
-                                .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                                .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
-                            HStack{
-                                Image(systemName: "rectangle.portrait.and.arrow.right")
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    .font(.system(size: 35))
-                                Text("Sair da conta")
-                                    .font(Font.custom("Futura",size: 27))
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                            }
-                            .padding(.leading)
-                            .padding(.top)
                         }
                     }
+                    VStack(spacing: -20){
+                        VStack(spacing: 0){
+                            ZStack(alignment: .leading){
+                                RoundedRectangle(cornerRadius: 20)
+                                    .padding(.top,20)
+                                    .foregroundColor(.white)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
+                                    .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
+                                HStack{
+                                        Image(systemName: "person")
+                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .font(.system(size: 35))
+                                        Text("Editar Perfil")
+                                            .font(Font.custom("Futura",size: 27))
+                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                }
+                                .padding(.leading)
+                                .padding(.top)
+                            }
+                            ZStack(alignment: .leading){
+                                RoundedRectangle(cornerRadius: 20)
+                                    .padding(.top,20)
+                                    .foregroundColor(.white)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
+                                    .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
+                                HStack{
+                                    Image(systemName: "questionmark.circle")
+                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                        .font(.system(size: 35))
+                                    Text("Ajuda")
+                                        .font(Font.custom("Futura",size: 27))
+                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                }
+                                .padding(.leading)
+                                .padding(.top)
+                            }
+                            ZStack(alignment: .leading){
+                                
+                                RoundedRectangle(cornerRadius: 20)
+                                    .padding(.top,20)
+                                    .foregroundColor(.white)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
+                                    .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
+                                HStack{
+                                    NavigationLink(destination: FavoriteRecipes(), label: {
+                                        Image(systemName: "fork.knife")
+                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .font(.system(size: 35))
+                                        Text("Minhas Receitas")
+                                            .font(Font.custom("Futura",size: 27))
+                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                    })
+                                }
+                                .padding(.leading)
+                                .padding(.top)
+                            }
+                            ZStack(alignment: .leading){
+                                RoundedRectangle(cornerRadius: 20)
+                                    .padding(.top,20)
+                                    .foregroundColor(.white)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
+                                    .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
+                                HStack{
+                                    Image(systemName: "doc.text")
+                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                        .font(.system(size: 35))
+                                    Text("Termos de uso")
+                                        .font(Font.custom("Futura",size: 27))
+                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                }
+                                .padding(.leading)
+                                .padding(.top)
+                            }
+                        }
+                    }
+                    Spacer()
                 }
-                Spacer()
             }
             
             

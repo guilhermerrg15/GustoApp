@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31AF6D428FDB931002DE056 /* RecipeModel.swift */; };
 		E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */; };
-		E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */; };
 		E34AF7D128F5FA6C00FFE597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */; };
 		E34AF7D428F5FA6C00FFE597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */; };
 		E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3CC28FE40E000EB7B27 /* MainView.swift */; };
@@ -21,14 +20,15 @@
 		E3ECA3DD2901B68100EB7B27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */; };
 		E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */; };
 		E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3E22906FB0000EB7B27 /* HomeView.swift */; };
-		E3ECA3E52906FBCB00EB7B27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3E42906FBCB00EB7B27 /* MainView.swift */; };
+		E3ECA3EC2907100300EB7B27 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EB2907100300EB7B27 /* Coins.swift */; };
+		E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3ED290716EC00EB7B27 /* Teste.swift */; };
+		E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E31AF6D428FDB931002DE056 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		E34AF7C928F5FA6B00FFE597 /* GustoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GustoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GustoAppApp.swift; sourceTree = "<group>"; };
-		E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E3ECA3CC28FE40E000EB7B27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -40,7 +40,10 @@
 		E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardSearch.swift; sourceTree = "<group>"; };
 		E3ECA3E22906FB0000EB7B27 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E3ECA3E42906FBCB00EB7B27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E3ECA3EA29070CEA00EB7B27 /* GustoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GustoApp.entitlements; sourceTree = "<group>"; };
+		E3ECA3EB2907100300EB7B27 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
+		E3ECA3ED290716EC00EB7B27 /* Teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste.swift; sourceTree = "<group>"; };
+		E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +73,8 @@
 				E3ECA3DA2901B2CF00EB7B27 /* FirstView.swift */,
 				E3ECA3D42900747200EB7B27 /* SearchView.swift */,
 				E3ECA3E22906FB0000EB7B27 /* HomeView.swift */,
-				E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */,
-				E3ECA3E42906FBCB00EB7B27 /* MainView.swift */,
+				E3ECA3ED290716EC00EB7B27 /* Teste.swift */,
+				E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */,
 				E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */,
 				E3ECA3D2290065B500EB7B27 /* TabBarView.swift */,
 			);
@@ -92,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E31AF6D428FDB931002DE056 /* RecipeModel.swift */,
+				E3ECA3EB2907100300EB7B27 /* Coins.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,6 +119,7 @@
 		E34AF7CB28F5FA6B00FFE597 /* GustoApp */ = {
 			isa = PBXGroup;
 			children = (
+				E3ECA3EA29070CEA00EB7B27 /* GustoApp.entitlements */,
 				E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */,
 				E31AF6D328FDB8FA002DE056 /* Models */,
 				E31AF6C328FDB714002DE056 /* Views */,
@@ -202,8 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */,
-				E3ECA3E52906FBCB00EB7B27 /* MainView.swift in Sources */,
 				E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */,
 				E3ECA3DB2901B2CF00EB7B27 /* FirstView.swift in Sources */,
 				E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */,
@@ -211,7 +214,10 @@
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
 				E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */,
+				E3ECA3EC2907100300EB7B27 /* Coins.swift in Sources */,
+				E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */,
 				E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */,
+				E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */,
 				E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */,
 				E3ECA3DD2901B68100EB7B27 /* ProfileView.swift in Sources */,
 				E3ECA3D72900785600EB7B27 /* RecipeList.swift in Sources */,
@@ -340,10 +346,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GustoApp/GustoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = LYWHM8UYDW;
+				DEVELOPMENT_TEAM = 67AYPRFZH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -370,10 +377,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GustoApp/GustoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = LYWHM8UYDW;
+				DEVELOPMENT_TEAM = 67AYPRFZH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

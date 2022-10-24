@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct RecipeCard2: View {
-    @State var recipe : Recipe
+    
+    @StateObject var recipe : Recipe
     
     var body: some View {
         ZStack(alignment: .top){
@@ -27,7 +28,7 @@ struct RecipeCard2: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(.leading, 15)
                                     .padding(.top)
-                                    
+                                
                             }.padding(.top,120)
                             VStack{
                                 Spacer()
@@ -57,7 +58,10 @@ struct RecipeCard2: View {
                     .frame(width: UIScreen.main.bounds.width/10, height: UIScreen.main.bounds.height / 24 )
                     .padding(.top, 20)
                     .padding(.trailing, 10)
-                Image(systemName: "heart")
+                Image(systemName:recipe.favorites ? "heart.fill" : "heart")
+                    .onTapGesture {
+                        recipe.favorites.toggle()
+                    }
                     .foregroundColor(Color("ColorWine"))
                     .padding(.top, 26)
                     .padding(.trailing, 14)
@@ -65,11 +69,11 @@ struct RecipeCard2: View {
             }
         }
     }
-    
-    
-    struct RecipeCard2_Previews: PreviewProvider {
-        static var previews: some View {
-            RecipeCard2(recipe: Recipe.MediumRecipes[0])
-        }
-    }
 }
+    
+//    struct RecipeCard2_Previews: PreviewProvider {
+//        static var previews: some View {
+//            RecipeCard2(recipe: Recipe.MediumRecipes[0])
+//        }
+//    }
+//}

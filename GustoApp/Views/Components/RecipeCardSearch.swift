@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeCardSearch: View {
-    @State var recipe : Recipe
+    @StateObject var recipe : Recipe
     var body: some View {
         ZStack(alignment: .leading){
             
@@ -47,7 +47,10 @@ struct RecipeCardSearch: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .overlay(alignment: .topTrailing){
-                Image(systemName: "heart")
+                Image(systemName:recipe.favorites ? "heart.fill" : "heart")
+                    .onTapGesture {
+                        recipe.favorites.toggle()
+                    }
                     .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
                     .padding(.top, 5)
                     .padding(.trailing, 5)
@@ -62,8 +65,8 @@ struct RecipeCardSearch: View {
     
 }
 
-struct RecipeCardSearch_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeCardSearch(recipe: Recipe.EasyRecipes[1])
-    }
-}
+//struct RecipeCardSearch_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecipeCardSearch(recipe: Recipe.EasyRecipes[1])
+//    }
+//}
