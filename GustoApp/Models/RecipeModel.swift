@@ -15,7 +15,6 @@ enum Level: String, CaseIterable, Identifiable {
 }
 
 
-
 struct Recipe: Identifiable {
     let id = UUID()
     let name : String
@@ -737,4 +736,35 @@ extension Recipe {
                     showsDismissButton: true)
                ])
     ]
+    
+    public func getIngredients() -> [String] {
+        let ingredients = self.ingredients
+        
+        let listIngredients = ingredients.split(separator: "\n ")
+        let listIgts: [String] = listIngredients.map({ String($0) })
+        
+        
+        let pureIngredients: [String] = listIgts.map({ elem in
+            let elems = elem.split(separator: " de ")
+            let strElems =  elems.map({ String($0) })
+            
+            return strElems[1...].joined(separator: " de ")
+            
+        })
+        let nonEmptyIngredients = pureIngredients.filter({ $0 != ""})
+        
+        return nonEmptyIngredients
+    }
+    
+    var namedIngredients: String {
+        let ingredients = getIngredients()
+        
+        let text = ingredients.joined(separator: ", ")
+        
+        let firstLetter = text.prefix(1).capitalized
+        let remainingLetter = text.dropFirst()
+        return firstLetter + remainingLetter
+        
+    }
+   
 }

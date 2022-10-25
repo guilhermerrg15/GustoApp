@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        RecipeCard2(recipe: Recipe.EasyRecipes[0])
     }
 }
 
@@ -19,4 +18,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
