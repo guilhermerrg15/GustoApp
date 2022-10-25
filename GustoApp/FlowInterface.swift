@@ -89,7 +89,7 @@ struct PageView: View{
                     shouldShowOnboarding.toggle()
                 }, label: {
                     Text("Terminar Receita")
-                        .font(.custom("SulSansTest-Bold", size: 50, relativeTo: .title))
+                        .font(.custom("SulSansTest-Bold", size: 20, relativeTo: .title))
                         .foregroundColor(.white)
                         .padding(.horizontal, 25)
                         .padding(.vertical, 10)
