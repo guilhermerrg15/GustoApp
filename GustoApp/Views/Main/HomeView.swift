@@ -23,7 +23,7 @@ struct HomeView: View {
                     }.frame(height: 50)
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
-                            ForEach(Recipe.EasyRecipes) { recipe in
+                            ForEach(Recipe.easyRecipes) { recipe in
                                 RecipeCard2(recipe: recipe)
                             }
                         }

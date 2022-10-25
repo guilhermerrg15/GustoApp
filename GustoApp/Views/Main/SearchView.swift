@@ -16,7 +16,7 @@ struct SearchView: View {
         ZStack{
             NavigationView{
                 ScrollView(showsIndicators: false) {
-                    RecipeList(searchText: $searchText, recipes: Recipe.EasyRecipes)
+                    RecipeList(searchText: $searchText, recipes: Recipe.easyRecipes)
                         .frame(maxWidth: .infinity)
                         .navigationBarTitleDisplayMode(.inline)
                         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))

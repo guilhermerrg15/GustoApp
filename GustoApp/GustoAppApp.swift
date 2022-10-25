@@ -12,7 +12,7 @@ struct GustoAppApp: App {
     var body: some Scene {
         WindowGroup {
 //            ReceitasView(recipe: Recipe.EasyRecipes[0])
-            SelectView()
+            MainView()
         }
     }
 }

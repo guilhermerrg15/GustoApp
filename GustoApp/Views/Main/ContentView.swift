@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        RecipeCard2(recipe: Recipe.EasyRecipes[0])
+        RecipeCard2(recipe: Recipe.easyRecipes[0])
     }
 }
 

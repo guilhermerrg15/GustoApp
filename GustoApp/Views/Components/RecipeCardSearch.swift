@@ -64,6 +64,6 @@ struct RecipeCardSearch: View {
 
 struct RecipeCardSearch_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCardSearch(recipe: Recipe.EasyRecipes[1])
+        RecipeCardSearch(recipe: Recipe.easyRecipes[1])
     }
 }

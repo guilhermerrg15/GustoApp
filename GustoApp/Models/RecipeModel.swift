@@ -738,13 +738,13 @@ extension Recipe {
     ]
     
     public func getIngredients() -> [String] {
-        let ingredients = self.ingredients
+        let ingredients: [String] = self.ingredients
         
-        let listIngredients = ingredients.split(separator: "\n ")
-        let listIgts: [String] = listIngredients.map({ String($0) })
+//        let listIngredients = ingredients.split(separator: "\n ")
+//        let listIgts: [String] = listIngredients.map({ String($0) })
         
         
-        let pureIngredients: [String] = listIgts.map({ elem in
+        let pureIngredients: [String] = ingredients.map({ elem in
             let elems = elem.split(separator: " de ")
             let strElems =  elems.map({ String($0) })
             
