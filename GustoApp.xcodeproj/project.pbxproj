@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A35DC2028FE2865004BFFFA /* FlowInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */; };
+		8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2928FF4ECA004BFFFA /* Cores.swift */; };
+		8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2B290086EF004BFFFA /* ReceitasView.swift */; };
+		8AB8231129030EBE0088C950 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8231029030EBE0088C950 /* SelectView.swift */; };
+		8AF8B9392903261A00E903CB /* SulSansTest-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */; };
+		8AF8B93A2903261A00E903CB /* SulSansTest-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9302903261A00E903CB /* SulSansTest-Medium.otf */; };
+		8AF8B93B2903261A00E903CB /* SulSansTest-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9312903261A00E903CB /* SulSansTest-Regular.otf */; };
+		8AF8B93C2903261A00E903CB /* SulSansTest-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9322903261A00E903CB /* SulSansTest-BlackItalic.otf */; };
+		8AF8B93D2903261A00E903CB /* SulSansTest-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9332903261A00E903CB /* SulSansTest-MediumItalic.otf */; };
+		8AF8B93E2903261A00E903CB /* SulSansTest-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9342903261A00E903CB /* SulSansTest-Black.otf */; };
+		8AF8B93F2903261A00E903CB /* SulSansTest-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9352903261A00E903CB /* SulSansTest-Light.otf */; };
+		8AF8B9402903261A00E903CB /* SulSansTest-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9362903261A00E903CB /* SulSansTest-BoldItalic.otf */; };
+		8AF8B9412903261A00E903CB /* SulSansTest-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9372903261A00E903CB /* SulSansTest-Bold.otf */; };
+		8AF8B9422903261A00E903CB /* SulSansTest-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9382903261A00E903CB /* SulSansTest-Italic.otf */; };
+		8AF8B946290704C100E903CB /* PageViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8B945290704C100E903CB /* PageViewContent.swift */; };
 		E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31AF6D428FDB931002DE056 /* RecipeModel.swift */; };
 		E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */; };
 		E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */; };
@@ -25,6 +40,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowInterface.swift; sourceTree = "<group>"; };
+		8A35DC2928FF4ECA004BFFFA /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
+		8A35DC2B290086EF004BFFFA /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
+		8AB8231029030EBE0088C950 /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-LightItalic.otf"; sourceTree = "<group>"; };
+		8AF8B9302903261A00E903CB /* SulSansTest-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Medium.otf"; sourceTree = "<group>"; };
+		8AF8B9312903261A00E903CB /* SulSansTest-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Regular.otf"; sourceTree = "<group>"; };
+		8AF8B9322903261A00E903CB /* SulSansTest-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-BlackItalic.otf"; sourceTree = "<group>"; };
+		8AF8B9332903261A00E903CB /* SulSansTest-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-MediumItalic.otf"; sourceTree = "<group>"; };
+		8AF8B9342903261A00E903CB /* SulSansTest-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Black.otf"; sourceTree = "<group>"; };
+		8AF8B9352903261A00E903CB /* SulSansTest-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Light.otf"; sourceTree = "<group>"; };
+		8AF8B9362903261A00E903CB /* SulSansTest-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-BoldItalic.otf"; sourceTree = "<group>"; };
+		8AF8B9372903261A00E903CB /* SulSansTest-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Bold.otf"; sourceTree = "<group>"; };
+		8AF8B9382903261A00E903CB /* SulSansTest-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Italic.otf"; sourceTree = "<group>"; };
+		8AF8B9432903262400E903CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8AF8B945290704C100E903CB /* PageViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewContent.swift; sourceTree = "<group>"; };
 		E31AF6D428FDB931002DE056 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		E34AF7C928F5FA6B00FFE597 /* GustoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GustoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GustoAppApp.swift; sourceTree = "<group>"; };
@@ -54,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AF8B9442903285500E903CB /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8B9342903261A00E903CB /* SulSansTest-Black.otf */,
+				8AF8B9322903261A00E903CB /* SulSansTest-BlackItalic.otf */,
+				8AF8B9372903261A00E903CB /* SulSansTest-Bold.otf */,
+				8AF8B9362903261A00E903CB /* SulSansTest-BoldItalic.otf */,
+				8AF8B9382903261A00E903CB /* SulSansTest-Italic.otf */,
+				8AF8B9352903261A00E903CB /* SulSansTest-Light.otf */,
+				8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */,
+				8AF8B9302903261A00E903CB /* SulSansTest-Medium.otf */,
+				8AF8B9332903261A00E903CB /* SulSansTest-MediumItalic.otf */,
+				8AF8B9312903261A00E903CB /* SulSansTest-Regular.otf */,
+			);
+			path = Fontes;
+			sourceTree = "<group>";
+		};
 		E31AF6C328FDB714002DE056 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E31AF6D428FDB931002DE056 /* RecipeModel.swift */,
+				8AF8B945290704C100E903CB /* PageViewContent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,11 +164,17 @@
 		E34AF7CB28F5FA6B00FFE597 /* GustoApp */ = {
 			isa = PBXGroup;
 			children = (
+				8AF8B9432903262400E903CB /* Info.plist */,
 				E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */,
 				E31AF6D328FDB8FA002DE056 /* Models */,
 				E31AF6C328FDB714002DE056 /* Views */,
 				E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */,
 				E34AF7D228F5FA6C00FFE597 /* Preview Content */,
+				8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */,
+				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
+				8A35DC2928FF4ECA004BFFFA /* Cores.swift */,
+				8AB8231029030EBE0088C950 /* SelectView.swift */,
+				8AF8B9442903285500E903CB /* Fontes */,
 			);
 			path = GustoApp;
 			sourceTree = "<group>";
@@ -190,8 +245,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF8B93A2903261A00E903CB /* SulSansTest-Medium.otf in Resources */,
+				8AF8B93B2903261A00E903CB /* SulSansTest-Regular.otf in Resources */,
+				8AF8B9392903261A00E903CB /* SulSansTest-LightItalic.otf in Resources */,
+				8AF8B93C2903261A00E903CB /* SulSansTest-BlackItalic.otf in Resources */,
 				E34AF7D428F5FA6C00FFE597 /* Preview Assets.xcassets in Resources */,
 				E34AF7D128F5FA6C00FFE597 /* Assets.xcassets in Resources */,
+				8AF8B93D2903261A00E903CB /* SulSansTest-MediumItalic.otf in Resources */,
+				8AF8B93E2903261A00E903CB /* SulSansTest-Black.otf in Resources */,
+				8AF8B9402903261A00E903CB /* SulSansTest-BoldItalic.otf in Resources */,
+				8AF8B9422903261A00E903CB /* SulSansTest-Italic.otf in Resources */,
+				8AF8B93F2903261A00E903CB /* SulSansTest-Light.otf in Resources */,
+				8AF8B9412903261A00E903CB /* SulSansTest-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */,
 				E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */,
 				E3ECA3E52906FBCB00EB7B27 /* MainView.swift in Sources */,
 				E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */,
@@ -210,6 +276,10 @@
 				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
+				8AF8B946290704C100E903CB /* PageViewContent.swift in Sources */,
+				8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */,
+				8A35DC2028FE2865004BFFFA /* FlowInterface.swift in Sources */,
+				8AB8231129030EBE0088C950 /* SelectView.swift in Sources */,
 				E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */,
 				E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */,
 				E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */,
@@ -343,9 +413,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = LYWHM8UYDW;
+				DEVELOPMENT_TEAM = 67AYPRFZH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GustoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -373,9 +444,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = LYWHM8UYDW;
+				DEVELOPMENT_TEAM = 67AYPRFZH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GustoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
