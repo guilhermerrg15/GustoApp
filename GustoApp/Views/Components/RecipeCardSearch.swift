@@ -9,38 +9,52 @@ import SwiftUI
 
 struct RecipeCardSearch: View {
     @StateObject var recipe : Recipe
+    @State var showRecipe: Bool = false
+    
     var body: some View {
+        
         ZStack(alignment: .leading){
+            cardSearchUI
+
+        }.onTapGesture {
+            showRecipe = true
+        }.fullScreenCover(isPresented: $showRecipe) {
+            ReceitaView(receita: recipe)
+        }
+    }
+    
+    var cardSearchUI: some View {
             
             ZStack{
                 VStack(alignment: .leading){
                     Text(recipe.name)
-                        .font(Font.custom("Futura",size: 20))
-                        .foregroundColor(Color("ColorWine"))
+                        .font(.custom("SulSansTest-Bold", size: 22, relativeTo: .title2))
+                        .foregroundColor(Color.corRosa)
                         .multilineTextAlignment(.leading)
                     HStack(alignment: .bottom){
                         Image(recipe.image)
                             .resizable()
-                            .frame(width: 160, height: 140, alignment: .top)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                        VStack{
-                            Text("Ingredientes")
-                                .font(Font.custom("Futura",size: 15))
-                                .foregroundColor(Color(red:111/255, green: 111/255, blue: 111/255))
-                            Text(recipe.namedIngredients)
-                                .font(Font.custom("Futura",size: 12))
-                                .foregroundColor(.gray)
+                            .frame(width: 130, height: 108, alignment: .top)
+//                            .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        VStack(alignment:.leading){
+                            Text("Ingredientes:")
+                                .font(.custom("SulSansTest-Medium", size: 18, relativeTo: .title3))
+                                .foregroundColor(Color.corCinza)
+                            Text(recipe.allIngredients)
+                                .font(.custom("SulSansTest-Regular", size: 12, relativeTo: .caption))
+                                .foregroundColor(Color.corCinza)
                                 .lineLimit(3)
                         }
                         Spacer()
-                        HStack{
-                            Image(systemName: "clock")
-                                .foregroundColor(.gray)
+                        HStack(spacing: 3){
+                            Image(systemName: "clock") 
+                                .foregroundColor(Color.corCinza)
                             Text(recipe.recipeTime)
-                                .foregroundColor(.gray)
-                                .font(Font.custom("Futura",size: 13))
-                                .padding(.trailing)
+                                .foregroundColor(Color.corCinza)
+                                .font(Font.custom("SulSansTest-Medium",size: 13, relativeTo: .title))
+                                .padding(.trailing,10)
+                                
                         }
                     }
                 } .padding(.leading,15)
@@ -53,20 +67,21 @@ struct RecipeCardSearch: View {
                     }
                     .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
                     .padding(.top, 5)
-                    .padding(.trailing, 5)
+                    .padding(.trailing, 10)
+                    .font(.system(size: 20))
             }.padding(.vertical)
             .background {
                 RoundedRectangle(cornerRadius: 0, style: .continuous)
-                    .fill(Color(.white))
-                    .shadow(color: Color.black.opacity(0.5), radius: 6, x: 0, y: 5)
+                    .fill(Color.white)
+                    .shadow(color: Color.black.opacity(0.25), radius: 6, x: 0, y: 0)
             } .padding(15)
         }
-    }
+    
     
 }
 
 //struct RecipeCardSearch_Previews: PreviewProvider {
 //    static var previews: some View {
-//        RecipeCardSearch(recipe: Recipe.EasyRecipes[1])
+//        RecipeCardSearch(recipe: Recipe.easyRecipes[1])
 //    }
 //}

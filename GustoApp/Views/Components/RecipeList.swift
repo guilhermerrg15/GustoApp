@@ -35,6 +35,6 @@ struct RecipeList: View {
 
 //struct RecipeList_Previews: PreviewProvider {
 //    static var previews: some View {
-//        RecipeList(searchText: .constant(""), recipes: Recipe.EasyRecipes)
+//        RecipeList(searchText: .constant(""), recipes: AllRecipes.instance)
 //    }
 //}
