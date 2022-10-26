@@ -15,9 +15,9 @@ class Wallet {
         self.coins = userDefaults.object(forKey: "myCoins") as? Int ?? 0
     }
     
+    private let userDefaults = UserDefaults.standard
     private(set) var coins : Int = 0
     
-    private let userDefaults = UserDefaults.standard
 
     func add(newCoins: Int = 10){
         self.coins += newCoins

@@ -23,6 +23,8 @@
 		E3ECA3EC2907100300EB7B27 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EB2907100300EB7B27 /* Coins.swift */; };
 		E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3ED290716EC00EB7B27 /* Teste.swift */; };
 		E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */; };
+		E3ECA3F32907431200EB7B27 /* CodableExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = E3ECA3F22907431200EB7B27 /* CodableExtensions */; };
+		E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F4290976E900EB7B27 /* CuponsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,7 @@
 		E3ECA3EB2907100300EB7B27 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		E3ECA3ED290716EC00EB7B27 /* Teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste.swift; sourceTree = "<group>"; };
 		E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipes.swift; sourceTree = "<group>"; };
+		E3ECA3F4290976E900EB7B27 /* CuponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuponsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3ECA3F32907431200EB7B27 /* CodableExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,7 @@
 				E3ECA3D42900747200EB7B27 /* SearchView.swift */,
 				E3ECA3E22906FB0000EB7B27 /* HomeView.swift */,
 				E3ECA3ED290716EC00EB7B27 /* Teste.swift */,
+				E3ECA3F4290976E900EB7B27 /* CuponsView.swift */,
 				E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */,
 				E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */,
 				E3ECA3D2290065B500EB7B27 /* TabBarView.swift */,
@@ -153,6 +158,9 @@
 			dependencies = (
 			);
 			name = GustoApp;
+			packageProductDependencies = (
+				E3ECA3F22907431200EB7B27 /* CodableExtensions */,
+			);
 			productName = GustoApp;
 			productReference = E34AF7C928F5FA6B00FFE597 /* GustoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +189,9 @@
 				Base,
 			);
 			mainGroup = E34AF7C028F5FA6B00FFE597;
+			packageReferences = (
+				E3ECA3F12907431200EB7B27 /* XCRemoteSwiftPackageReference "CodableExtensions" */,
+			);
 			productRefGroup = E34AF7CA28F5FA6B00FFE597 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -213,6 +224,7 @@
 				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
+				E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */,
 				E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */,
 				E3ECA3EC2907100300EB7B27 /* Coins.swift in Sources */,
 				E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */,
@@ -425,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3ECA3F12907431200EB7B27 /* XCRemoteSwiftPackageReference "CodableExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rvenieris/CodableExtensions.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3ECA3F22907431200EB7B27 /* CodableExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3ECA3F12907431200EB7B27 /* XCRemoteSwiftPackageReference "CodableExtensions" */;
+			productName = CodableExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E34AF7C128F5FA6B00FFE597 /* Project object */;
 }

@@ -7,15 +7,13 @@
 
 import Foundation
 import SwiftUI
+import CodableExtensions
 
-enum Level: String, CaseIterable, Identifiable {
-    var id : String{ self.rawValue}
-    case easy = "Básico"
-    case medium = "Intermediário"
-    case hard = "Difícil"
-}
 
 class AllRecipes: ObservableObject {
+    static let instance = AllRecipes()
+    private init(){}
+    
     @Published var easyRecipe: [Recipe] = [
         Recipe(name: "Macarrão com Bolonhesa",
                image: "macarrao",
@@ -79,6 +77,12 @@ class AllRecipes: ObservableObject {
                recipeTime: "2h",
                level: "Difícil")
     ]
+    
+    @Published var coins : Int = 0
+    
+    func add(newCoins: Int = 10){
+        self.coins += newCoins
+    }
 
 }
 
@@ -89,25 +93,25 @@ class Recipe: ObservableObject, Identifiable {
     let image : String
     let ingredients : String
     let recipeTime : String
-    let level : Level.RawValue
-    @Published var favorites : Bool {
-        didSet {
-            print("Alterou porra!", name, favorites)
-        }
-    }
+    let level : String
+    @Published var favorites : Bool
     
-    init(name: String, image: String, ingredients: String, recipeTime: String, level: Level.RawValue) {
+    init(id:Int = Recipe.lastId, name: String, image: String, ingredients: String, recipeTime: String, level: String, favorites:Bool = false) {
         self.id = Recipe.lastId
         self.name = name
         self.image = image
         self.ingredients = ingredients
         self.recipeTime = recipeTime
         self.level = level
-        self.favorites = false
+        self.favorites = favorites
         Recipe.lastId += 1
     }
-}
+    
+    convenience init(from recipe: AppData.RecipePersist) {
+        self.init(id: recipe.id, name: recipe.name, image: recipe.image, ingredients: recipe.ingredients, recipeTime: recipe.recipeTime, level: recipe.level, favorites: recipe.favorites)
+    }
 
+}
 
 extension Recipe{
     
@@ -139,5 +143,68 @@ extension Recipe{
         let remainingLetter = text.dropFirst()
         return firstLetter + remainingLetter
         
+    }
+}
+
+
+
+// To Persist
+
+
+class AppData:Codable {
+    static var instance = AppData()
+    private init(){}
+    
+    class RecipePersist: Codable {
+        let id:Int
+        let name : String
+        let image : String
+        let ingredients : String
+        let recipeTime : String
+        let level : String
+        var favorites : Bool
+        
+        init(id: Int, name: String, image: String, ingredients: String, recipeTime: String, level: String, favorites: Bool) {
+            self.id = id
+            self.name = name
+            self.image = image
+            self.ingredients = ingredients
+            self.recipeTime = recipeTime
+            self.level = level
+            self.favorites = favorites
+        }
+        convenience init(from recipe: Recipe) {
+            self.init(id: recipe.id, name: recipe.name, image: recipe.image, ingredients: recipe.ingredients, recipeTime: recipe.recipeTime, level: recipe.level, favorites: recipe.favorites)
+        }
+    }
+    var easyRecipe: [RecipePersist] = []
+    var mediumRecipe: [RecipePersist] = []
+    var hardRecipe: [RecipePersist] = []
+    
+    private(set) var coins : Int = 0
+    
+    func add(newCoins: Int = 10){
+        self.coins += newCoins
+    }
+    
+    func saveData() {
+        self.easyRecipe = AllRecipes.instance.easyRecipe.map{item in return RecipePersist(from: item)}
+        self.mediumRecipe = AllRecipes.instance.mediumRecipe.map{item in return RecipePersist(from: item)}
+        self.hardRecipe = AllRecipes.instance.hardRecipe.map{item in return RecipePersist(from: item)}
+        self.coins = AllRecipes.instance.coins
+        
+        try? self.save()
+
+    }
+
+    static func loadData() {
+        guard let loaded = (try? AppData.load()) else {return}
+        Self.instance = loaded
+        
+        AllRecipes.instance.easyRecipe = instance.easyRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.mediumRecipe = instance.mediumRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.hardRecipe = instance.hardRecipe.map{item in return Recipe(from: item)}
+
+        AllRecipes.instance.coins = Self.instance.coins
     }
 }

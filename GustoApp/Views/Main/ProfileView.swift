@@ -66,12 +66,14 @@ struct ProfileView: View {
                                     .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                                     .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
                                 HStack{
-                                    Image(systemName: "questionmark.circle")
-                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                        .font(.system(size: 35))
-                                    Text("Ajuda")
-                                        .font(Font.custom("Futura",size: 27))
-                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                    NavigationLink(destination: CuponsView(), label: {
+                                        Image(systemName: "ticket")
+                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .font(.system(size: 25))
+                                        Text("Cupons")
+                                            .font(Font.custom("Futura",size: 27))
+                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                    })
                                 }
                                 .padding(.leading)
                                 .padding(.top)
