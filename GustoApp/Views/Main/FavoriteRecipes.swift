@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  FavoriteRecipes.swift
 //  GustoApp
 //
 //  Created by Guilherme Gomes on 24/10/22.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @EnvironmentObject var recipes:AllRecipes
+struct FavoriteRecipes: View {
+    @EnvironmentObject var recipes: AllRecipes
     var body: some View {
         ZStack{
             Color(red: 1, green: 247/255,blue: 238/255)
@@ -25,7 +25,9 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
                             ForEach($recipes.easyRecipe) { $recipe in
-                                RecipeCard2(recipe: recipe)
+                                if recipe.favorites {
+                                    RecipeCard2(recipe: recipe)
+                                }
                             }
                         }
                         .padding()
@@ -43,7 +45,9 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
                             ForEach($recipes.mediumRecipe) { $recipe in
-                                RecipeCard2(recipe: recipe)
+                                if recipe.favorites {
+                                    RecipeCard2(recipe: recipe)
+                                }
                             }
                         }
                         .padding()
@@ -59,7 +63,9 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
                             ForEach($recipes.hardRecipe) { $recipe in
-                                RecipeCard2(recipe: recipe)
+                                if recipe.favorites {
+                                    RecipeCard2(recipe: recipe)
+                                }
                             }
                         }
                         .padding()
@@ -82,8 +88,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct FavoriteRecipes_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        FavoriteRecipes()
     }
 }

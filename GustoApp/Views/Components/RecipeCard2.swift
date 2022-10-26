@@ -9,9 +9,8 @@ import SwiftUI
 
 struct RecipeCard2: View {
     
-    @State var recipe : Recipe
+    @StateObject var recipe : Recipe
     @State var showRecipe: Bool = false
-    
     
     var body: some View {
         
@@ -80,11 +79,11 @@ struct RecipeCard2: View {
             }
         }
     }
-    
-    
-    struct RecipeCard2_Previews: PreviewProvider {
-        static var previews: some View {
-            RecipeCard2(recipe: Recipe.MediumRecipes[0])
-        }
-    }
 }
+    
+//    struct RecipeCard2_Previews: PreviewProvider {
+//        static var previews: some View {
+//            RecipeCard2(recipe: Recipe.MediumRecipes[0])
+//        }
+//    }
+//}

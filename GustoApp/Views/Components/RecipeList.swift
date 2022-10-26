@@ -9,33 +9,32 @@ import SwiftUI
 
 struct RecipeList: View {
     @Binding var searchText : String
-    var recipes: [Recipe]
+    @EnvironmentObject var recipes: AllRecipes
     var body: some View {
         ScrollView{
             VStack{
-                ForEach(Recipe.easyRecipes) { recipe in
+                ForEach($recipes.easyRecipe) { $recipe in
                     if (searchText.isEmpty || recipe.name.lowercased().contains(searchText.lowercased())) {
                         RecipeCardSearch(recipe: recipe)
                     }
                 }
-                ForEach(Recipe.MediumRecipes) { recipe in
+                ForEach($recipes.mediumRecipe) { $recipe in
                     if (searchText.isEmpty || recipe.name.lowercased().contains(searchText.lowercased())) {
                         RecipeCardSearch(recipe: recipe)
                     }
                 }
-                ForEach(Recipe.HardRecipes) { recipe in
+                ForEach($recipes.hardRecipe) { $recipe in
                     if (searchText.isEmpty || recipe.name.lowercased().contains(searchText.lowercased())) {
                         RecipeCardSearch(recipe: recipe)
                     }
                 }
             }
-          //.padding(.horizontal, 30)
         }
     }
 }
 
-struct RecipeList_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeList(searchText: .constant(""), recipes: Recipe.easyRecipes)
-    }
-}
+//struct RecipeList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecipeList(searchText: .constant(""), recipes: AllRecipes.instance)
+//    }
+//}

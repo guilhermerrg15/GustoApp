@@ -9,14 +9,12 @@ import SwiftUI
 import UIKit
 
 struct SearchView: View {
-    
     @State var searchText = ""
-    
     var body: some View {
         ZStack{
             NavigationView{
                 ScrollView(showsIndicators: false) {
-                    RecipeList(searchText: $searchText, recipes: Recipe.easyRecipes)
+                    RecipeList(searchText: $searchText)
                         .frame(maxWidth: .infinity)
                         .navigationBarTitleDisplayMode(.inline)
                         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
@@ -42,8 +40,8 @@ struct SearchView: View {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}
