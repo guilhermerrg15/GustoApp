@@ -11,7 +11,7 @@ struct ProfileView: View {
     var body: some View {
         
         ZStack{
-            Color(red: 1, green: 247/255,blue: 238/255)
+            Color.corDeFundo
                 .ignoresSafeArea()
             VStack{
                 ZStack{
@@ -33,7 +33,7 @@ struct ProfileView: View {
                         }
                         VStack{
                             Text("Pedro Henrique Rocha")
-                                .foregroundColor(Color("ColorWine"))
+                                .foregroundColor(Color.corRosa)
                                 .font(Font.custom("Futura",size: 20))
                             Text("Nivel básico")
                                 .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))

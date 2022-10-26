@@ -20,22 +20,43 @@ struct Recipe: Identifiable {
     let name : String
     let image : String
     let description : String
-    let ingredients: [String]
+    //let ingredients: [String]
+    var ingredientes: [Ingrediente] = []
     let recipeTime : String
     //    let directions : String
     let level : Level
     //    let datePublished: String
     var instructions: [PageViewContent] = []
+    
+    var allIngredients: String {
+        let nomeIngredients: [String] =  ingredientes.map({$0.alimento}).filter({$0 != ""})
+        let nomesJuntos = nomeIngredients.joined(separator: ", ")
+        
+        let primeiraLetra = nomesJuntos.prefix(1).capitalized
+        let restante = nomesJuntos.dropFirst()
+        return primeiraLetra + restante
+    }
 
 }
 
 extension Recipe {
-
+    
     static var easyRecipes: [Recipe] = [
         Recipe(name: "Macarrão a Bolonhesa",
                image: "macarrao",
                description: "Macarrão com molho feito de tomate e carne moida com toque espeiclal de queijo ralado",
-               ingredients: ["- 150g de macarrão", "- 100g de carne moída", "- 150 ml de molho de tomate", "- 1 dente de alho picado", "- 1/4 cebola picada", "- 50g de queijo ralado picado", "- 1 colher de sopa Azeite extra-virgem", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal"],
+               //               ingredients: ["- 150g de macarrão", "- 100g de carne moída", "- 150 ml de molho de tomate", "- 1 dente de alho picado", "- 1/4 de cebola picada", "- 50g de queijo ralado picado", "- 1 colher de sopa Azeite extra-virgem", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal"],
+               ingredientes: [
+                Ingrediente(quantidade: "150g", alimento: "macarrão"),
+                Ingrediente(quantidade: "100g", alimento: "carne moída"),
+                Ingrediente(quantidade: "150 ml", alimento: "molho de tomate"),
+                Ingrediente(quantidade: "1 dente", alimento: "alho picado"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
+                Ingrediente(quantidade: "50g", alimento: "queijo ralado picado"),
+                Ingrediente(quantidade: "1 colher", alimento: "sopa Azeite extra-virgem"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "pimenta"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+               ],
                recipeTime: "45 min",
                level: .easy,
                instructions: [
@@ -88,15 +109,23 @@ extension Recipe {
                     //imageName: "",
                     showsDismissButton: true)
                 
-            ]),
+               ]),
         
         Recipe(name: "Omelete de queijo e presunto",
                image: "omelete",
                description: "ovos batidos",
-               ingredients: ["- 3 fatias de queijo", "- 2 fatias de presunto", "- 2 ovos", "- 2 colheres de manteiga", "- 1 colher de chá de orégano (opcional)", "- 1 colher de café de sal"],
+               //               ingredients: ["- 3 fatias de queijo", "- 2 fatias de presunto", "- 2 ovos", "- 2 colheres de manteiga", "- 1 colher de chá de orégano (opcional)", "- 1 colher de café de sal"],
+               ingredientes: [
+                Ingrediente(quantidade: "3 fatias", alimento: "queijo"),
+                Ingrediente(quantidade: "2 fatias", alimento: "presunto"),
+                Ingrediente(quantidade: "2", alimento: "ovos",separador:  ""),
+                Ingrediente(quantidade: "2 colheres", alimento: "manteiga"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "orégano (opcional)"),
+                Ingrediente(quantidade: "1 colher de café", alimento: "sal"),
+               ],
                recipeTime: "45 min",
                level: .easy,
-              instructions: [
+               instructions: [
                 PageViewContent(
                     title: "Pegue um pote de sua preferência",
                     //imageName: "",
@@ -141,12 +170,27 @@ extension Recipe {
                     title: "Dobre o omelete e passe para um prato",
                     //imageName: "",
                     showsDismissButton: true)
-              ]),
-
+               ]),
+        
         Recipe(name: "Crepioca de Frango",
                image: "crepioca de frango",
                description: "tapioca batida com ovo",
-               ingredients: ["Massa:", "- 1 ovo", "- 1 clara de ovo", "- 2 colheres de sopa de tapioca", "- 1 colher de sopa de leite", "Recheio:", "- 1 filé de peito de frango", "- 2 colheres de sopa cheias de requeijão", "- 1/2 cebola picada", "- 1 colher de chá de pimenta", "- 2 colheres de chá de sal", "- 2 colheres de chá de orégano", "- 2 colheres de chá de azeite"],
+               //               ingredients: ["Massa:", "- 1 ovo", "- 1 clara de ovo", "- 2 colheres de sopa de tapioca", "- 1 colher de sopa de leite", "Recheio:", "- 1 filé de peito de frango", "- 2 colheres de sopa cheias de requeijão", "- 1/2 cebola picada", "- 1 colher de chá de pimenta", "- 2 colheres de chá de sal", "- 2 colheres de chá de orégano", "- 2 colheres de chá de azeite"],
+               ingredientes: [
+                Ingrediente(parte: "Massa:"),
+                Ingrediente(quantidade: "1", alimento: "ovo", separador:  ""),
+                Ingrediente(quantidade: "1", alimento: " clara de ovo", separador:  ""),
+                Ingrediente(quantidade: "2 colheres de sopa", alimento: "tapioca"),
+                Ingrediente(quantidade: "1 colher de sopa", alimento: "leite"),
+                Ingrediente(parte: "Recheio:"),
+                Ingrediente(quantidade: "1 filé", alimento: "peito de frango"),
+                Ingrediente(quantidade: "2 colheres de sopa cheias", alimento: "requeijão"),
+                Ingrediente(quantidade: "1/2", alimento: "cebola picada",separador:  ""),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "pimenta"),
+                Ingrediente(quantidade: "2 colheres de chá", alimento: "sal"),
+                Ingrediente(quantidade: "2 colheres de chá", alimento: "orégano"),
+                Ingrediente(quantidade: "2 colheres de chá", alimento: "azeite"),
+               ],
                recipeTime: "45 min",
                level: .easy,
                instructions: [
@@ -216,11 +260,21 @@ extension Recipe {
                     showsDismissButton: true)
                 
                ]),
-
+        
         Recipe(name: "Sopa de legumes",
                image: "sopa de legumes",
                description: "caldo com diversos legumes",
-               ingredients: ["- 1 colher de chá de óleo", "- 1/4 de cebola ralada", "- 1/2 dente de alho amassado", "- 1/4 cenoura média em rodelas", "- 1 batatas em cubos", "- 1/2 tomates sem pele e sem sementes picados", "- 1/2 envelope de MAGGI® Sopa de Carne com Conchinhas", "- 1/2 xícara de água fria"],
+               //              ingredients: ["- 1 colher de chá de óleo", "- 1/4 de cebola ralada", "- 1/2 dente de alho amassado", "- 1/4 cenoura média em rodelas", "- 1 batatas em cubos", "- 1/2 tomates sem pele e sem sementes picados", "- 1/2 envelope de MAGGI® Sopa de Carne com Conchinhas", "- 1/2 xícara de água fria"],
+               ingredientes: [
+                Ingrediente(quantidade: "1 colher de chá", alimento: "óleo"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola ralada"),
+                Ingrediente(quantidade: "1/2 dente", alimento: "alho amassado"),
+                Ingrediente(quantidade: "1/4", alimento: "cenoura média em rodelas"),
+                Ingrediente(quantidade: "1", alimento: "batata em cubos",separador:  ""),
+                Ingrediente(quantidade: "1/2", alimento: "tomate sem pele e sem sementes picados",separador:  ""),
+                Ingrediente(quantidade: "1/2 envelope", alimento: "MAGGI® Sopa de Carne"),
+                Ingrediente(quantidade: "1/2 xícara", alimento: "água fria")
+               ],
                recipeTime: "45 min",
                level: .easy,
                instructions: [
@@ -249,11 +303,32 @@ extension Recipe {
                     //imageName: "",
                     showsDismissButton: true)
                ]),
-
+        
         Recipe(name: "Strogonoff de Frango",
                image: "strogonoff de frango",
                description: "frangos ",
-               ingredients: ["Strogonoff:", "- 100g de peito de frango cortado em cubos ou tiras", "- 1/4 de cebola picada", "- 1/2 dente de alho picado", "- 1/2 colher de sopa de manteiga", "- 1/2 caixa de creme de leite", "- 1 colher de sopa de mostarda (opcional)", "- 1 colher de sopa de molho de tomate", "- 2 colheres de sopa de ketchup", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho picada", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz", "extra:", "- batata palha"],
+               //               ingredients: ["Strogonoff:", "- 100g de peito de frango cortado em cubos ou tiras", "- 1/4 de cebola picada", "- 1/2 dente de alho picado", "- 1/2 colher de sopa de manteiga", "- 1/2 caixa de creme de leite", "- 1 colher de sopa de mostarda (opcional)", "- 1 colher de sopa de molho de tomate", "- 2 colheres de sopa de ketchup", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho picada", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz", "extra:", "- batata palha"],
+               ingredientes: [
+                Ingrediente(parte: "Srogonoff:"),
+                Ingrediente(quantidade: "100g", alimento: "peito de frango cortado em cubos ou tiras"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
+                Ingrediente(quantidade: "1/2 dente", alimento: "alho picado"),
+                Ingrediente(quantidade: "1/2 colher de sopa", alimento: "manteiga"),
+                Ingrediente(quantidade: "1/2 caixa", alimento: "creme de leite"),
+                Ingrediente(quantidade: "1 colher de sopa", alimento: "mostarda (opcional)"),
+                Ingrediente(quantidade: "1 colher de sopa", alimento: "molho de tomate"),
+                Ingrediente(quantidade: "2 colheres de sopa", alimento: "ketchup"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "pimenta"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                Ingrediente(parte:"Arroz:"),
+                Ingrediente(quantidade: "2 colheres de sopa", alimento: "azeite"),
+                Ingrediente(quantidade: "1/2 dente", alimento: "alho picada"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
+                Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
+                Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: "",separador:  ""),
+                Ingrediente(parte: "Extra:"),
+                Ingrediente(quantidade: "", alimento: "batata palha",separador:  ""),
+               ],
                recipeTime: "45 min",
                level: .easy,
                instructions: [
@@ -313,10 +388,34 @@ extension Recipe {
     ]
     
     public static let MediumRecipes : [Recipe] = [
-        Recipe(name: "Bife com molho madera",
+        Recipe(name: "Bife c/ molho madeira e arroz à piamontese",
                image: "bife molho madeira",
                description: "carne e cebola",
-               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho", "- 1/4 de cebola", "- 1 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 caixa de creme de leite", "- 50g de queijo mussarela", "- 1 colher de chá noz moscada", "- 25 g de queijo parmesão", "Bife:", "- 1 colher de sopa de manteiga", "- 1 file mignon grande", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "Molho madeira:", "- 40 g de farinha de trigo", "- 1 colher de sopa de manteiga", "- 1 colher de chá de sal", "- 80 ml de vinho madeira", "- 250 ml de caldo de carne", "- 1 colher de chá de mostarda", "- champignon (opcional)"],
+               //               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho", "- 1/4 de cebola", "- 1 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 caixa de creme de leite", "- 50g de queijo mussarela", "- 1 colher de chá noz moscada", "- 25 g de queijo parmesão", "Bife:", "- 1 colher de sopa de manteiga", "- 1 file mignon grande", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "Molho madeira:", "- 40 g de farinha de trigo", "- 1 colher de sopa de manteiga", "- 1 colher de chá de sal", "- 80 ml de vinho madeira", "- 250 ml de caldo de carne", "- 1 colher de chá de mostarda", "- champignon (opcional)"],
+               ingredientes: [Ingrediente(parte: "Arroz:"),
+                              Ingrediente(quantidade: "2 colheres de sopa", alimento: "azeite"),
+                              Ingrediente(quantidade: "1/2 dente", alimento: "alho"),
+                              Ingrediente(quantidade: "1/4", alimento: "cebola"),
+                              Ingrediente(quantidade: "1 xícara", alimento: "arroz"),
+                              Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
+                              Ingrediente(quantidade: "1/2 caixa", alimento: "creme de leite"),
+                              Ingrediente(quantidade: "50g", alimento: "queijo mussarela"),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "noz moscada"),
+                              Ingrediente(quantidade: "25 g", alimento: "queijo parmesão"),
+                              Ingrediente(parte: "Bife:"),
+                              Ingrediente(quantidade: "1 colher de sopa", alimento: "manteiga"),
+                              Ingrediente(quantidade: "1", alimento: "file mignon grande",separador:""),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "pimenta"),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                              Ingrediente(parte: "Molho madeira:"),
+                              Ingrediente(quantidade: "40 g", alimento: "farinha de trigo"),
+                              Ingrediente(quantidade: "1 colher de sopa", alimento: "manteiga"),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                              Ingrediente(quantidade: "80 ml", alimento: "vinho madeira"),
+                              Ingrediente(quantidade: "250 ml", alimento: "caldo de carne"),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "mostarda"),
+                              Ingrediente(quantidade: "80g", alimento: "champignon (opcional)")
+                             ],
                recipeTime: "45 min",
                level: .medium,
                instructions: [
@@ -393,11 +492,25 @@ extension Recipe {
                     //imageName: "",
                     showsDismissButton: true)
                ]),
-
+        
         Recipe(name: "Salmão Grelhado",
                image: "salmão",
                description: "salmao",
-               ingredients: ["Salmão:", "- 1 filé de salmão sem pele", "- 1 colher de chá de Azeite", "- 1/4 dentes de alho picados finamente", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "- 1/4 de limão", "Arroz de brócolis:", "- 1 colher de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 maço de brócolis"],
+               //               ingredients: ["Salmão:", "- 1 filé de salmão sem pele", "- 1 colher de chá de Azeite", "- 1/4 dentes de alho picados finamente", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "- 1/4 de limão", "Arroz de brócolis:", "- 1 colher de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 maço de brócolis"],
+               ingredientes: [Ingrediente(parte:"Salmão:"),
+                              Ingrediente(quantidade: "1 filé", alimento: "salmão sem pele"),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "Azeite"),
+                              Ingrediente(quantidade: "1/4 dentes", alimento: "alho picados finamente"),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "pimenta"),
+                              Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                              Ingrediente(quantidade: "1/4", alimento: "limão"),
+                              Ingrediente(parte:"Arroz de brócolis:"),
+                              Ingrediente(quantidade: "1 colher de sopa", alimento: "azeite"),
+                              Ingrediente(quantidade: "1/2 dente", alimento: "alho picado"),
+                              Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
+                              Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
+                              Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
+                              Ingrediente(quantidade: "1/2 maço", alimento: "brócolis")],
                recipeTime: "45 min",
                level: .medium,
                instructions: [
@@ -462,11 +575,18 @@ extension Recipe {
                     //imageName: "",
                     showsDismissButton: true)
                ]),
-
+        
         Recipe(name: "Brownie",
                image: "brownie",
                description: "bolo ",
-               ingredients: ["- 3 ovos","- 100g de manteiga", "- 180g de açúcar", "- 250g de Nescau", "- 1 xícara de farinha de trigo"],
+               //               ingredients: ["- 3 ovos","- 100g de manteiga", "- 180g de açúcar", "- 250g de Nescau", "- 1 xícara de farinha de trigo"],
+               ingredientes: [
+                Ingrediente(quantidade: "3", alimento: "ovos", separador: ""),
+                Ingrediente(quantidade: "100g", alimento: "manteiga"),
+                Ingrediente(quantidade: "180g", alimento: "açúcar"),
+                Ingrediente(quantidade: "250g", alimento: "Nescau"),
+                Ingrediente(quantidade: "1 xícara", alimento: "farinha de trigo")
+               ],
                recipeTime: "45 min",
                level: .medium,
                instructions: [
@@ -500,12 +620,46 @@ extension Recipe {
                     showsDismissButton: true)
                ]),
     ]
-
+    
     public static let HardRecipes : [Recipe] = [
         Recipe(name: "Bife acebolado",
                image: "bife acebolado",
                description: "bife com cebola",
-               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz" ,"Feijão:" ,"- 50 g de feijão-preto", "- 1/2 colheres de sopa de óleo", "- 1/4 cebola picada", "- 1/2 dentes de alho amassados", "- 1 xícaras chá de água (200 ml)", "- 1/2 sachê de Tempero de sua escolha", "- 1 colher de chá de sal", "Couve refogada:", "- 50g de couve", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1 colher sopa cheia de óleo", "- 1 colher de chá de sal", "Farofa:", "- 100g de farinha de mandioca", "- 1/2 kg cebola grande fatiada", "- 50g colheres de manteiga", "- 1 colher de chá de sal", "- 1 colher de chá de pimenta", "Bife acebolado:", "- 100g de contrafilé (ou outro bife de sua preferência)", "- 1/2 tablete de caldo de carne", "- 1/2 xícara de chá de água quente", "- 1 colher de chá de azeite", "- 1/4 de cebola em rodelas"],
+               //               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz" ,"Feijão:" ,"- 50 g de feijão-preto", "- 1/2 colheres de sopa de óleo", "- 1/4 cebola picada", "- 1/2 dentes de alho amassados", "- 1 xícaras chá de água (200 ml)", "- 1/2 sachê de Tempero de sua escolha", "- 1 colher de chá de sal", "Couve refogada:", "- 50g de couve", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1 colher sopa cheia de óleo", "- 1 colher de chá de sal", "Farofa:", "- 100g de farinha de mandioca", "- 1/2 kg cebola grande fatiada", "- 50g colheres de manteiga", "- 1 colher de chá de sal", "- 1 colher de chá de pimenta", "Bife acebolado:", "- 100g de contrafilé (ou outro bife de sua preferência)", "- 1/2 tablete de caldo de carne", "- 1/2 xícara de chá de água quente", "- 1 colher de chá de azeite", "- 1/4 de cebola em rodelas"],
+               ingredientes: [
+                Ingrediente(parte:"Arroz:"),
+                Ingrediente(quantidade: "2 colheres de sopa", alimento: "azeite"),
+                Ingrediente(quantidade: "1/2 dente", alimento: "alho picado"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
+                Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
+                Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
+                Ingrediente(parte: "Feijão:"),
+                Ingrediente(quantidade: "50 g", alimento: "feijão-preto"),
+                Ingrediente(quantidade: "1/2 colheres de sopa", alimento: "óleo"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
+                Ingrediente(quantidade: "1/2 dente", alimento: "alho amassado"),
+                Ingrediente(quantidade: "1 xícaras chá", alimento: "água (200 ml)"),
+                Ingrediente(quantidade: "1/2 sachê", alimento: "tempero de sua escolha"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                Ingrediente(parte: "Couve refogada:"),
+                Ingrediente(quantidade: "50g", alimento: "couve"),
+                Ingrediente(quantidade: "1/2 dente", alimento: "alho picado"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
+                Ingrediente(quantidade: "1 colher de sopa cheia", alimento: "óleo"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                Ingrediente(parte: "Farofa:"),
+                Ingrediente(quantidade: "100g", alimento: "farinha de mandioca"),
+                Ingrediente(quantidade: "300g", alimento: "cebola grande fatiada"),
+                Ingrediente(quantidade: "50g", alimento: "manteiga"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "pimenta"),
+                Ingrediente(parte: "Bife:"),
+                Ingrediente(quantidade: "100g", alimento: "contrafilé (ou outro bife de sua preferência)"),
+                Ingrediente(quantidade: "1/2 tablete", alimento: "caldo de carne"),
+                Ingrediente(quantidade: "1/2 xícara de chá", alimento: "água quente"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "azeite"),
+                Ingrediente(quantidade: "1/4", alimento: "cebola em rodelas")
+               ],
                recipeTime: "45 min",
                level: .hard,
                instructions: [
@@ -590,21 +744,21 @@ extension Recipe {
                     //imageName: "",
                     showsDismissButton: false),
                 PageViewContent(
-                            title: "Acrescente a farinha, continue mexendo e abaixe o fogo",
-                            //imageName: "",
-                            showsDismissButton: false),
+                    title: "Acrescente a farinha, continue mexendo e abaixe o fogo",
+                    //imageName: "",
+                    showsDismissButton: false),
                 PageViewContent(
-                                title: "Coloque o sal e a pimenta logo após adicionar a farinha.",
-                                //imageName: "",
-                                showsDismissButton: false),
+                    title: "Coloque o sal e a pimenta logo após adicionar a farinha.",
+                    //imageName: "",
+                    showsDismissButton: false),
                 PageViewContent(
-                                title: "Mexa até que incorpore toda a cebola e a manteiga na farinha e está pronta",
-                                //imageName: "",
-                                showsDismissButton: false),
+                    title: "Mexa até que incorpore toda a cebola e a manteiga na farinha e está pronta",
+                    //imageName: "",
+                    showsDismissButton: false),
                 PageViewContent(
-                                title: "Modo de preparo do bife acebolado: ",
-                                //imageName: "",
-                                showsDismissButton: false),
+                    title: "Modo de preparo do bife acebolado: ",
+                    //imageName: "",
+                    showsDismissButton: false),
                 PageViewContent(
                     title: "Dissolva o caldo de carne na água quente",
                     //imageName: "",
@@ -638,11 +792,31 @@ extension Recipe {
                     //imageName: "",
                     showsDismissButton: true)
                ]),
-
+        
         Recipe(name: "Empadão de Frango",
                image: "empadao",
                description: "massa de empada",
-               ingredients: ["Massa:" ,"- 140g de manteiga", "- 1 ovo", "- 220g de farinha de trigo", "- 2g de fermento em pó", "Recheio:", "- 650g de peito de frango cozido e desfiado", "- 1 lata de molho de tomate", "- ¼ xícara de azeitonas pretas picadas (opcional)", "- 1 cebola média fatiada", "- 1 colher de sopa de azeite", "- 2 colheres de Sal", "- 2 colheres de pimenta", "- 1 tablete de galinha", "- 2 dentes de alho amassados", "- 400g de requeijão", "Finalização:", "- 1 ovo batido"],
+               //               ingredients: ["Massa:" ,"- 140g de manteiga", "- 1 ovo", "- 220g de farinha de trigo", "- 2g de fermento em pó", "Recheio:", "- 650g de peito de frango cozido e desfiado", "- 1 lata de molho de tomate", "- ¼ xícara de azeitonas pretas picadas (opcional)", "- 1 cebola média fatiada", "- 1 colher de sopa de azeite", "- 2 colheres de Sal", "- 2 colheres de pimenta", "- 1 tablete de galinha", "- 2 dentes de alho amassados", "- 400g de requeijão", "Finalização:", "- 1 ovo batido"],
+               ingredientes: [
+                Ingrediente(parte: "Massa:"),
+                Ingrediente(quantidade: "140g", alimento: "manteiga"),
+                Ingrediente(quantidade: "1", alimento: "ovo",separador: ""),
+                Ingrediente(quantidade: "220g", alimento: "farinha de trigo"),
+                Ingrediente(quantidade: "2g", alimento: "fermento em pó"),
+                Ingrediente(parte: "Recheio"),
+                Ingrediente(quantidade: "650g", alimento: "peito de frango cozido e desfiado"),
+                Ingrediente(quantidade: "1 lata", alimento: "molho de tomate"),
+                Ingrediente(quantidade: "¼ xícara", alimento: "azeitonas pretas picadas (opcional)"),
+                Ingrediente(quantidade: "1", alimento: "cebola média fatiada", separador: ""),
+                Ingrediente(quantidade: "1 colher de sopa", alimento: "azeite"),
+                Ingrediente(quantidade: "2 colheres", alimento: "sal"),
+                Ingrediente(quantidade: "2 colheres", alimento: "pimenta"),
+                Ingrediente(quantidade: "1 tablete", alimento: " caldo de galinha"),
+                Ingrediente(quantidade: "2 dentes", alimento: "alho amassados"),
+                Ingrediente(quantidade: "400g", alimento: "requeijão"),
+                Ingrediente(parte: "Finalização:"),
+                Ingrediente(quantidade: "1", alimento: "ovo batido",separador: "")
+               ],
                recipeTime: "45 min",
                level: .hard,
                instructions: [
@@ -736,35 +910,69 @@ extension Recipe {
                     showsDismissButton: true)
                ])
     ]
+}
+//    public func getIngredients() -> [String] {
+//        let ingredients: [String] = self.ingredientes
+//
+//
+//        let pureIngredients: [String] = ingredientes.map({ elem in
+//            let elems = elem.split(separator: " de ")
+//            let strElems =  elems.map({ String($0) })
+//
+//            let quantidade = strElems.first!.dropFirst(2)
+//            let alimento = strElems[1...].joined(separator: " de ")
+//            print("Ingrediente(quantidade: \"\(quantidade)\", alimento: \"\(alimento)\"),")
+//            return alimento
+//
+//        })
+//        let nonEmptyIngredients = pureIngredients.filter({ $0 != ""})
+//
+//        print("\n- - - -")
+//
+//        return nonEmptyIngredients
+//    }
+//
+//    var namedIngredients: String {
+//        let ingredients = getIngredients()
+//
+//        let text = ingredients.joined(separator: ", ")
+//
+//        let firstLetter = text.prefix(1).capitalized
+//        let remainingLetter = text.dropFirst()
+//        return firstLetter + remainingLetter
+//
+//    }
+//
+//}
+
+
+struct Ingrediente: Identifiable {
+    var id = UUID()
+    var quantidade: String
+    var alimento: String
+    var parte: String
+    var separador: String
     
-    public func getIngredients() -> [String] {
-        let ingredients: [String] = self.ingredients
-        
-//        let listIngredients = ingredients.split(separator: "\n ")
-//        let listIgts: [String] = listIngredients.map({ String($0) })
-        
-        
-        let pureIngredients: [String] = ingredients.map({ elem in
-            let elems = elem.split(separator: " de ")
-            let strElems =  elems.map({ String($0) })
-            
-            return strElems[1...].joined(separator: " de ")
-            
-        })
-        let nonEmptyIngredients = pureIngredients.filter({ $0 != ""})
-        
-        return nonEmptyIngredients
+    init(parte: String) {
+        self.parte = parte
+        self.quantidade = ""
+        self.alimento = ""
+        self.separador = ""
     }
     
-    var namedIngredients: String {
-        let ingredients = getIngredients()
-        
-        let text = ingredients.joined(separator: ", ")
-        
-        let firstLetter = text.prefix(1).capitalized
-        let remainingLetter = text.dropFirst()
-        return firstLetter + remainingLetter
-        
+    init(quantidade: String, alimento: String, separador: String = " de ") {
+        self.quantidade = quantidade
+        self.alimento = alimento
+        self.parte = ""
+        self.separador = separador
     }
-   
+    
+    var texto: String {
+        if alimento == "" {
+            return parte
+        }
+        let complemento = alimento == "" ? "" : self.separador + self.alimento
+        
+        return "- " + quantidade + complemento
+    }
 }

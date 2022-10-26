@@ -11,7 +11,7 @@ struct FirstView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color("ColorWine")
+                Color.corRosa
                     .ignoresSafeArea()
                 VStack{
                     Image("logo2")
@@ -20,10 +20,10 @@ struct FirstView: View {
                         .frame(width: 250, alignment: .center)
                         .padding()
                     NavigationLink(destination: MainView(), label: {
-                        Text("Cadastrar")
+                        Text("Comecar")
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
-                            .background(Color("CorStartButton"))
+                            .background(Color.corAmarela)
                             .cornerRadius(10)
                         
                     })
