@@ -25,6 +25,9 @@
 		E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */; };
 		E3ECA3F32907431200EB7B27 /* CodableExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = E3ECA3F22907431200EB7B27 /* CodableExtensions */; };
 		E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F4290976E900EB7B27 /* CuponsView.swift */; };
+		E3ECA3F72909AED300EB7B27 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */; };
+		E3ECA3F92909CD2C00EB7B27 /* MyCuponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */; };
+		E3ECA3FB2909D3CF00EB7B27 /* TicketCardFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		E3ECA3ED290716EC00EB7B27 /* Teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste.swift; sourceTree = "<group>"; };
 		E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipes.swift; sourceTree = "<group>"; };
 		E3ECA3F4290976E900EB7B27 /* CuponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuponsView.swift; sourceTree = "<group>"; };
+		E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCuponsView.swift; sourceTree = "<group>"; };
+		E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCardFive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,8 @@
 				E3ECA3D42900747200EB7B27 /* SearchView.swift */,
 				E3ECA3E22906FB0000EB7B27 /* HomeView.swift */,
 				E3ECA3ED290716EC00EB7B27 /* Teste.swift */,
+				E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */,
+				E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */,
 				E3ECA3F4290976E900EB7B27 /* CuponsView.swift */,
 				E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */,
 				E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */,
@@ -91,6 +99,7 @@
 			children = (
 				E3ECA3D028FF97F200EB7B27 /* RecipeCard2.swift */,
 				E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */,
+				E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */,
 				E3ECA3D62900785600EB7B27 /* RecipeList.swift */,
 			);
 			path = Components;
@@ -220,9 +229,11 @@
 			files = (
 				E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */,
 				E3ECA3DB2901B2CF00EB7B27 /* FirstView.swift in Sources */,
+				E3ECA3F72909AED300EB7B27 /* EditProfileView.swift in Sources */,
 				E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */,
 				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
+				E3ECA3F92909CD2C00EB7B27 /* MyCuponsView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
 				E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */,
 				E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */,
@@ -233,6 +244,7 @@
 				E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */,
 				E3ECA3DD2901B68100EB7B27 /* ProfileView.swift in Sources */,
 				E3ECA3D72900785600EB7B27 /* RecipeList.swift in Sources */,
+				E3ECA3FB2909D3CF00EB7B27 /* TicketCardFive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

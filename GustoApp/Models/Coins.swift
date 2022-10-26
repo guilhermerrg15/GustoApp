@@ -8,7 +8,7 @@
 import Foundation
 import GameKit
 
-class Wallet {
+class Wallet: ObservableObject {
     static let instance = Wallet()
     
     private init(){
@@ -19,7 +19,8 @@ class Wallet {
     private(set) var coins : Int = 0
     
 
-    func add(newCoins: Int = 10){
+    func add(newCoins: Int = 5){
+        self.objectWillChange.send()
         self.coins += newCoins
         userDefaults.set(self.coins, forKey: "myCoins")
     }

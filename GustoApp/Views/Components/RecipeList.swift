@@ -29,7 +29,6 @@ struct RecipeList: View {
                     }
                 }
             }
-          //  .padding(.horizontal, 30)
         }
     }
 }

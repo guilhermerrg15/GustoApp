@@ -8,16 +8,31 @@
 import SwiftUI
 
 struct Teste: View {
-    var wallet: Wallet =  Wallet.instance
+    @ObservedObject var wallet: Wallet =  Wallet.instance
+    @State private var showingAlert = false
     var body: some View {
         Button("Aumenta!"){
             wallet.add()
+            showingAlert = true
+        } .alert("important pessage", isPresented: $showingAlert){
+            Button("First"){}
+            Button("Second"){}
+            Button("Third"){}
         }
         .padding()
+        .foregroundColor(.white)
+        .background(Color("ColorWine"))
+        .clipShape(Capsule())
+        
         Button("Carrega!"){
             print(wallet.coins)
         }
-        Text("Você tem \(wallet.coins) moedas!! ")
+        HStack{
+            Image("coin")
+                .resizable()
+                .frame(width: 120, height: 120)
+            Text("\(wallet.getCoins())")
+        }
     }
 }
 

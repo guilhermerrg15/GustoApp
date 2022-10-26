@@ -79,7 +79,7 @@ class AllRecipes: ObservableObject {
     ]
     
     @Published var coins : Int = 0
-    
+
     func add(newCoins: Int = 10){
         self.coins += newCoins
     }
@@ -151,6 +151,11 @@ extension Recipe{
 // To Persist
 
 
+enum UserDefaultsKeys: String {
+    case username = "username"
+}
+
+
 class AppData:Codable {
     static var instance = AppData()
     private init(){}
@@ -186,6 +191,8 @@ class AppData:Codable {
     func add(newCoins: Int = 10){
         self.coins += newCoins
     }
+    
+    
     
     func saveData() {
         self.easyRecipe = AllRecipes.instance.easyRecipe.map{item in return RecipePersist(from: item)}

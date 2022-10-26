@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State var username: String =
+        UserDefaults.standard.string(forKey: UserDefaultsKeys.username.rawValue) ?? "Nome"
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -25,14 +29,9 @@ struct ProfileView: View {
                                     .resizable()
                                     .frame(width: 120, height: 120)
                                     .clipShape(Circle())
-                                Image(systemName: "pencil")
-                                    .frame(width: 60, height: 30)
-                                    .foregroundColor(.white)
-                                    .background(.black)
-                                    .clipShape(Circle())
                             }
                             VStack{
-                                Text("Nome")
+                                Text(username)
                                     .foregroundColor(Color("ColorWine"))
                                     .font(Font.custom("Futura",size: 20))
                                 Text("Nivel básico")
@@ -49,12 +48,14 @@ struct ProfileView: View {
                                     .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                                     .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
                                 HStack{
+                                    NavigationLink(destination: EditProfileView(username: $username), label: {
                                         Image(systemName: "person")
                                             .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
                                             .font(.system(size: 35))
                                         Text("Editar Perfil")
                                             .font(Font.custom("Futura",size: 27))
                                             .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                    })
                                 }
                                 .padding(.leading)
                                 .padding(.top)

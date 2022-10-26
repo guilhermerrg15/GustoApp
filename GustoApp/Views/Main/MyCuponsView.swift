@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct CuponsView: View {
+struct MyCuponsView: View {
+    @ObservedObject var wallet: Wallet =  Wallet.instance
+    @State private var showingAlert = false
     var body: some View {
         NavigationView{
             ZStack{
@@ -19,23 +21,11 @@ struct CuponsView: View {
                             .foregroundColor(.white)
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5 )
-                        HStack{
-                            Image("coin")
-                                .resizable()
-                                .frame(width: 120, height: 120)
-                            VStack{
-                                Text("Troque suas moedas")
-                                    .foregroundColor(Color("ColorWine"))
-                                    .font(Font.custom("Futura",size: 22))
-                                    .padding(5)
-                                Text("1 receita: 5 moedas")
-                                    .foregroundColor(.gray)
-                                Text("10 moedas: 5 reais")
-                                    .foregroundColor(.gray)
-                                Text("20 moedas: 12 reais")
-                                    .foregroundColor(.gray)
-                            }
-                        } .padding(.trailing)
+                        Text("Você realizou \(wallet.getCoins()/5) receitas, seu saldo é de \(wallet.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
+                            .foregroundColor(Color("ColorWine"))
+                            .font(Font.headline.weight(.bold))
+                            .padding()
+                        
                     }
                     ZStack{
                         RoundedRectangle(cornerRadius: 5)
@@ -48,7 +38,7 @@ struct CuponsView: View {
                                         .font(Font.custom("Futura",size: 14))
                                         .foregroundColor(.gray)
                                 } .padding(.leading, 30)
-                                    .padding(.bottom)
+                                    .padding(.bottom, 10)
                             }
                         Group{
                             VStack{
@@ -61,9 +51,17 @@ struct CuponsView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Text("R$5")
+                                    
+                                    Button("R$5"){
+                                        wallet.add()
+                                        showingAlert = true
+                                    } .alert("Confirmação", isPresented: $showingAlert){
+                                        Button("Trocar"){}
+                                        Button("Cancel", role: .cancel){}
+                                    }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
+                                        .padding()
                                 }
                             }
                         } .padding(.bottom, 30)
@@ -79,7 +77,7 @@ struct CuponsView: View {
                                         .font(Font.custom("Futura",size: 14))
                                         .foregroundColor(.gray)
                                 } .padding(.leading, 30)
-                                    .padding(.bottom)
+                                    .padding(.bottom, 10)
                             }
                         Group{
                             VStack{
@@ -125,11 +123,12 @@ struct CuponsView: View {
                                             .foregroundColor(Color(red: 215/255, green: 153/255, blue: 177/255))
                                             .frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height / 12 )
                                         VStack{
-                                            NavigationLink(destination: MyCuponsView(), label: {
-                                                Text("Meus cupons")
-                                                    .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
-                                                    .font(Font.custom("Futura",size: 28))
-                                            })
+                                            Text("\(wallet.getCoins()) moedas")
+                                                .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
+                                                .font(Font.custom("Futura",size: 22))
+                                            Text("(\(wallet.getCoins()/5) receitas realizadas)")
+                                                .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
+                                                .font(Font.custom("Futura",size: 16))
                                         }
                                     }
                                 }
@@ -146,7 +145,7 @@ struct CuponsView: View {
                             Color("ColorWine")
                                 .ignoresSafeArea(edges: .top)
                                 .padding(.bottom)
-                            Text("Cupons")
+                            Text("Meus Cupons")
                                 .font(Font.custom("Futura",size: 35))
                                 .foregroundColor(Color("ColorYellow"))
                                 .padding(20)
@@ -157,8 +156,9 @@ struct CuponsView: View {
     }
 }
 
-struct CuponsView_Previews: PreviewProvider {
+struct MyCuponsView_Previews: PreviewProvider {
     static var previews: some View {
-        CuponsView()
+        MyCuponsView()
     }
 }
+
