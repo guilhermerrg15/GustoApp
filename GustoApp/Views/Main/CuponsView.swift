@@ -64,8 +64,7 @@ struct CuponsView: View {
                                         .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
                                     Button("R$5"){
-                                        wallet.addFiveCoins()
-                                        wallet.addReceita()
+                                        wallet.subtractTenCoins()
                                         showingAlert = true
                                     } .alert("Confirmação", isPresented: $showingAlert){
                                         Button("Trocar"){}
@@ -102,7 +101,7 @@ struct CuponsView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Button("R$5"){
+                                    Button("R$12"){
                                         wallet.subtractTwentyCoins()
                                         showingAlert = true
                                     } .alert("Confirmação", isPresented: $showingAlert){

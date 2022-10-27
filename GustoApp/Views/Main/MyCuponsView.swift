@@ -102,11 +102,6 @@ struct MyCuponsView: View {
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 7.5 )
                             .overlay(alignment: .bottomTrailing){
-                                Image(systemName: "arrow.right")
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    .font(.system(size: 25))
-                                    .padding(.bottom)
-                                    .padding(.trailing, 10)
                             }
                         HStack{
                             Image("coin")
