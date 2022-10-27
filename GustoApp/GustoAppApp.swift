@@ -21,9 +21,9 @@ struct GustoAppApp: App {
             MainView()
                 .environmentObject(recipes)
                 .onChange(of: scenePhase) { newPhase in
-//                    if newPhase == .inactive {
-//                        AppData.instance.saveData()
-//                    }
+                    if newPhase == .inactive {
+                        AppData.instance.saveData()
+                    }
                     if newPhase == .background {
                         AppData.instance.saveData()
                     }

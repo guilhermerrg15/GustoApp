@@ -12,7 +12,7 @@ struct Teste: View {
     @State private var showingAlert = false
     var body: some View {
         Button("Aumenta!"){
-            wallet.add()
+            wallet.addFiveCoins()
             showingAlert = true
         } .alert("important pessage", isPresented: $showingAlert){
             Button("First"){}

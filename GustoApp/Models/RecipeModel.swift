@@ -231,7 +231,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "2 colheres de chá", alimento: "orégano"),
                 Ingrediente(quantidade: "2 colheres de chá", alimento: "azeite"),
                ],
-               recipeTime: "45 min",
+               recipeTime: "15 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -315,7 +315,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "1/2 envelope", alimento: "MAGGI® Sopa de Carne"),
                 Ingrediente(quantidade: "1/2 xícara", alimento: "água fria")
                ],
-               recipeTime: "45 min",
+               recipeTime: "15 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -369,7 +369,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(parte: "Extra:"),
                 Ingrediente(quantidade: "", alimento: "batata palha",separador:  ""),
                ],
-               recipeTime: "45 min",
+               recipeTime: "15 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -456,7 +456,7 @@ class AllRecipes: ObservableObject {
                               Ingrediente(quantidade: "1 colher de chá", alimento: "mostarda"),
                               Ingrediente(quantidade: "80g", alimento: "champignon (opcional)")
                              ],
-               recipeTime: "45 min",
+               recipeTime: "60 min",
                level: .medium,
                instructions: [
                 PageViewContent(
@@ -551,7 +551,7 @@ class AllRecipes: ObservableObject {
                               Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
                               Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
                               Ingrediente(quantidade: "1/2 maço", alimento: "brócolis")],
-               recipeTime: "45 min",
+               recipeTime: "2h e 30 min",
                level: .medium,
                instructions: [
                 PageViewContent(
@@ -627,7 +627,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "250g", alimento: "Nescau"),
                 Ingrediente(quantidade: "1 xícara", alimento: "farinha de trigo")
                ],
-               recipeTime: "45 min",
+               recipeTime: "40 min",
                level: .medium,
                instructions: [
                 PageViewContent(
@@ -699,7 +699,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "1 colher de chá", alimento: "azeite"),
                 Ingrediente(quantidade: "1/4", alimento: "cebola em rodelas")
                ],
-               recipeTime: "45 min",
+               recipeTime: "1h e 20 min",
                level: .hard,
                instructions: [
                 PageViewContent(
@@ -856,7 +856,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(parte: "Finalização:"),
                 Ingrediente(quantidade: "1", alimento: "ovo batido",separador: "")
                ],
-               recipeTime: "45 min",
+               recipeTime: "2h",
                level: .hard,
                instructions: [
                 PageViewContent(
@@ -951,9 +951,13 @@ class AllRecipes: ObservableObject {
     ]
     
     @Published var coins : Int = 0
+    @Published var receita : Int = 0
     
     func add(newCoins: Int = 10){
         self.coins += newCoins
+    }
+    func add(newReceita: Int = 1){
+        self.receita += newReceita
     }
     
 }
@@ -1015,6 +1019,11 @@ class AppData:Codable {
     func add(newCoins: Int = 10){
         self.coins += newCoins
     }
+    private(set) var receita : Int = 0
+    
+    func add(newReceita: Int = 10){
+        self.coins += newReceita
+    }
     
     
     
@@ -1023,6 +1032,7 @@ class AppData:Codable {
         self.mediumRecipe = AllRecipes.instance.mediumRecipe.map{item in return RecipePersist(from: item)}
         self.hardRecipe = AllRecipes.instance.hardRecipe.map{item in return RecipePersist(from: item)}
         self.coins = AllRecipes.instance.coins
+        
         
         try? self.save()
         
@@ -1035,44 +1045,10 @@ class AppData:Codable {
         AllRecipes.instance.easyRecipe = instance.easyRecipe.map{item in return Recipe(from: item)}
         AllRecipes.instance.mediumRecipe = instance.mediumRecipe.map{item in return Recipe(from: item)}
         AllRecipes.instance.hardRecipe = instance.hardRecipe.map{item in return Recipe(from: item)}
-        
         AllRecipes.instance.coins = Self.instance.coins
+        
     }
 }
-//    public func getIngredients() -> [String] {
-//        let ingredients: [String] = self.ingredientes
-//
-//
-//        let pureIngredients: [String] = ingredientes.map({ elem in
-//            let elems = elem.split(separator: " de ")
-//            let strElems =  elems.map({ String($0) })
-//
-//            let quantidade = strElems.first!.dropFirst(2)
-//            let alimento = strElems[1...].joined(separator: " de ")
-//            print("Ingrediente(quantidade: \"\(quantidade)\", alimento: \"\(alimento)\"),")
-//            return alimento
-//
-//        })
-//        let nonEmptyIngredients = pureIngredients.filter({ $0 != ""})
-//
-//        print("\n- - - -")
-//
-//        return nonEmptyIngredients
-//    }
-//
-//    var namedIngredients: String {
-//        let ingredients = getIngredients()
-//
-//        let text = ingredients.joined(separator: ", ")
-//
-//        let firstLetter = text.prefix(1).capitalized
-//        let remainingLetter = text.dropFirst()
-//        return firstLetter + remainingLetter
-//
-//    }
-//
-//}
-
 
 struct Ingrediente: Identifiable, Codable {
     var id = UUID()

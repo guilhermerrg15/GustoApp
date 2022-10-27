@@ -40,7 +40,7 @@ struct TicketCardFive: View {
                             .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
                         
                         Button("R$5"){
-                            wallet.add()
+                            wallet.addFiveCoins()
                             showingAlert = true
                         } .alert("Confirmação", isPresented: $showingAlert){
                             Button("Trocar"){}

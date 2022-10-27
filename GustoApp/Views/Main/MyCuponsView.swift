@@ -11,7 +11,6 @@ struct MyCuponsView: View {
     @ObservedObject var wallet: Wallet =  Wallet.instance
     @State private var showingAlert = false
     var body: some View {
-        NavigationView{
             ZStack{
                 Color(red: 1, green: 247/255,blue: 238/255)
                     .ignoresSafeArea()
@@ -21,7 +20,7 @@ struct MyCuponsView: View {
                             .foregroundColor(.white)
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5 )
-                        Text("Você realizou \(wallet.getCoins()/5) receitas, seu saldo é de \(wallet.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
+                        Text("Você realizou \(wallet.getReceita()) receitas, seu saldo é de \(wallet.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
                             .foregroundColor(Color("ColorWine"))
                             .font(Font.headline.weight(.bold))
                             .padding()
@@ -53,12 +52,12 @@ struct MyCuponsView: View {
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
                                     
                                     Button("R$5"){
-                                        wallet.add()
-                                        showingAlert = true
-                                    } .alert("Confirmação", isPresented: $showingAlert){
-                                        Button("Trocar"){}
-                                        Button("Cancel", role: .cancel){}
-                                    }
+                                        //wallet.add()
+//                                        showingAlert = true
+                                    } //.alert("Confirmação", isPresented: $showingAlert){
+                                        //Button("Trocar"){}
+                                        //Button("Cancel", role: .cancel){}
+//                                    }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
                                         .padding()
@@ -90,7 +89,9 @@ struct MyCuponsView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Text("R$12")
+                                    Button("R$12"){
+                                        
+                                    }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
                                 }
@@ -103,11 +104,6 @@ struct MyCuponsView: View {
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 7.5 )
                             .overlay(alignment: .bottomTrailing){
-                                Image(systemName: "arrow.right")
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    .font(.system(size: 25))
-                                    .padding(.bottom)
-                                    .padding(.trailing, 10)
                             }
                         HStack{
                             Image("coin")
@@ -126,7 +122,7 @@ struct MyCuponsView: View {
                                             Text("\(wallet.getCoins()) moedas")
                                                 .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
                                                 .font(Font.custom("Futura",size: 22))
-                                            Text("(\(wallet.getCoins()/5) receitas realizadas)")
+                                            Text("(\(wallet.getReceita()) receitas realizadas)")
                                                 .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
                                                 .font(Font.custom("Futura",size: 16))
                                         }
@@ -152,7 +148,7 @@ struct MyCuponsView: View {
                         }.frame(height: 35)
                     }
             }
-        }
+            .navigationBarHidden(true)
     }
 }
 
