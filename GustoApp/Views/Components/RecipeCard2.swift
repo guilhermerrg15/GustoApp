@@ -71,7 +71,10 @@ struct RecipeCard2: View {
                     .frame(width: UIScreen.main.bounds.width/12, height: UIScreen.main.bounds.height / 28 )
                     .padding(.top, 15)
                     .padding(.trailing, 8)
-                Image(systemName: "heart")
+                Image(systemName:recipe.favorites ? "heart.fill" : "heart")
+                    .onTapGesture {
+                        recipe.favorites.toggle()
+                    }
                     .foregroundColor(Color.corRosa)
                     .padding(.top, 20)
                     .padding(.trailing, 11)

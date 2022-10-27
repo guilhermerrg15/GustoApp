@@ -951,9 +951,13 @@ class AllRecipes: ObservableObject {
     ]
     
     @Published var coins : Int = 0
+    @Published var receita : Int = 0
     
     func add(newCoins: Int = 10){
         self.coins += newCoins
+    }
+    func add(newReceita: Int = 1){
+        self.receita += newReceita
     }
     
 }
@@ -1015,6 +1019,11 @@ class AppData:Codable {
     func add(newCoins: Int = 10){
         self.coins += newCoins
     }
+    private(set) var receita : Int = 0
+    
+    func add(newReceita: Int = 10){
+        self.coins += newReceita
+    }
     
     
     
@@ -1039,40 +1048,6 @@ class AppData:Codable {
         AllRecipes.instance.coins = Self.instance.coins
     }
 }
-//    public func getIngredients() -> [String] {
-//        let ingredients: [String] = self.ingredientes
-//
-//
-//        let pureIngredients: [String] = ingredientes.map({ elem in
-//            let elems = elem.split(separator: " de ")
-//            let strElems =  elems.map({ String($0) })
-//
-//            let quantidade = strElems.first!.dropFirst(2)
-//            let alimento = strElems[1...].joined(separator: " de ")
-//            print("Ingrediente(quantidade: \"\(quantidade)\", alimento: \"\(alimento)\"),")
-//            return alimento
-//
-//        })
-//        let nonEmptyIngredients = pureIngredients.filter({ $0 != ""})
-//
-//        print("\n- - - -")
-//
-//        return nonEmptyIngredients
-//    }
-//
-//    var namedIngredients: String {
-//        let ingredients = getIngredients()
-//
-//        let text = ingredients.joined(separator: ", ")
-//
-//        let firstLetter = text.prefix(1).capitalized
-//        let remainingLetter = text.dropFirst()
-//        return firstLetter + remainingLetter
-//
-//    }
-//
-//}
-
 
 struct Ingrediente: Identifiable, Codable {
     var id = UUID()

@@ -35,7 +35,6 @@ struct RecipeCardSearch: View {
                         Image(recipe.image)
                             .resizable()
                             .frame(width: 130, height: 108, alignment: .top)
-//                            .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
                             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         VStack(alignment:.leading){
                             Text("Ingredientes:")

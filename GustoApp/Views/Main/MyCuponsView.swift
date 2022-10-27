@@ -11,7 +11,6 @@ struct MyCuponsView: View {
     @ObservedObject var wallet: Wallet =  Wallet.instance
     @State private var showingAlert = false
     var body: some View {
-        NavigationView{
             ZStack{
                 Color(red: 1, green: 247/255,blue: 238/255)
                     .ignoresSafeArea()
@@ -21,7 +20,7 @@ struct MyCuponsView: View {
                             .foregroundColor(.white)
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5 )
-                        Text("Você realizou \(wallet.getCoins()/5) receitas, seu saldo é de \(wallet.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
+                        Text("Você realizou \(wallet.getReceita()) receitas, seu saldo é de \(wallet.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
                             .foregroundColor(Color("ColorWine"))
                             .font(Font.headline.weight(.bold))
                             .padding()
@@ -53,7 +52,7 @@ struct MyCuponsView: View {
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
                                     
                                     Button("R$5"){
-                                        wallet.add()
+                                        //wallet.add()
                                         showingAlert = true
                                     } .alert("Confirmação", isPresented: $showingAlert){
                                         Button("Trocar"){}
@@ -152,7 +151,7 @@ struct MyCuponsView: View {
                         }.frame(height: 35)
                     }
             }
-        }
+            .navigationBarHidden(true)
     }
 }
 
