@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @State var imageSelect = UIImage()
     @State var username: String =
         UserDefaults.standard.string(forKey: UserDefaultsKeys.username.rawValue) ?? "Nome"
     
@@ -27,8 +28,13 @@ struct ProfileView: View {
                             ZStack(alignment: .bottomLeading){
                                 Image("profile")
                                     .resizable()
-                                    .frame(width: 120, height: 120)
+                                    .frame(width: 100, height: 100)
                                     .clipShape(Circle())
+                                Image(uiImage: imageSelect)
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                                
                             }
                             VStack{
                                 Text(username)
@@ -48,14 +54,14 @@ struct ProfileView: View {
                                     .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                                     .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
                                 HStack{
-                                    NavigationLink(destination: EditProfileView(username: $username), label: {
+                                    NavigationLink(destination: EditProfileView(username: $username, imageSelect: self.$imageSelect), label: {
                                         Image(systemName: "person")
                                             .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
                                             .font(.system(size: 35))
                                         Text("Editar Perfil")
                                             .font(Font.custom("Futura",size: 27))
                                             .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    })
+                                    }).buttonStyle(.plain)
                                 }
                                 .padding(.leading)
                                 .padding(.top)
@@ -74,7 +80,7 @@ struct ProfileView: View {
                                         Text("Cupons")
                                             .font(Font.custom("Futura",size: 27))
                                             .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    })
+                                    }) .buttonStyle(.plain)
                                 }
                                 .padding(.leading)
                                 .padding(.top)
@@ -94,7 +100,7 @@ struct ProfileView: View {
                                         Text("Minhas Receitas")
                                             .font(Font.custom("Futura",size: 27))
                                             .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                    })
+                                    }) .buttonStyle(.plain)
                                 }
                                 .padding(.leading)
                                 .padding(.top)

@@ -53,11 +53,11 @@ struct MyCuponsView: View {
                                     
                                     Button("R$5"){
                                         //wallet.add()
-                                        showingAlert = true
-                                    } .alert("Confirmação", isPresented: $showingAlert){
-                                        Button("Trocar"){}
-                                        Button("Cancel", role: .cancel){}
-                                    }
+//                                        showingAlert = true
+                                    } //.alert("Confirmação", isPresented: $showingAlert){
+                                        //Button("Trocar"){}
+                                        //Button("Cancel", role: .cancel){}
+//                                    }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
                                         .padding()
@@ -89,7 +89,9 @@ struct MyCuponsView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Text("R$12")
+                                    Button("R$12"){
+                                        
+                                    }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
                                 }
@@ -120,7 +122,7 @@ struct MyCuponsView: View {
                                             Text("\(wallet.getCoins()) moedas")
                                                 .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
                                                 .font(Font.custom("Futura",size: 22))
-                                            Text("(\(wallet.getCoins()/5) receitas realizadas)")
+                                            Text("(\(wallet.getReceita()) receitas realizadas)")
                                                 .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
                                                 .font(Font.custom("Futura",size: 16))
                                         }

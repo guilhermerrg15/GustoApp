@@ -33,7 +33,6 @@
 		E3ECA3DD2901B68100EB7B27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */; };
 		E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */; };
 		E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3E22906FB0000EB7B27 /* HomeView.swift */; };
-		E3ECA3EC2907100300EB7B27 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EB2907100300EB7B27 /* Coins.swift */; };
 		E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3ED290716EC00EB7B27 /* Teste.swift */; };
 		E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */; };
 		E3ECA3F32907431200EB7B27 /* CodableExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = E3ECA3F22907431200EB7B27 /* CodableExtensions */; };
@@ -42,8 +41,11 @@
 		E3ECA3F92909CD2C00EB7B27 /* MyCuponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */; };
 		E3ECA3FB2909D3CF00EB7B27 /* TicketCardFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */; };
 		E3ECA3FE290B052F00EB7B27 /* FlowInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FC290B052E00EB7B27 /* FlowInterface.swift */; };
-		E3ECA3FF290B052F00EB7B27 /* ImagePicker 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FD290B052E00EB7B27 /* ImagePicker 2.swift */; };
+		E3ECA3FF290B052F00EB7B27 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FD290B052E00EB7B27 /* ImagePicker.swift */; };
 		E3ECA401290B058700EB7B27 /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA400290B058700EB7B27 /* CoinView.swift */; };
+		E3ECA403290B098100EB7B27 /* ProfileImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */; };
+		E3ECA405290B124E00EB7B27 /* Cupom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA404290B124E00EB7B27 /* Cupom.swift */; };
+		E3ECA407290B12C600EB7B27 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA406290B12C600EB7B27 /* Wallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +78,6 @@
 		E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardSearch.swift; sourceTree = "<group>"; };
 		E3ECA3E22906FB0000EB7B27 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E3ECA3EA29070CEA00EB7B27 /* GustoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GustoApp.entitlements; sourceTree = "<group>"; };
-		E3ECA3EB2907100300EB7B27 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		E3ECA3ED290716EC00EB7B27 /* Teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste.swift; sourceTree = "<group>"; };
 		E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipes.swift; sourceTree = "<group>"; };
 		E3ECA3F4290976E900EB7B27 /* CuponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuponsView.swift; sourceTree = "<group>"; };
@@ -84,8 +85,11 @@
 		E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCuponsView.swift; sourceTree = "<group>"; };
 		E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCardFive.swift; sourceTree = "<group>"; };
 		E3ECA3FC290B052E00EB7B27 /* FlowInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowInterface.swift; sourceTree = "<group>"; };
-		E3ECA3FD290B052E00EB7B27 /* ImagePicker 2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImagePicker 2.swift"; sourceTree = "<group>"; };
+		E3ECA3FD290B052E00EB7B27 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E3ECA400290B058700EB7B27 /* CoinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
+		E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePicker.swift; sourceTree = "<group>"; };
+		E3ECA404290B124E00EB7B27 /* Cupom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupom.swift; sourceTree = "<group>"; };
+		E3ECA406290B12C600EB7B27 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,9 @@
 				E3ECA3E22906FB0000EB7B27 /* HomeView.swift */,
 				E3ECA3ED290716EC00EB7B27 /* Teste.swift */,
 				E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */,
+				E3ECA400290B058700EB7B27 /* CoinView.swift */,
 				E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */,
+				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
 				E3ECA3F4290976E900EB7B27 /* CuponsView.swift */,
 				E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */,
 				E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */,
@@ -158,9 +164,10 @@
 		E31AF6D328FDB8FA002DE056 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E3ECA406290B12C600EB7B27 /* Wallet.swift */,
 				E31AF6D428FDB931002DE056 /* RecipeModel.swift */,
-				E3ECA3EB2907100300EB7B27 /* Coins.swift */,
 				8AF8B945290704C100E903CB /* PageViewContent.swift */,
+				E3ECA404290B124E00EB7B27 /* Cupom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,11 +198,10 @@
 				E31AF6C328FDB714002DE056 /* Views */,
 				E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */,
 				E3ECA3FC290B052E00EB7B27 /* FlowInterface.swift */,
-				E3ECA400290B058700EB7B27 /* CoinView.swift */,
-				E3ECA3FD290B052E00EB7B27 /* ImagePicker 2.swift */,
-				E34AF7D228F5FA6C00FFE597 /* Preview Content */,
-				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
+				E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */,
+				E3ECA3FD290B052E00EB7B27 /* ImagePicker.swift */,
 				8A35DC2928FF4ECA004BFFFA /* Cores.swift */,
+				E34AF7D228F5FA6C00FFE597 /* Preview Content */,
 				8AF8B9442903285500E903CB /* Fontes */,
 			);
 			path = GustoApp;
@@ -295,11 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3ECA407290B12C600EB7B27 /* Wallet.swift in Sources */,
 				8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */,
 				E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */,
 				E3ECA3DB2901B2CF00EB7B27 /* FirstView.swift in Sources */,
 				E3ECA3F72909AED300EB7B27 /* EditProfileView.swift in Sources */,
 				E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */,
+				E3ECA403290B098100EB7B27 /* ProfileImagePicker.swift in Sources */,
 				E3ECA3FE290B052F00EB7B27 /* FlowInterface.swift in Sources */,
 				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
@@ -309,11 +317,11 @@
 				8AF8B946290704C100E903CB /* PageViewContent.swift in Sources */,
 				8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */,
 				E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */,
-				E3ECA3FF290B052F00EB7B27 /* ImagePicker 2.swift in Sources */,
-				E3ECA3EC2907100300EB7B27 /* Coins.swift in Sources */,
+				E3ECA3FF290B052F00EB7B27 /* ImagePicker.swift in Sources */,
 				E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */,
 				E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */,
 				E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */,
+				E3ECA405290B124E00EB7B27 /* Cupom.swift in Sources */,
 				E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */,
 				E3ECA3DD2901B68100EB7B27 /* ProfileView.swift in Sources */,
 				E3ECA401290B058700EB7B27 /* CoinView.swift in Sources */,

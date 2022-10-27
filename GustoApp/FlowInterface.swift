@@ -11,7 +11,6 @@ import UIKit
 
 //Onboarding
 struct PassoaPasso: View{
-    
     @Binding var shouldShowOnboarding: Bool
     @State var finalizar: Bool = true
     var receita: Recipe
@@ -93,22 +92,7 @@ struct PageView: View{
                 .padding(.horizontal, 30)
                 .foregroundColor(Color.corTextoPasso)
             
-            //            Image(content.imageName)
-            //                .resizable()
-            //                .padding()
-            //                .aspectRatio(contentMode: .fit)
-            //                .frame(width: 150, height: 150)
-            //
             if content.showsDismissButton{
-                //                NavigationLink(destination: HomeView()) {
-                //                    Text("Terminar Receita")
-                //                        .font(.custom("SulSansTest-Bold", size: 20, relativeTo: .title))
-                //                        .foregroundColor(.white)
-                //                        .padding(.horizontal, 25)
-                //                        .padding(.vertical, 10)
-                //                        .background (Color.corTextoPasso)
-                //                        .clipShape (Capsule())
-                //                }
                 Button(action: {
                     finalizar.toggle()
                     print("AAA")
@@ -132,6 +116,7 @@ struct PageView: View{
 
 
 struct ParabensView: View {
+    @State var imageSelect = UIImage()
     @State var fechar: Bool = false
     @State var openCamera = false
     @State var imageSelected: UIImage?
@@ -148,12 +133,19 @@ struct ParabensView: View {
                     .padding(.top,-10)
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color.corRosa)
-                
-                Circle()
-                    .foregroundColor(Color.corRosa)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/6 )
-                    .padding(.bottom, 10)
-                    .padding(.trailing, 8)
+                Image("profile")
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                    .clipShape(Circle())
+                Image(uiImage: imageSelect)
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                    .clipShape(Circle())
+//                Circle()
+//                    .foregroundColor(Color.corRosa)
+//                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/6 )
+//                    .padding(.bottom, 10)
+//                    .padding(.trailing, 8)
                 
                 Text("Você concluiu a receita!")
                     .font(.custom("SulSansTest-Regular", size: 25, relativeTo: .headline))

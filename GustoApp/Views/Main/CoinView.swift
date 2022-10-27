@@ -29,7 +29,6 @@ struct CoinView: View {
                         fechar.toggle()
                         wallet.addFiveCoins()
                         wallet.addReceita()
-                        print("AAAAAAA")
                     } label: {
                         Text("Fechar")
                             

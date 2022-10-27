@@ -26,7 +26,7 @@ struct SearchView: View {
                     ToolbarItem(placement: .principal) {
                         Text("Busca")
                             .font(.custom("SulSansTest-Bold", size: 35, relativeTo:.largeTitle))
-                            .shadow(color: Color.black.opacity(0.5), radius: 3, x: 0, y: 4)
+//                            .shadow(color: Color.black.opacity(0.5), radius: 3, x: 0, y: 4)
                             .foregroundColor(Color("ColorWine"))
                     }
                 }.frame(maxWidth: .infinity)

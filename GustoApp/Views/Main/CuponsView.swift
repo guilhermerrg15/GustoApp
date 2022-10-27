@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CuponsView: View {
     @ObservedObject var wallet: Wallet =  Wallet.instance
+    
+    var cupons: [Cupom] = Cupom.allCupons
+    
     @State private var showingAlert = false
     var body: some View {
         NavigationView{
@@ -50,7 +53,6 @@ struct CuponsView: View {
                                         .font(Font.custom("Futura",size: 14))
                                         .foregroundColor(.gray)
                                 } .padding(.leading, 30)
-//                                    .padding(.bottom)
                             }
                         Group{
                             VStack{
@@ -63,16 +65,21 @@ struct CuponsView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Button("R$5"){
-                                        wallet.subtractTenCoins()
+                                    Button(cupons[0].texto){
                                         showingAlert = true
                                     } .alert("Confirmação", isPresented: $showingAlert){
-                                        Button("Trocar"){}
-                                        Button("Cancel", role: .cancel){}
+                                        Button("Trocar"){
+                                            let _ = wallet.buy(cupom: cupons[0])
+                                        }
+                                        Button("Cancel", role: .cancel){
+                                            
+                                        }
                                     }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
                                         .padding()
+                                        .buttonStyle(.plain)
+                                        .disabled(!wallet.hasMoney(for: cupons[0]))
                                 }
                             }
                         } .padding(.bottom, 30)
@@ -101,16 +108,19 @@ struct CuponsView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Button("R$12"){
-                                        wallet.subtractTwentyCoins()
+                                    Button(cupons[1].texto){
                                         showingAlert = true
                                     } .alert("Confirmação", isPresented: $showingAlert){
-                                        Button("Trocar"){}
+                                        Button("Trocar"){
+                                            let _ = wallet.buy(cupom: cupons[1])
+                                        }
                                         Button("Cancel", role: .cancel){}
                                     }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
                                         .padding()
+                                        .buttonStyle(.plain)
+                                        .disabled(!wallet.hasMoney(for: cupons[1]))
                                 }
                             }
                         } .padding(.bottom, 30)
