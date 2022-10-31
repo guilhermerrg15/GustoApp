@@ -22,10 +22,10 @@ struct GustoAppApp: App {
                 .environmentObject(recipes)
                 .onChange(of: scenePhase) { newPhase in
                     if newPhase == .inactive {
-                        AppData.instance.saveData()
+                        AppData.shared.saveData()
                     }
                     if newPhase == .background {
-                        AppData.instance.saveData()
+                        AppData.shared.saveData()
                     }
                     
                 }

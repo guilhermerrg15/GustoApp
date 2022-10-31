@@ -80,7 +80,7 @@ struct FavoriteRecipes: View {
                     Color("ColorWine")
                         .ignoresSafeArea(edges: .top)
                         .padding(.bottom)
-                    Text("Receitas")
+                    Text("Minhas Receitas")
                         .font(Font.custom("Futura",size: 35))
                         .foregroundColor(Color("ColorYellow"))
                         .padding(20)

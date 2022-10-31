@@ -31,7 +31,7 @@ struct EditProfileView: View {
                             if changeProfileImage {
                                 Image(uiImage: imageSelect)
                                     .resizable()
-                                    .frame(width: 140, height: 140)
+                                    .scaledToFit()
                                     .clipShape(Circle())
                             } else {
                                 Image("profile")

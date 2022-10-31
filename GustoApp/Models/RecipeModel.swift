@@ -17,7 +17,6 @@ enum Level: String, CaseIterable, Identifiable, Codable {
     case hard = "Difícil"
 }
 
-
 class Recipe: ObservableObject, Identifiable {
     static var lastId: Int = 0
     let id: Int
@@ -431,7 +430,6 @@ class AllRecipes: ObservableObject {
         Recipe(name: "Bife c/ molho madeira e arroz à piamontese",
                image: "bife molho madeira",
                description: "carne e cebola",
-               //               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho", "- 1/4 de cebola", "- 1 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 caixa de creme de leite", "- 50g de queijo mussarela", "- 1 colher de chá noz moscada", "- 25 g de queijo parmesão", "Bife:", "- 1 colher de sopa de manteiga", "- 1 file mignon grande", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "Molho madeira:", "- 40 g de farinha de trigo", "- 1 colher de sopa de manteiga", "- 1 colher de chá de sal", "- 80 ml de vinho madeira", "- 250 ml de caldo de carne", "- 1 colher de chá de mostarda", "- champignon (opcional)"],
                ingredientes: [Ingrediente(parte: "Arroz:"),
                               Ingrediente(quantidade: "2 colheres de sopa", alimento: "azeite"),
                               Ingrediente(quantidade: "1/2 dente", alimento: "alho"),
@@ -618,7 +616,6 @@ class AllRecipes: ObservableObject {
         Recipe(name: "Brownie",
                image: "brownie",
                description: "bolo ",
-               //               ingredients: ["- 3 ovos","- 100g de manteiga", "- 180g de açúcar", "- 250g de Nescau", "- 1 xícara de farinha de trigo"],
                ingredientes: [
                 Ingrediente(quantidade: "3", alimento: "ovos", separador: ""),
                 Ingrediente(quantidade: "100g", alimento: "manteiga"),
@@ -663,7 +660,6 @@ class AllRecipes: ObservableObject {
         Recipe(name: "Bife acebolado",
                image: "bife acebolado",
                description: "bife com cebola",
-               //               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz" ,"Feijão:" ,"- 50 g de feijão-preto", "- 1/2 colheres de sopa de óleo", "- 1/4 cebola picada", "- 1/2 dentes de alho amassados", "- 1 xícaras chá de água (200 ml)", "- 1/2 sachê de Tempero de sua escolha", "- 1 colher de chá de sal", "Couve refogada:", "- 50g de couve", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1 colher sopa cheia de óleo", "- 1 colher de chá de sal", "Farofa:", "- 100g de farinha de mandioca", "- 1/2 kg cebola grande fatiada", "- 50g colheres de manteiga", "- 1 colher de chá de sal", "- 1 colher de chá de pimenta", "Bife acebolado:", "- 100g de contrafilé (ou outro bife de sua preferência)", "- 1/2 tablete de caldo de carne", "- 1/2 xícara de chá de água quente", "- 1 colher de chá de azeite", "- 1/4 de cebola em rodelas"],
                ingredientes: [
                 Ingrediente(parte:"Arroz:"),
                 Ingrediente(quantidade: "2 colheres de sopa", alimento: "azeite"),
@@ -834,7 +830,6 @@ class AllRecipes: ObservableObject {
         Recipe(name: "Empadão de Frango",
                image: "empadao",
                description: "massa de empada",
-               //               ingredients: ["Massa:" ,"- 140g de manteiga", "- 1 ovo", "- 220g de farinha de trigo", "- 2g de fermento em pó", "Recheio:", "- 650g de peito de frango cozido e desfiado", "- 1 lata de molho de tomate", "- ¼ xícara de azeitonas pretas picadas (opcional)", "- 1 cebola média fatiada", "- 1 colher de sopa de azeite", "- 2 colheres de Sal", "- 2 colheres de pimenta", "- 1 tablete de galinha", "- 2 dentes de alho amassados", "- 400g de requeijão", "Finalização:", "- 1 ovo batido"],
                ingredientes: [
                 Ingrediente(parte: "Massa:"),
                 Ingrediente(quantidade: "140g", alimento: "manteiga"),
@@ -972,7 +967,7 @@ enum UserDefaultsKeys: String {
 
 
 class AppData:Codable {
-    static var instance = AppData()
+    static var shared = AppData()
     private init(){}
     
     class RecipePersist: Codable {
@@ -1024,27 +1019,23 @@ class AppData:Codable {
         self.coins += newReceita
     }
     
-    
-    
-    func saveData() {
+     func saveData() {
         self.easyRecipe = AllRecipes.instance.easyRecipe.map{item in return RecipePersist(from: item)}
         self.mediumRecipe = AllRecipes.instance.mediumRecipe.map{item in return RecipePersist(from: item)}
         self.hardRecipe = AllRecipes.instance.hardRecipe.map{item in return RecipePersist(from: item)}
         self.coins = AllRecipes.instance.coins
-        
-        
         try? self.save()
         
     }
     
     static func loadData() {
         guard let loaded = (try? AppData.load()) else {return}
-        Self.instance = loaded
+        Self.shared = loaded
         
-        AllRecipes.instance.easyRecipe = instance.easyRecipe.map{item in return Recipe(from: item)}
-        AllRecipes.instance.mediumRecipe = instance.mediumRecipe.map{item in return Recipe(from: item)}
-        AllRecipes.instance.hardRecipe = instance.hardRecipe.map{item in return Recipe(from: item)}
-        AllRecipes.instance.coins = Self.instance.coins
+        AllRecipes.instance.easyRecipe = shared.easyRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.mediumRecipe = shared.mediumRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.hardRecipe = shared.hardRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.coins = Self.shared.coins
         
     }
 }

@@ -111,7 +111,6 @@ struct ReceitaView: View {
                 Button {
                     dismiss()
                     shouldShowOnboarding = false
-                    print("Click1")
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
