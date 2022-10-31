@@ -54,7 +54,7 @@ struct FavoriteRecipes: View {
                     }
                     ZStack {
                         Color("ColorYellow")
-                        Text("Difícil")
+                        Text("Avançado")
                             .foregroundColor(Color("ColorWine"))
                             .font(Font.custom("Futura",size: 25))
                             .frame(maxWidth: .infinity , alignment: .leading)
@@ -85,6 +85,7 @@ struct FavoriteRecipes: View {
                 }.frame(height: 65)
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
