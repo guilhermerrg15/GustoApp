@@ -11,6 +11,8 @@ import SwiftUI
 struct GustoAppApp: App {
     @StateObject var recipes:AllRecipes = AllRecipes.instance
     @Environment(\.scenePhase) var scenePhase
+    @StateObject var flowOrganizer: FlowOrganizer = FlowOrganizer()
+
     
     init() {
         AppData.loadData()
@@ -20,6 +22,7 @@ struct GustoAppApp: App {
 //            ReceitasView(recipe: Recipe.EasyRecipes[0])
             MainView()
                 .environmentObject(recipes)
+                .environmentObject(flowOrganizer)
                 .onChange(of: scenePhase) { newPhase in
                     if newPhase == .inactive {
                         AppData.shared.saveData()

@@ -9,9 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var recipes:AllRecipes
+    @EnvironmentObject var flowOrganizer: FlowOrganizer
+    
+     var isMediumActive: Bool {
+        print("AA")
+        return recipes.easyRecipe.filter({$0.hasCompleted == true}).count >= 1
+    }
+    
+     var isHardActive: Bool {
+        print("BB")
+        return recipes.mediumRecipe.filter({$0.hasCompleted == true}).count >= 1
+    }
+    
     var body: some View {
         ZStack{
-            Color(red: 1, green: 247/255,blue: 238/255)
+            Color.corDeFundo
             ScrollView{
                 VStack{
                     ZStack {
@@ -26,6 +38,7 @@ struct HomeView: View {
                         HStack {
                             ForEach($recipes.easyRecipe) { $recipe in
                                 RecipeCard2(recipe: recipe)
+                            
                             }
                         }
                         .padding()
@@ -43,7 +56,7 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
                             ForEach($recipes.mediumRecipe) { $recipe in
-                                RecipeCard2(recipe: recipe)
+                                RecipeCard2(recipe: recipe, active: isMediumActive)
                             }
                         }
                         .padding()
@@ -59,7 +72,7 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
                             ForEach($recipes.hardRecipe) { $recipe in
-                                RecipeCard2(recipe: recipe)
+                                RecipeCard2(recipe: recipe, active: isHardActive)
                             }
                         }
                         .padding()
@@ -79,6 +92,7 @@ struct HomeView: View {
                 }.frame(height: 65)
             }
         }
+        
     }
 }
 

@@ -11,17 +11,27 @@ struct RecipeCard2: View {
     
     @StateObject var recipe : Recipe
     @State var showRecipe: Bool = false
+    @State var opacity: Bool = false
+    var active: Bool = true
+    @EnvironmentObject var flowOrganizer: FlowOrganizer
     
     var body: some View {
         
         ZStack(alignment: .leading){
-            cardUI
-
+            if (!active) {
+                cardUI
+                Color.corDeFundo.opacity( 0.5)
+            } else {
+                cardUI
+            }
         }.onTapGesture {
             showRecipe = true
+            flowOrganizer.navigateTo(.recipe)
         }.fullScreenCover(isPresented: $showRecipe) {
             ReceitaView(receita: recipe)
-        }
+        }.disabled(!active)
+       
+
     }
 
     var cardUI: some View {
