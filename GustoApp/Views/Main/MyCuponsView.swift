@@ -54,12 +54,7 @@ struct MyCuponsView: View {
                                         .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
                                     
                                     Button("R$5"){
-                                        //wallet.add()
-//                                        showingAlert = true
-                                    } //.alert("Confirmação", isPresented: $showingAlert){
-                                        //Button("Trocar"){}
-                                        //Button("Cancel", role: .cancel){}
-//                                    }
+                                    }
                                         .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
                                         .font(Font.custom("Futura",size: 35))
                                         .padding()

@@ -96,7 +96,6 @@ struct CuponsView: View {
                                         .font(Font.custom("Futura",size: 14))
                                         .foregroundColor(.gray)
                                 } .padding(.leading, 30)
-//                                    .padding(.bottom)
                             }
                         Group{
                             VStack{
