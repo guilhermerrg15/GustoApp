@@ -78,7 +78,7 @@ struct RecipeCard2: View {
                     .padding(.top,8)
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color.corDeFundo)
-                    .frame(width: UIScreen.main.bounds.width/12, height: UIScreen.main.bounds.height / 28 )
+                    .frame(width: UIScreen.main.bounds.width/11, height: UIScreen.main.bounds.height / 28 )
                     .padding(.top, 15)
                     .padding(.trailing, 8)
                 Image(systemName:recipe.favorites ? "heart.fill" : "heart")

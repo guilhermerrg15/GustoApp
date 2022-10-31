@@ -19,6 +19,6 @@ struct Cupom {
     
     static let allCupons: [Cupom] = [
         Cupom(id: 0, valor: 5, custo: 10),
-        Cupom(id: 0, valor: 12, custo: 20),
+        Cupom(id: 1, valor: 12, custo: 20),
     ]
 }

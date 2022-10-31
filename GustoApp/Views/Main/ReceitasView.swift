@@ -115,7 +115,6 @@ struct ReceitaView: View {
                 Button {
                     flowOrganizer.dismiss()
                     dismiss()
-                    print("Click1")
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .resizable()

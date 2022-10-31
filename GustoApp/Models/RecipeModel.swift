@@ -17,7 +17,6 @@ enum Level: String, CaseIterable, Identifiable, Codable {
     case hard = "Difícil"
 }
 
-
 class Recipe: ObservableObject, Identifiable {
     static var lastId: Int = 0
     let id: Int
@@ -91,7 +90,7 @@ enum UserDefaultsKeys: String {
 
 
 class AppData:Codable {
-    static var instance = AppData()
+    static var shared = AppData()
     private init(){}
     
     class RecipePersist: Codable {
@@ -146,27 +145,23 @@ class AppData:Codable {
         self.coins += newReceita
     }
     
-    
-    
-    func saveData() {
+     func saveData() {
         self.easyRecipe = AllRecipes.instance.easyRecipe.map{item in return RecipePersist(from: item)}
         self.mediumRecipe = AllRecipes.instance.mediumRecipe.map{item in return RecipePersist(from: item)}
         self.hardRecipe = AllRecipes.instance.hardRecipe.map{item in return RecipePersist(from: item)}
         self.coins = AllRecipes.instance.coins
-        
-        
         try? self.save()
         
     }
     
     static func loadData() {
         guard let loaded = (try? AppData.load()) else {return}
-        Self.instance = loaded
+        Self.shared = loaded
         
-        AllRecipes.instance.easyRecipe = instance.easyRecipe.map{item in return Recipe(from: item)}
-        AllRecipes.instance.mediumRecipe = instance.mediumRecipe.map{item in return Recipe(from: item)}
-        AllRecipes.instance.hardRecipe = instance.hardRecipe.map{item in return Recipe(from: item)}
-        AllRecipes.instance.coins = Self.instance.coins
+        AllRecipes.instance.easyRecipe = shared.easyRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.mediumRecipe = shared.mediumRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.hardRecipe = shared.hardRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.coins = Self.shared.coins
         
     }
 }

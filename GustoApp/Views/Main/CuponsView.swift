@@ -9,12 +9,13 @@ import SwiftUI
 
 struct CuponsView: View {
     @ObservedObject var wallet: Wallet =  Wallet.instance
-    
+    @State var shouldShowOnboarding: Bool = false
+    @Environment(\.dismiss) private var dismiss
     var cupons: [Cupom] = Cupom.allCupons
     
     @State private var showingAlert = false
     var body: some View {
-        NavigationView{
+        
             ZStack{
                 Color(red: 1, green: 247/255,blue: 238/255)
                     .ignoresSafeArea()
@@ -179,7 +180,28 @@ struct CuponsView: View {
                         }.frame(height: 35)
                     }
             }
-        }
+            .navigationBarBackButtonHidden(true)
+            .overlay(alignment: .topTrailing){
+                HStack {
+                    Button {
+                        dismiss()
+                        shouldShowOnboarding = false
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30)
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(Color.corRosa, Color.corDeFundo)
+                            
+                            .padding(.leading, 20)
+                            .padding(.top, 10)
+                        Spacer()
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        
     }
 }
 

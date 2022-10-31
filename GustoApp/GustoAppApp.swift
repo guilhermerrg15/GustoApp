@@ -25,10 +25,10 @@ struct GustoAppApp: App {
                 .environmentObject(flowOrganizer)
                 .onChange(of: scenePhase) { newPhase in
                     if newPhase == .inactive {
-                        AppData.instance.saveData()
+                        AppData.shared.saveData()
                     }
                     if newPhase == .background {
-                        AppData.instance.saveData()
+                        AppData.shared.saveData()
                     }
                     
                 }

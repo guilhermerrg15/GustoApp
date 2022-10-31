@@ -12,9 +12,11 @@ struct EditProfileView: View {
     @State var openCamera = false
     @Binding var username: String
     @Binding var imageSelect: UIImage
+    @State var shouldShowOnboarding: Bool = false
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView{
+        
             ZStack{
                 Color(red: 1, green: 247/255,blue: 238/255)
                     .ignoresSafeArea()
@@ -29,7 +31,7 @@ struct EditProfileView: View {
                             if changeProfileImage {
                                 Image(uiImage: imageSelect)
                                     .resizable()
-                                    .frame(width: 140, height: 140)
+                                    .scaledToFit()
                                     .clipShape(Circle())
                             } else {
                                 Image("profile")
@@ -74,19 +76,42 @@ struct EditProfileView: View {
                     
                     Spacer()
                 }
-                
-            }.safeAreaInset(edge: .top){
-                ZStack {
-                    Color("ColorWine")
-                        .ignoresSafeArea(edges: .top)
-                        .padding(.bottom)
-                    Text("Editar Perfil")
-                        .font(Font.custom("Futura",size: 35))
-                        .foregroundColor(Color("ColorYellow"))
-                        .padding(20)
-                }.frame(height: 35)
+                .safeAreaInset(edge: .top){
+                    ZStack {
+                        Color("ColorWine")
+                            .ignoresSafeArea(edges: .top)
+                            .padding(.bottom)
+                        Text("Editar Perfil")
+                            .font(Font.custom("Futura",size: 35))
+                            .foregroundColor(Color("ColorYellow"))
+                            .padding(20)
+                    }.frame(height: 35)
+                }
             }
-        }
+            
+            .navigationBarBackButtonHidden(true)
+            .overlay(alignment: .topTrailing){
+                HStack {
+                    Button {
+                        dismiss()
+                        shouldShowOnboarding = false
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30)
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(Color.corRosa, Color.corDeFundo)
+                            
+                            .padding(.leading, 20)
+                            .padding(.top, 10)
+                        Spacer()
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            
+        
     }}
 
 struct DummyView: View {
