@@ -536,7 +536,6 @@ class AllRecipes: ObservableObject {
         Recipe(name: "Salmão Grelhado",
                image: "salmão",
                description: "salmao",
-               //               ingredients: ["Salmão:", "- 1 filé de salmão sem pele", "- 1 colher de chá de Azeite", "- 1/4 dentes de alho picados finamente", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "- 1/4 de limão", "Arroz de brócolis:", "- 1 colher de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 maço de brócolis"],
                ingredientes: [Ingrediente(parte:"Salmão:"),
                               Ingrediente(quantidade: "1 filé", alimento: "salmão sem pele"),
                               Ingrediente(quantidade: "1 colher de chá", alimento: "Azeite"),

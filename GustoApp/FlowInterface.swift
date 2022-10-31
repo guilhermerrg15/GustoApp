@@ -72,10 +72,6 @@ struct PassoaPasso: View{
     }
     
 }
-
-
-
-
 struct PageView: View{
     var content: PageViewContent
     @Binding var finalizar: Bool
