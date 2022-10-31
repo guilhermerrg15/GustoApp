@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SulSansTest-MediumItalic.otf</string>
+		<string>SulSansTest-Medium.otf</string>
+		<string>SulSansTest-LightItalic.otf</string>
+		<string>SulSansTest-Light.otf</string>
+		<string>SulSansTest-Italic.otf</string>
+		<string>SulSansTest-BoldItalic.otf</string>
+		<string>SulSansTest-BlackItalic.otf</string>
+		<string>SulSansTest-Black.otf</string>
+		<string>SulSansTest-Regular.otf</string>
+		<string>SulSansTest-Bold.otf</string>
+	</array>
+</dict>
+</plist>
