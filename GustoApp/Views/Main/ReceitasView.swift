@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+
 struct ReceitaView: View {
     @Environment(\.dismiss) private var dismiss
     
     var receita: Recipe
-    @State var shouldShowOnboarding: Bool = false
+    @EnvironmentObject var flowOrganizer: FlowOrganizer
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -72,7 +73,7 @@ struct ReceitaView: View {
                             .foregroundColor(Color.corDeFundo)
                         VStack {
                             Button {
-                                shouldShowOnboarding.toggle()
+                                flowOrganizer.navigateTo(.instructions)
                             } label: {
                                 Text("Começar receita")
                                     .bold()
@@ -85,8 +86,8 @@ struct ReceitaView: View {
                             }
                             .buttonStyle(.plain)
                             .frame(width: UIScreen.main.bounds.width)
-                            .fullScreenCover(isPresented: $shouldShowOnboarding) {
-                                PassoaPasso(shouldShowOnboarding: $shouldShowOnboarding, receita: self.receita)
+                            .fullScreenCover(isPresented: $flowOrganizer.shouldPresentInstrucoes) {
+                                PassoaPasso(receita: self.receita)
                                     .ignoresSafeArea()
                             }
                         }
@@ -105,12 +106,15 @@ struct ReceitaView: View {
             
             
         }
+        .onAppear {
+            print(receita.name)
+        }
         .ignoresSafeArea()
         .overlay(alignment: .topTrailing){
             HStack {
                 Button {
+                    flowOrganizer.dismiss()
                     dismiss()
-                    shouldShowOnboarding = false
                     print("Click1")
                 } label: {
                     Image(systemName: "xmark.circle.fill")

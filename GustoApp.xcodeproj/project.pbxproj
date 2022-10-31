@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2928FF4ECA004BFFFA /* Cores.swift */; };
 		8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2B290086EF004BFFFA /* ReceitasView.swift */; };
+		8A81E40A29104F850089E56D /* FlowOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81E40929104F850089E56D /* FlowOrganizer.swift */; };
+		8A81E40C29106C910089E56D /* AllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81E40B29106C910089E56D /* AllRecipes.swift */; };
 		8AF8B9392903261A00E903CB /* SulSansTest-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */; };
 		8AF8B93A2903261A00E903CB /* SulSansTest-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9302903261A00E903CB /* SulSansTest-Medium.otf */; };
 		8AF8B93B2903261A00E903CB /* SulSansTest-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9312903261A00E903CB /* SulSansTest-Regular.otf */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		8A35DC2928FF4ECA004BFFFA /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
 		8A35DC2B290086EF004BFFFA /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
+		8A81E40929104F850089E56D /* FlowOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowOrganizer.swift; sourceTree = "<group>"; };
+		8A81E40B29106C910089E56D /* AllRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipes.swift; sourceTree = "<group>"; };
 		8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-LightItalic.otf"; sourceTree = "<group>"; };
 		8AF8B9302903261A00E903CB /* SulSansTest-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Medium.otf"; sourceTree = "<group>"; };
 		8AF8B9312903261A00E903CB /* SulSansTest-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Regular.otf"; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 				E31AF6D428FDB931002DE056 /* RecipeModel.swift */,
 				8AF8B945290704C100E903CB /* PageViewContent.swift */,
 				E3ECA404290B124E00EB7B27 /* Cupom.swift */,
+				8A81E40929104F850089E56D /* FlowOrganizer.swift */,
+				8A81E40B29106C910089E56D /* AllRecipes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,8 +315,10 @@
 				E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */,
 				E3ECA403290B098100EB7B27 /* ProfileImagePicker.swift in Sources */,
 				E3ECA3FE290B052F00EB7B27 /* FlowInterface.swift in Sources */,
+				8A81E40A29104F850089E56D /* FlowOrganizer.swift in Sources */,
 				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
+				8A81E40C29106C910089E56D /* AllRecipes.swift in Sources */,
 				E3ECA3F92909CD2C00EB7B27 /* MyCuponsView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
 				E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */,

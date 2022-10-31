@@ -11,9 +11,10 @@ import UIKit
 
 //Onboarding
 struct PassoaPasso: View{
-    @Binding var shouldShowOnboarding: Bool
+    
     @State var finalizar: Bool = true
-    var receita: Recipe
+    @State var receita: Recipe
+    @EnvironmentObject var flowOrganizer: FlowOrganizer
     
     var body: some View{
         ZStack{
@@ -24,17 +25,17 @@ struct PassoaPasso: View{
                 ForEach(receita.instructions) { page in
                     PageView(
                         content: page,
-                        finalizar: $finalizar
+                        finalizar: $finalizar,
+                        receita: $receita
                     )
                     
                 }
             }
-            
             .overlay(alignment: .center) {
                 
                 VStack {
                     Button {
-                        self.shouldShowOnboarding = false
+                        flowOrganizer.dismiss()
                         print("Click")
                     } label: {
                         Image(systemName: "xmark")
@@ -50,8 +51,7 @@ struct PassoaPasso: View{
                     .padding(.top, 80)
                     
                     if !finalizar {
-                        ParabensView()
-                        
+                        ParabensView(receita: $receita)
                     } else {
                         Spacer()
                     }
@@ -59,9 +59,7 @@ struct PassoaPasso: View{
                 
                 
             }.frame(width: UIScreen.main.bounds.width)
-                .onAppear {
-                    print(receita.name)
-                }
+
             
         }
         .tabViewStyle(PageTabViewStyle())
@@ -75,12 +73,10 @@ struct PassoaPasso: View{
 struct PageView: View{
     var content: PageViewContent
     @Binding var finalizar: Bool
+    @Binding var receita: Recipe
     
-    var body: some View{
-        
-        
+    var body: some View {
         VStack{
-            
             Text(content.title)
                 .font(.largeTitle)
                 .bold()
@@ -117,6 +113,9 @@ struct ParabensView: View {
     @State var openCamera = false
     @State var imageSelected: UIImage?
     @State var jaGanhou: Bool = false
+    @Binding var receita: Recipe
+    
+    @EnvironmentObject var flowOrganizer: FlowOrganizer
     
     var body: some View {
         ZStack {
@@ -173,6 +172,7 @@ struct ParabensView: View {
                             if let _ = imageSelected  {
                                 fechar.toggle()
                                 jaGanhou = true
+                                receita.hasCompleted = true
                             }
                         }
                 }
@@ -205,6 +205,8 @@ struct ParabensView: View {
                     .buttonStyle(.plain)
                 }
             }
+        }.onAppear {
+            flowOrganizer.navigateTo(.parabens)
         }
     }
 }
