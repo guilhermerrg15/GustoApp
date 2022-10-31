@@ -30,21 +30,6 @@ struct ReceitaView: View {
                         .font(.custom("SulSansTest-Bold", size: 30, relativeTo: .title))
                         .padding(.vertical, 8)
                     HStack(spacing: 3) {
-//                        Image(systemName: "star")
-//                            .foregroundColor(Color.corAmarela)
-//
-//                        Image(systemName: "star")
-//                            .foregroundColor(Color.corAmarela)
-//
-//                        Image(systemName: "star")
-//                            .foregroundColor(Color.corAmarela)
-//
-//                        Image(systemName: "star")
-//                            .foregroundColor(Color.corAmarela)
-//
-//                        Image(systemName: "star")
-//                            .foregroundColor(Color.corAmarela)
-                        
                         Image(systemName: "clock")
                             //.padding(.leading,200)
                             .foregroundColor(Color.corCinza)

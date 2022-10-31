@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A35DC2028FE2865004BFFFA /* FlowInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */; };
 		8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2928FF4ECA004BFFFA /* Cores.swift */; };
 		8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2B290086EF004BFFFA /* ReceitasView.swift */; };
 		8AF8B9392903261A00E903CB /* SulSansTest-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */; };
@@ -21,10 +20,8 @@
 		8AF8B9412903261A00E903CB /* SulSansTest-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9372903261A00E903CB /* SulSansTest-Bold.otf */; };
 		8AF8B9422903261A00E903CB /* SulSansTest-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9382903261A00E903CB /* SulSansTest-Italic.otf */; };
 		8AF8B946290704C100E903CB /* PageViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8B945290704C100E903CB /* PageViewContent.swift */; };
-		8AF8B9662909BD7D00E903CB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8B9652909BD7D00E903CB /* ImagePicker.swift */; };
 		E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31AF6D428FDB931002DE056 /* RecipeModel.swift */; };
 		E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */; };
-		E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */; };
 		E34AF7D128F5FA6C00FFE597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */; };
 		E34AF7D428F5FA6C00FFE597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */; };
 		E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3CC28FE40E000EB7B27 /* MainView.swift */; };
@@ -36,10 +33,22 @@
 		E3ECA3DD2901B68100EB7B27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */; };
 		E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */; };
 		E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3E22906FB0000EB7B27 /* HomeView.swift */; };
+		E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3ED290716EC00EB7B27 /* Teste.swift */; };
+		E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */; };
+		E3ECA3F32907431200EB7B27 /* CodableExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = E3ECA3F22907431200EB7B27 /* CodableExtensions */; };
+		E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F4290976E900EB7B27 /* CuponsView.swift */; };
+		E3ECA3F72909AED300EB7B27 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */; };
+		E3ECA3F92909CD2C00EB7B27 /* MyCuponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */; };
+		E3ECA3FB2909D3CF00EB7B27 /* TicketCardFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */; };
+		E3ECA3FE290B052F00EB7B27 /* FlowInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FC290B052E00EB7B27 /* FlowInterface.swift */; };
+		E3ECA3FF290B052F00EB7B27 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3FD290B052E00EB7B27 /* ImagePicker.swift */; };
+		E3ECA401290B058700EB7B27 /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA400290B058700EB7B27 /* CoinView.swift */; };
+		E3ECA403290B098100EB7B27 /* ProfileImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */; };
+		E3ECA405290B124E00EB7B27 /* Cupom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA404290B124E00EB7B27 /* Cupom.swift */; };
+		E3ECA407290B12C600EB7B27 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA406290B12C600EB7B27 /* Wallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowInterface.swift; sourceTree = "<group>"; };
 		8A35DC2928FF4ECA004BFFFA /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
 		8A35DC2B290086EF004BFFFA /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
 		8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-LightItalic.otf"; sourceTree = "<group>"; };
@@ -54,11 +63,9 @@
 		8AF8B9382903261A00E903CB /* SulSansTest-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Italic.otf"; sourceTree = "<group>"; };
 		8AF8B9432903262400E903CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8AF8B945290704C100E903CB /* PageViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewContent.swift; sourceTree = "<group>"; };
-		8AF8B9652909BD7D00E903CB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E31AF6D428FDB931002DE056 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
-		E34AF7C928F5FA6B00FFE597 /* GustoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GustoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E34AF7C928F5FA6B00FFE597 /* Gustô.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gustô.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GustoAppApp.swift; sourceTree = "<group>"; };
-		E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E3ECA3CC28FE40E000EB7B27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -70,7 +77,19 @@
 		E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardSearch.swift; sourceTree = "<group>"; };
 		E3ECA3E22906FB0000EB7B27 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E3ECA3E42906FBCB00EB7B27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E3ECA3EA29070CEA00EB7B27 /* GustoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GustoApp.entitlements; sourceTree = "<group>"; };
+		E3ECA3ED290716EC00EB7B27 /* Teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste.swift; sourceTree = "<group>"; };
+		E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipes.swift; sourceTree = "<group>"; };
+		E3ECA3F4290976E900EB7B27 /* CuponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuponsView.swift; sourceTree = "<group>"; };
+		E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCuponsView.swift; sourceTree = "<group>"; };
+		E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCardFive.swift; sourceTree = "<group>"; };
+		E3ECA3FC290B052E00EB7B27 /* FlowInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowInterface.swift; sourceTree = "<group>"; };
+		E3ECA3FD290B052E00EB7B27 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		E3ECA400290B058700EB7B27 /* CoinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
+		E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePicker.swift; sourceTree = "<group>"; };
+		E3ECA404290B124E00EB7B27 /* Cupom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupom.swift; sourceTree = "<group>"; };
+		E3ECA406290B12C600EB7B27 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3ECA3F32907431200EB7B27 /* CodableExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +137,13 @@
 				E3ECA3DA2901B2CF00EB7B27 /* FirstView.swift */,
 				E3ECA3D42900747200EB7B27 /* SearchView.swift */,
 				E3ECA3E22906FB0000EB7B27 /* HomeView.swift */,
-				E34AF7CE28F5FA6B00FFE597 /* ContentView.swift */,
-				E3ECA3E42906FBCB00EB7B27 /* MainView.swift */,
+				E3ECA3ED290716EC00EB7B27 /* Teste.swift */,
+				E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */,
+				E3ECA400290B058700EB7B27 /* CoinView.swift */,
+				E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */,
+				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
+				E3ECA3F4290976E900EB7B27 /* CuponsView.swift */,
+				E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */,
 				E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */,
 				E3ECA3D2290065B500EB7B27 /* TabBarView.swift */,
 			);
@@ -130,6 +155,7 @@
 			children = (
 				E3ECA3D028FF97F200EB7B27 /* RecipeCard2.swift */,
 				E3ECA3DE2901D75F00EB7B27 /* RecipeCardSearch.swift */,
+				E3ECA3FA2909D3CF00EB7B27 /* TicketCardFive.swift */,
 				E3ECA3D62900785600EB7B27 /* RecipeList.swift */,
 			);
 			path = Components;
@@ -138,8 +164,10 @@
 		E31AF6D328FDB8FA002DE056 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E3ECA406290B12C600EB7B27 /* Wallet.swift */,
 				E31AF6D428FDB931002DE056 /* RecipeModel.swift */,
 				8AF8B945290704C100E903CB /* PageViewContent.swift */,
+				E3ECA404290B124E00EB7B27 /* Cupom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,7 +183,7 @@
 		E34AF7CA28F5FA6B00FFE597 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E34AF7C928F5FA6B00FFE597 /* GustoApp.app */,
+				E34AF7C928F5FA6B00FFE597 /* Gustô.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,16 +191,17 @@
 		E34AF7CB28F5FA6B00FFE597 /* GustoApp */ = {
 			isa = PBXGroup;
 			children = (
+				E3ECA3EA29070CEA00EB7B27 /* GustoApp.entitlements */,
 				8AF8B9432903262400E903CB /* Info.plist */,
 				E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */,
 				E31AF6D328FDB8FA002DE056 /* Models */,
 				E31AF6C328FDB714002DE056 /* Views */,
 				E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */,
-				E34AF7D228F5FA6C00FFE597 /* Preview Content */,
-				8A35DC1F28FE2865004BFFFA /* FlowInterface.swift */,
-				8AF8B9652909BD7D00E903CB /* ImagePicker.swift */,
-				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
+				E3ECA3FC290B052E00EB7B27 /* FlowInterface.swift */,
+				E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */,
+				E3ECA3FD290B052E00EB7B27 /* ImagePicker.swift */,
 				8A35DC2928FF4ECA004BFFFA /* Cores.swift */,
+				E34AF7D228F5FA6C00FFE597 /* Preview Content */,
 				8AF8B9442903285500E903CB /* Fontes */,
 			);
 			path = GustoApp;
@@ -189,9 +218,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E34AF7C828F5FA6B00FFE597 /* GustoApp */ = {
+		E34AF7C828F5FA6B00FFE597 /* Gustô */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E34AF7D728F5FA6C00FFE597 /* Build configuration list for PBXNativeTarget "GustoApp" */;
+			buildConfigurationList = E34AF7D728F5FA6C00FFE597 /* Build configuration list for PBXNativeTarget "Gustô" */;
 			buildPhases = (
 				E34AF7C528F5FA6B00FFE597 /* Sources */,
 				E34AF7C628F5FA6B00FFE597 /* Frameworks */,
@@ -201,9 +230,12 @@
 			);
 			dependencies = (
 			);
-			name = GustoApp;
+			name = "Gustô";
+			packageProductDependencies = (
+				E3ECA3F22907431200EB7B27 /* CodableExtensions */,
+			);
 			productName = GustoApp;
-			productReference = E34AF7C928F5FA6B00FFE597 /* GustoApp.app */;
+			productReference = E34AF7C928F5FA6B00FFE597 /* Gustô.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -230,11 +262,14 @@
 				Base,
 			);
 			mainGroup = E34AF7C028F5FA6B00FFE597;
+			packageReferences = (
+				E3ECA3F12907431200EB7B27 /* XCRemoteSwiftPackageReference "CodableExtensions" */,
+			);
 			productRefGroup = E34AF7CA28F5FA6B00FFE597 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E34AF7C828F5FA6B00FFE597 /* GustoApp */,
+				E34AF7C828F5FA6B00FFE597 /* Gustô */,
 			);
 		};
 /* End PBXProject section */
@@ -266,23 +301,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3ECA407290B12C600EB7B27 /* Wallet.swift in Sources */,
 				8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */,
-				E34AF7CF28F5FA6B00FFE597 /* ContentView.swift in Sources */,
 				E3ECA3E32906FB0000EB7B27 /* HomeView.swift in Sources */,
-				8AF8B9662909BD7D00E903CB /* ImagePicker.swift in Sources */,
 				E3ECA3DB2901B2CF00EB7B27 /* FirstView.swift in Sources */,
+				E3ECA3F72909AED300EB7B27 /* EditProfileView.swift in Sources */,
 				E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */,
+				E3ECA403290B098100EB7B27 /* ProfileImagePicker.swift in Sources */,
+				E3ECA3FE290B052F00EB7B27 /* FlowInterface.swift in Sources */,
 				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
+				E3ECA3F92909CD2C00EB7B27 /* MyCuponsView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
+				E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */,
 				8AF8B946290704C100E903CB /* PageViewContent.swift in Sources */,
 				8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */,
-				8A35DC2028FE2865004BFFFA /* FlowInterface.swift in Sources */,
 				E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */,
+				E3ECA3FF290B052F00EB7B27 /* ImagePicker.swift in Sources */,
+				E3ECA3EE290716EC00EB7B27 /* Teste.swift in Sources */,
 				E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */,
+				E3ECA3F0290721C600EB7B27 /* FavoriteRecipes.swift in Sources */,
+				E3ECA405290B124E00EB7B27 /* Cupom.swift in Sources */,
 				E3ECA3DF2901D75F00EB7B27 /* RecipeCardSearch.swift in Sources */,
 				E3ECA3DD2901B68100EB7B27 /* ProfileView.swift in Sources */,
+				E3ECA401290B058700EB7B27 /* CoinView.swift in Sources */,
 				E3ECA3D72900785600EB7B27 /* RecipeList.swift in Sources */,
+				E3ECA3FB2909D3CF00EB7B27 /* TicketCardFive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GustoApp/GustoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
@@ -415,6 +460,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GustoApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gustô ";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permita que Gustô tenha acesso a sua câmera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -426,8 +472,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = guilherme.gomes.GustoApp;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = les.inf.academy.GustoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -440,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GustoApp/GustoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GustoApp/Preview Content\"";
@@ -447,6 +494,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GustoApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gustô ";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permita que Gustô tenha acesso a sua câmera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -458,8 +506,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = guilherme.gomes.GustoApp;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = les.inf.academy.GustoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -479,7 +527,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E34AF7D728F5FA6C00FFE597 /* Build configuration list for PBXNativeTarget "GustoApp" */ = {
+		E34AF7D728F5FA6C00FFE597 /* Build configuration list for PBXNativeTarget "Gustô" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E34AF7D828F5FA6C00FFE597 /* Debug */,
@@ -489,6 +537,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3ECA3F12907431200EB7B27 /* XCRemoteSwiftPackageReference "CodableExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rvenieris/CodableExtensions.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3ECA3F22907431200EB7B27 /* CodableExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3ECA3F12907431200EB7B27 /* XCRemoteSwiftPackageReference "CodableExtensions" */;
+			productName = CodableExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E34AF7C128F5FA6B00FFE597 /* Project object */;
 }

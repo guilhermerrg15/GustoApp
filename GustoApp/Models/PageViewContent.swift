@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct PageViewContent: Identifiable {
+struct PageViewContent: Identifiable, Codable {
+    // TODO:  Resolver
     let id = UUID()
     let title: String
-    //let imageName: String
     let showsDismissButton: Bool
     
 }
+

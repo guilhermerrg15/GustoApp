@@ -6,27 +6,65 @@
 //
 import Foundation
 import SwiftUI
+import CodableExtensions
 
-enum Level: String, CaseIterable, Identifiable {
-    var id : String{ self.rawValue}
+
+
+enum Level: String, CaseIterable, Identifiable, Codable {
+    var id : String{ self.rawValue }
     case easy = "Básico"
     case medium = "Intermediário"
     case hard = "Difícil"
 }
 
 
-struct Recipe: Identifiable {
-    let id = UUID()
+class Recipe: ObservableObject, Identifiable {
+    static var lastId: Int = 0
+    let id: Int
     let name : String
     let image : String
     let description : String
-    //let ingredients: [String]
     var ingredientes: [Ingrediente] = []
     let recipeTime : String
-    //    let directions : String
     let level : Level
-    //    let datePublished: String
     var instructions: [PageViewContent] = []
+    @Published var favorites : Bool
+    
+    
+    init(id:Int = Recipe.lastId,
+        name: String,
+        image: String,
+        description: String,
+        ingredientes: [Ingrediente],
+        recipeTime: String,
+        level: Level,
+         instructions: [PageViewContent],
+         favorites:Bool = false) {
+            
+            self.id = Recipe.lastId
+            self.name = name
+            self.image = image
+            self.description = description
+            self.ingredientes = ingredientes
+            self.recipeTime = recipeTime
+            self.instructions = instructions
+            self.level = level
+            self.favorites = favorites
+            Recipe.lastId += 1
+        }
+    
+    convenience init(from recipe: AppData.RecipePersist) {
+        self.init(id: recipe.id,
+                  name: recipe.name,
+                  image: recipe.image,
+                  description: recipe.description,
+                  ingredientes: recipe.ingredientes,
+                  recipeTime: recipe.recipeTime,
+                  level: recipe.level,
+                  instructions: recipe.instructions,
+                  favorites: recipe.favorites)
+    }
+    
     
     var allIngredients: String {
         let nomeIngredients: [String] =  ingredientes.map({$0.alimento}).filter({$0 != ""})
@@ -36,13 +74,15 @@ struct Recipe: Identifiable {
         let restante = nomesJuntos.dropFirst()
         return primeiraLetra + restante
     }
-
+    
 }
 
-extension Recipe {
+class AllRecipes: ObservableObject {
+    static let instance = AllRecipes()
+    private init(){}
     
-    static var easyRecipes: [Recipe] = [
-        Recipe(name: "Macarrão a Bolonhesa",
+    @Published var easyRecipe: [Recipe] = [
+        Recipe(name: "Macarrão com Bolonhesa",
                image: "macarrao",
                description: "Macarrão com molho feito de tomate e carne moida com toque espeiclal de queijo ralado",
                //               ingredients: ["- 150g de macarrão", "- 100g de carne moída", "- 150 ml de molho de tomate", "- 1 dente de alho picado", "- 1/4 de cebola picada", "- 50g de queijo ralado picado", "- 1 colher de sopa Azeite extra-virgem", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal"],
@@ -191,7 +231,7 @@ extension Recipe {
                 Ingrediente(quantidade: "2 colheres de chá", alimento: "orégano"),
                 Ingrediente(quantidade: "2 colheres de chá", alimento: "azeite"),
                ],
-               recipeTime: "45 min",
+               recipeTime: "15 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -275,7 +315,7 @@ extension Recipe {
                 Ingrediente(quantidade: "1/2 envelope", alimento: "MAGGI® Sopa de Carne"),
                 Ingrediente(quantidade: "1/2 xícara", alimento: "água fria")
                ],
-               recipeTime: "45 min",
+               recipeTime: "15 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -329,7 +369,7 @@ extension Recipe {
                 Ingrediente(parte: "Extra:"),
                 Ingrediente(quantidade: "", alimento: "batata palha",separador:  ""),
                ],
-               recipeTime: "45 min",
+               recipeTime: "15 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -387,7 +427,7 @@ extension Recipe {
                ]),
     ]
     
-    public static let MediumRecipes : [Recipe] = [
+    @Published var  mediumRecipe : [Recipe] = [
         Recipe(name: "Bife c/ molho madeira e arroz à piamontese",
                image: "bife molho madeira",
                description: "carne e cebola",
@@ -416,7 +456,7 @@ extension Recipe {
                               Ingrediente(quantidade: "1 colher de chá", alimento: "mostarda"),
                               Ingrediente(quantidade: "80g", alimento: "champignon (opcional)")
                              ],
-               recipeTime: "45 min",
+               recipeTime: "60 min",
                level: .medium,
                instructions: [
                 PageViewContent(
@@ -496,7 +536,6 @@ extension Recipe {
         Recipe(name: "Salmão Grelhado",
                image: "salmão",
                description: "salmao",
-               //               ingredients: ["Salmão:", "- 1 filé de salmão sem pele", "- 1 colher de chá de Azeite", "- 1/4 dentes de alho picados finamente", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "- 1/4 de limão", "Arroz de brócolis:", "- 1 colher de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 maço de brócolis"],
                ingredientes: [Ingrediente(parte:"Salmão:"),
                               Ingrediente(quantidade: "1 filé", alimento: "salmão sem pele"),
                               Ingrediente(quantidade: "1 colher de chá", alimento: "Azeite"),
@@ -511,7 +550,7 @@ extension Recipe {
                               Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
                               Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
                               Ingrediente(quantidade: "1/2 maço", alimento: "brócolis")],
-               recipeTime: "45 min",
+               recipeTime: "2h e 30 min",
                level: .medium,
                instructions: [
                 PageViewContent(
@@ -587,7 +626,7 @@ extension Recipe {
                 Ingrediente(quantidade: "250g", alimento: "Nescau"),
                 Ingrediente(quantidade: "1 xícara", alimento: "farinha de trigo")
                ],
-               recipeTime: "45 min",
+               recipeTime: "40 min",
                level: .medium,
                instructions: [
                 PageViewContent(
@@ -620,8 +659,7 @@ extension Recipe {
                     showsDismissButton: true)
                ]),
     ]
-    
-    public static let HardRecipes : [Recipe] = [
+    @Published var hardRecipe: [Recipe] = [
         Recipe(name: "Bife acebolado",
                image: "bife acebolado",
                description: "bife com cebola",
@@ -660,7 +698,7 @@ extension Recipe {
                 Ingrediente(quantidade: "1 colher de chá", alimento: "azeite"),
                 Ingrediente(quantidade: "1/4", alimento: "cebola em rodelas")
                ],
-               recipeTime: "45 min",
+               recipeTime: "1h e 20 min",
                level: .hard,
                instructions: [
                 PageViewContent(
@@ -817,7 +855,7 @@ extension Recipe {
                 Ingrediente(parte: "Finalização:"),
                 Ingrediente(quantidade: "1", alimento: "ovo batido",separador: "")
                ],
-               recipeTime: "45 min",
+               recipeTime: "2h",
                level: .hard,
                instructions: [
                 PageViewContent(
@@ -910,43 +948,108 @@ extension Recipe {
                     showsDismissButton: true)
                ])
     ]
+    
+    @Published var coins : Int = 0
+    @Published var receita : Int = 0
+    
+    func add(newCoins: Int = 10){
+        self.coins += newCoins
+    }
+    func add(newReceita: Int = 1){
+        self.receita += newReceita
+    }
+    
 }
-//    public func getIngredients() -> [String] {
-//        let ingredients: [String] = self.ingredientes
-//
-//
-//        let pureIngredients: [String] = ingredientes.map({ elem in
-//            let elems = elem.split(separator: " de ")
-//            let strElems =  elems.map({ String($0) })
-//
-//            let quantidade = strElems.first!.dropFirst(2)
-//            let alimento = strElems[1...].joined(separator: " de ")
-//            print("Ingrediente(quantidade: \"\(quantidade)\", alimento: \"\(alimento)\"),")
-//            return alimento
-//
-//        })
-//        let nonEmptyIngredients = pureIngredients.filter({ $0 != ""})
-//
-//        print("\n- - - -")
-//
-//        return nonEmptyIngredients
-//    }
-//
-//    var namedIngredients: String {
-//        let ingredients = getIngredients()
-//
-//        let text = ingredients.joined(separator: ", ")
-//
-//        let firstLetter = text.prefix(1).capitalized
-//        let remainingLetter = text.dropFirst()
-//        return firstLetter + remainingLetter
-//
-//    }
-//
-//}
 
 
-struct Ingrediente: Identifiable {
+
+// To Persist
+
+
+enum UserDefaultsKeys: String {
+    case username = "username"
+}
+
+
+class AppData:Codable {
+    static var instance = AppData()
+    private init(){}
+    
+    class RecipePersist: Codable {
+        let id:Int
+        let name : String
+        let image : String
+        let description: String
+        let ingredientes : [Ingrediente]
+        let instructions: [PageViewContent]
+        let recipeTime : String
+        let level : Level
+        var favorites : Bool
+        
+        init(id: Int, name: String, image: String, description: String, ingredientes: [Ingrediente], recipeTime: String, level: Level, instructions: [PageViewContent], favorites: Bool) {
+            self.id = id
+            self.name = name
+            self.image = image
+            self.description = description
+            self.ingredientes = ingredientes
+            self.recipeTime = recipeTime
+            self.instructions = instructions
+            self.level = level
+            self.favorites = favorites
+        }
+        convenience init(from recipe: Recipe) {
+            self.init(id: recipe.id,
+                      name: recipe.name,
+                      image: recipe.image,
+                      description: recipe.description,
+                      ingredientes: recipe.ingredientes,
+                      recipeTime: recipe.recipeTime,
+                      level: recipe.level,
+                      instructions: recipe.instructions,
+                      favorites: recipe.favorites)
+        }
+    }
+    var easyRecipe: [RecipePersist] = []
+    var mediumRecipe: [RecipePersist] = []
+    var hardRecipe: [RecipePersist] = []
+    
+    private(set) var coins : Int = 0
+    
+    func add(newCoins: Int = 10){
+        self.coins += newCoins
+    }
+    private(set) var receita : Int = 0
+    
+    func add(newReceita: Int = 10){
+        self.coins += newReceita
+    }
+    
+    
+    
+    func saveData() {
+        self.easyRecipe = AllRecipes.instance.easyRecipe.map{item in return RecipePersist(from: item)}
+        self.mediumRecipe = AllRecipes.instance.mediumRecipe.map{item in return RecipePersist(from: item)}
+        self.hardRecipe = AllRecipes.instance.hardRecipe.map{item in return RecipePersist(from: item)}
+        self.coins = AllRecipes.instance.coins
+        
+        
+        try? self.save()
+        
+    }
+    
+    static func loadData() {
+        guard let loaded = (try? AppData.load()) else {return}
+        Self.instance = loaded
+        
+        AllRecipes.instance.easyRecipe = instance.easyRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.mediumRecipe = instance.mediumRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.hardRecipe = instance.hardRecipe.map{item in return Recipe(from: item)}
+        AllRecipes.instance.coins = Self.instance.coins
+        
+    }
+}
+
+struct Ingrediente: Identifiable, Codable {
     var id = UUID()
     var quantidade: String
     var alimento: String

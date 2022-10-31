@@ -6,14 +6,13 @@
 //
 
 import SwiftUI
+import UIKit
 
 
 //Onboarding
 struct PassoaPasso: View{
-    
     @Binding var shouldShowOnboarding: Bool
     @State var finalizar: Bool = true
-    
     var receita: Recipe
     
     var body: some View{
@@ -73,10 +72,6 @@ struct PassoaPasso: View{
     }
     
 }
-
-
-
-
 struct PageView: View{
     var content: PageViewContent
     @Binding var finalizar: Bool
@@ -93,22 +88,7 @@ struct PageView: View{
                 .padding(.horizontal, 30)
                 .foregroundColor(Color.corTextoPasso)
             
-            //            Image(content.imageName)
-            //                .resizable()
-            //                .padding()
-            //                .aspectRatio(contentMode: .fit)
-            //                .frame(width: 150, height: 150)
-            //
             if content.showsDismissButton{
-                //                NavigationLink(destination: HomeView()) {
-                //                    Text("Terminar Receita")
-                //                        .font(.custom("SulSansTest-Bold", size: 20, relativeTo: .title))
-                //                        .foregroundColor(.white)
-                //                        .padding(.horizontal, 25)
-                //                        .padding(.vertical, 10)
-                //                        .background (Color.corTextoPasso)
-                //                        .clipShape (Capsule())
-                //                }
                 Button(action: {
                     finalizar.toggle()
                     print("AAA")
@@ -132,60 +112,99 @@ struct PageView: View{
 
 
 struct ParabensView: View {
-    
+    @State var imageSelect = UIImage()
+    @State var fechar: Bool = false
     @State var openCamera = false
     @State var imageSelected: UIImage?
+    @State var jaGanhou: Bool = false
     
     var body: some View {
         ZStack {
             Color.corDeFundo
                 .padding(.bottom, -40)
             VStack{
-                Text("Parábens!")
+                Text("Parabéns!")
                     .bold()
-                    .font(.largeTitle)
-                    .padding(.top,30) //aumentar letra
+                    .font(.custom("SulSansTest-Bold", size: 50, relativeTo: .largeTitle))
+                    .padding(.top,-10)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.purple)
+                    .foregroundColor(Color.corRosa)
+                Image("profile")
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                    .clipShape(Circle())
+                Image(uiImage: imageSelect)
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                    .clipShape(Circle())
+//                Circle()
+//                    .foregroundColor(Color.corRosa)
+//                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/6 )
+//                    .padding(.bottom, 10)
+//                    .padding(.trailing, 8)
                 
-                Circle()
-                    .foregroundColor(.pink)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/6 )
-                    .padding(.top, 15)
-                    .padding(.trailing, 8)
                 Text("Você concluiu a receita!")
-                    .font(.title)
-                    .padding(.top,30)
+                    .font(.custom("SulSansTest-Regular", size: 25, relativeTo: .headline))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.purple)
+                    .foregroundColor(Color.corRosa)
+                
                 ZStack(alignment: .bottomTrailing) {
                     Button {
-                        openCamera.toggle()
+                        if !jaGanhou {
+                            openCamera.toggle()
+                        }
                     } label: {
                         if let imageSelected {
                             Image(uiImage: imageSelected)
                                 .resizable()
                                 .scaledToFit()
                         } else {
-                            Rectangle()
-                                .foregroundColor(.gray)
+                            Image("tirar foto")
+                                .resizable()
                                 .frame(width: 334, height: 239, alignment: .center)
                             
                         }
-                    }
+                    }.buttonStyle(.plain)
                 }
                 .sheet(isPresented: $openCamera){
                     ImagePicker(image: $imageSelected, sourceType: .camera)
                         .ignoresSafeArea()
+                        .onDisappear {
+                            if let _ = imageSelected  {
+                                fechar.toggle()
+                                jaGanhou = true
+                            }
+                        }
                 }
-                Text("Tire uma foto do prato e ganhe seu prêmio")
-                    .font(.title)
-                    .padding(.top,30) //aumentar letra
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.purple)
+                .sheet(isPresented: $fechar) {
+                    CoinView(fechar: $fechar)
+                        .presentationDetents([.medium])
+                        .ignoresSafeArea()
+                }
+                if !jaGanhou {
+                    Text("Tire uma foto do prato e ganhe seu prêmio")
+                        .font(.custom("SulSansTest-Regular", size: 25, relativeTo: .headline))
+                        .padding(.horizontal,20)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color.corRosa)
+                        .padding(.bottom,50 )
+                    
+                    
+                }else{
+                    
+                    ShareLink(item: Image(uiImage: imageSelected!), preview: SharePreview("Foto da sua receita!",image: Image(uiImage: imageSelected!))) {
+                        Text("Compartilhar")
+                            .font(.custom("SulSansTest-Medium", size: 20, relativeTo: .title))
+                            .foregroundColor(Color.corAmarela)
+                            .padding(.horizontal, 100)
+                            .padding(.vertical, 10)
+                            .background (Color.corRosa)
+                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
+                    .padding(.bottom)
+                    .buttonStyle(.plain)
+                }
             }
-            
         }
     }
 }
-

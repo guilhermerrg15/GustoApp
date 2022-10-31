@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RecipeCardSearch: View {
-    @State var recipe : Recipe
+    @StateObject var recipe : Recipe
     @State var showRecipe: Bool = false
-    
     
     var body: some View {
         
@@ -36,7 +35,6 @@ struct RecipeCardSearch: View {
                         Image(recipe.image)
                             .resizable()
                             .frame(width: 130, height: 108, alignment: .top)
-//                            .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
                             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         VStack(alignment:.leading){
                             Text("Ingredientes:")
@@ -62,8 +60,11 @@ struct RecipeCardSearch: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .overlay(alignment: .topTrailing){
-                Image(systemName: "heart")
-                    .foregroundColor(Color.corTextoPasso)
+                Image(systemName:recipe.favorites ? "heart.fill" : "heart")
+                    .onTapGesture {
+                        recipe.favorites.toggle()
+                    }
+                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
                     .padding(.top, 5)
                     .padding(.trailing, 10)
                     .font(.system(size: 20))
@@ -78,8 +79,8 @@ struct RecipeCardSearch: View {
     
 }
 
-struct RecipeCardSearch_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeCardSearch(recipe: Recipe.easyRecipes[1])
-    }
-}
+//struct RecipeCardSearch_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecipeCardSearch(recipe: Recipe.easyRecipes[1])
+//    }
+//}
