@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FavoriteRecipes: View {
     @EnvironmentObject var recipes: AllRecipes
+    @State var shouldShowOnboarding: Bool = false
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         ZStack{
             Color(red: 1, green: 247/255,blue: 238/255)
@@ -86,6 +88,26 @@ struct FavoriteRecipes: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .overlay(alignment: .topTrailing){
+            HStack {
+                Button {
+                    dismiss()
+                    shouldShowOnboarding = false
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30)
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color.corRosa, Color.corDeFundo)
+                        
+                        .padding(.leading, 20)
+                        .padding(.top, 20)
+                    Spacer()
+                }
+                .buttonStyle(.plain)
+            }
+        }
     }
 }
 
