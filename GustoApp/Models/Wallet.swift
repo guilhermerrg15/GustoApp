@@ -22,7 +22,7 @@ class Wallet: ObservableObject {
     
     private(set) var cupons: [Cupom] = []
 
-    func addFiveCoins(newCoins: Int = 50){
+    func addFiveCoins(newCoins: Int = 5){
         self.objectWillChange.send()
         self.coins += newCoins
         userDefaults.set(self.coins, forKey: "myCoins")
