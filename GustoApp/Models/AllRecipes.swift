@@ -11,8 +11,8 @@ import Foundation
 
 class AllRecipes: ObservableObject {
     static let instance = AllRecipes()
-    private init(){}
     
+    private init(){}
     
     @Published var easyRecipe: [Recipe] = [
         Recipe(name: "Macarrão com Bolonhesa",
