@@ -48,6 +48,7 @@
 		E3ECA403290B098100EB7B27 /* ProfileImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */; };
 		E3ECA405290B124E00EB7B27 /* Cupom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA404290B124E00EB7B27 /* Cupom.swift */; };
 		E3ECA407290B12C600EB7B27 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA406290B12C600EB7B27 /* Wallet.swift */; };
+		E3ECA40929198B8600EB7B27 /* CupomPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA40829198B8600EB7B27 /* CupomPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePicker.swift; sourceTree = "<group>"; };
 		E3ECA404290B124E00EB7B27 /* Cupom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupom.swift; sourceTree = "<group>"; };
 		E3ECA406290B12C600EB7B27 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		E3ECA40829198B8600EB7B27 /* CupomPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupomPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				E3ECA3ED290716EC00EB7B27 /* Teste.swift */,
 				E3ECA3F62909AED300EB7B27 /* EditProfileView.swift */,
 				E3ECA400290B058700EB7B27 /* CoinView.swift */,
+				E3ECA40829198B8600EB7B27 /* CupomPreviewView.swift */,
 				E3ECA3F4290976E900EB7B27 /* CuponsView.swift */,
 				E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */,
 				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
@@ -320,6 +323,7 @@
 				E3ECA3D52900747200EB7B27 /* SearchView.swift in Sources */,
 				8A81E40C29106C910089E56D /* AllRecipes.swift in Sources */,
 				E3ECA3F92909CD2C00EB7B27 /* MyCuponsView.swift in Sources */,
+				E3ECA40929198B8600EB7B27 /* CupomPreviewView.swift in Sources */,
 				E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */,
 				E3ECA3F5290976E900EB7B27 /* CuponsView.swift in Sources */,
 				8AF8B946290704C100E903CB /* PageViewContent.swift in Sources */,

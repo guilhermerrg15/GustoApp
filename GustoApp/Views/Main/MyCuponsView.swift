@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MyCuponsView: View {
-    @ObservedObject var wallet: Wallet =  Wallet.instance
+//    @StateObject var wallet: Wallet =  Wallet.instance
     @State private var showingAlert = false
     @State var shouldShowOnboarding: Bool = false
     @Environment(\.dismiss) private var dismiss
+    @Binding var geraCupom: [Int]
     var body: some View {
             ZStack{
                 Color(red: 1, green: 247/255,blue: 238/255)
@@ -22,78 +23,14 @@ struct MyCuponsView: View {
                             .foregroundColor(.white)
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5 )
-                        Text("Você realizou \(wallet.getReceita()) receitas, seu saldo é de \(wallet.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
+                        Text("Você realizou \(Wallet.instance.getReceita()) receitas, seu saldo é de \(Wallet.instance.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
                             .foregroundColor(Color("ColorWine"))
                             .font(Font.headline.weight(.bold))
                             .padding()
                         
                     }
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(.white)
-                            .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                            .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 5.5 )
-                            .overlay(alignment: .bottomLeading){
-                                HStack{
-                                    Text("Desconto de R$5, a partir de compras de R$40")
-                                        .font(Font.custom("Futura",size: 14))
-                                        .foregroundColor(.gray)
-                                } .padding(.leading, 30)
-                                    .padding(.bottom, 10)
-                            }
-                        Group{
-                            VStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                    .frame(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height / 8 )
-                            }
-                            VStack{
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
-                                        .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    
-                                    Button("R$5"){
-                                    }
-                                        .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                        .font(Font.custom("Futura",size: 35))
-                                        .padding()
-                                }
-                            }
-                        } .padding(.bottom, 30)
-                    }
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(.white)
-                            .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                            .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 5.5 )
-                            .overlay(alignment: .bottomLeading){
-                                HStack{
-                                    Text("Desconto de R$12, a partir de compras de R$100")
-                                        .font(Font.custom("Futura",size: 14))
-                                        .foregroundColor(.gray)
-                                } .padding(.leading, 30)
-                                    .padding(.bottom, 10)
-                            }
-                        Group{
-                            VStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                    .frame(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height / 8 )
-                            }
-                            VStack{
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
-                                        .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Button("R$12"){
-                                        
-                                    }
-                                        .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                        .font(Font.custom("Futura",size: 35))
-                                }
-                            }
-                        } .padding(.bottom, 30)
+                    ForEach(geraCupom, id: \.self) { cupom in
+                        CupomPreviewView(showingAlert: .constant(false), geraCupom: .constant([]), cupom: Cupom.allCupons[0]) //Valor de teste... array com 1 elemento ???????????)
                     }
                     ZStack{
                         RoundedRectangle(cornerRadius: 5)
@@ -116,10 +53,10 @@ struct MyCuponsView: View {
                                             .foregroundColor(Color(red: 215/255, green: 153/255, blue: 177/255))
                                             .frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height / 12 )
                                         VStack{
-                                            Text("\(wallet.getCoins()) moedas")
+                                            Text("\(Wallet.instance.getCoins()) moedas")
                                                 .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
                                                 .font(Font.custom("Futura",size: 22))
-                                            Text("(\(wallet.getReceita()) receitas realizadas)")
+                                            Text("(\(Wallet.instance.getReceita()) receitas realizadas)")
                                                 .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
                                                 .font(Font.custom("Futura",size: 16))
                                         }
@@ -131,8 +68,6 @@ struct MyCuponsView: View {
                     
                     Spacer()
                 } .padding(.top, 20)
-                
-                
                     .safeAreaInset(edge: .top) {
                         ZStack {
                             Color("ColorWine")
@@ -166,12 +101,13 @@ struct MyCuponsView: View {
                     .buttonStyle(.plain)
                 }
             }
-    }
-}
+        }
 
-struct MyCuponsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyCuponsView()
-    }
 }
-
+//
+//struct MyCuponsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyCuponsView()
+//    }
+//}
+//
