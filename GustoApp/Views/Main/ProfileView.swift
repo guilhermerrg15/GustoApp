@@ -40,8 +40,6 @@ struct ProfileView: View {
                                 Text(username)
                                     .foregroundColor(Color("ColorWine"))
                                     .font(Font.custom("Futura",size: 20))
-                                Text("Nivel básico")
-                                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
                             }
                         }
                     }

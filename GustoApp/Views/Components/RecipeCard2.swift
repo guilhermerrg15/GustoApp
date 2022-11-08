@@ -73,7 +73,6 @@ struct RecipeCard2: View {
                 Image(recipe.image)
                     .resizable()
                     .frame(width: 172, height: 120, alignment: .top)
-                    //.background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
                     .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                     .padding(.top,8)
                 RoundedRectangle(cornerRadius: 10)
