@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct CuponsView: View {
-    @ObservedObject var wallet: Wallet =  Wallet.instance
+//    @ObservedObject var wallet: Wallet
     @State var shouldShowOnboarding: Bool = false
     @Environment(\.dismiss) private var dismiss
-    var cupons: [Cupom] = Cupom.allCupons
-    
+    @State var cupons: [Cupom] = Cupom.allCupons
     @State private var showingAlert = false
+    @State var geraCupom: [Int] = []
     var body: some View {
-        
             ZStack{
                 Color(red: 1, green: 247/255,blue: 238/255)
                     .ignoresSafeArea()
@@ -38,93 +37,14 @@ struct CuponsView: View {
                                     .foregroundColor(.gray)
                                 Text("10 moedas: 5 reais")
                                     .foregroundColor(.gray)
-                                Text("20 moedas: 12 reais")
-                                    .foregroundColor(.gray)
                             }
                         } .padding(.trailing)
                     }
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(.white)
-                            .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                            .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 5.5 )
-                            .overlay(alignment: .bottomLeading){
-                                HStack{
-                                    Text("Desconto de R$5, a partir de compras de R$40")
-                                        .font(Font.custom("Futura",size: 14))
-                                        .foregroundColor(.gray)
-                                } .padding(.leading, 30)
-                            }
-                        Group{
-                            VStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                    .frame(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height / 8 )
-                            }
-                            VStack{
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
-                                        .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Button(cupons[0].texto){
-                                        showingAlert = true
-                                    } .alert("Confirmação", isPresented: $showingAlert){
-                                        Button("Trocar"){
-                                            let _ = wallet.buy(cupom: cupons[0])
-                                        }
-                                        Button("Cancel", role: .cancel){
-                                            
-                                        }
-                                    }
-                                        .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                        .font(Font.custom("Futura",size: 35))
-                                        .padding()
-                                        .buttonStyle(.plain)
-                                        .disabled(!wallet.hasMoney(for: cupons[0]))
-                                }
-                            }
-                        } .padding(.bottom, 30)
+                    
+                    ForEach(cupons) { cupom in
+                        CupomPreviewView(showingAlert: $showingAlert, geraCupom: $geraCupom, cupom: cupom)
                     }
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(.white)
-                            .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                            .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 5.5 )
-                            .overlay(alignment: .bottomLeading){
-                                HStack{
-                                    Text("Desconto de R$12, a partir de compras de R$100")
-                                        .font(Font.custom("Futura",size: 14))
-                                        .foregroundColor(.gray)
-                                } .padding(.leading, 30)
-                            }
-                        Group{
-                            VStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                    .frame(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height / 8 )
-                            }
-                            VStack{
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
-                                        .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                                    Button(cupons[1].texto){
-                                        showingAlert = true
-                                    } .alert("Confirmação", isPresented: $showingAlert){
-                                        Button("Trocar"){
-                                            let _ = wallet.buy(cupom: cupons[1])
-                                        }
-                                        Button("Cancel", role: .cancel){}
-                                    }
-                                        .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                                        .font(Font.custom("Futura",size: 35))
-                                        .padding()
-                                        .buttonStyle(.plain)
-                                        .disabled(!wallet.hasMoney(for: cupons[1]))
-                                }
-                            }
-                        } .padding(.bottom, 30)
-                    }
+                    
                     ZStack{
                         RoundedRectangle(cornerRadius: 5)
                             .foregroundColor(.white)
@@ -151,7 +71,7 @@ struct CuponsView: View {
                                             .foregroundColor(Color(red: 215/255, green: 153/255, blue: 177/255))
                                             .frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height / 12 )
                                         VStack{
-                                            NavigationLink(destination: MyCuponsView(), label: {
+                                            NavigationLink(destination: MyCuponsView( geraCupom: $geraCupom), label: {
                                                 Text("Meus cupons")
                                                     .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
                                                     .font(Font.custom("Futura",size: 28))
