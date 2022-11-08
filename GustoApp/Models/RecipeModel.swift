@@ -14,7 +14,7 @@ enum Level: String, CaseIterable, Identifiable, Codable {
     var id : String{ self.rawValue }
     case easy = "Básico"
     case medium = "Intermediário"
-    case hard = "Difícil"
+    case hard = "Avançado"
 }
 
 class Recipe: ObservableObject, Identifiable {

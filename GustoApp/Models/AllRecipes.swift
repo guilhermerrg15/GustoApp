@@ -17,8 +17,7 @@ class AllRecipes: ObservableObject {
     @Published var easyRecipe: [Recipe] = [
         Recipe(name: "Macarrão com Bolonhesa",
                image: "macarrao",
-               description: "Macarrão com molho feito de tomate e carne moida com toque espeiclal de queijo ralado",
-               //               ingredients: ["- 150g de macarrão", "- 100g de carne moída", "- 150 ml de molho de tomate", "- 1 dente de alho picado", "- 1/4 de cebola picada", "- 50g de queijo ralado picado", "- 1 colher de sopa Azeite extra-virgem", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal"],
+               description: "Macarrão com molho feito com carne bovina moída e tomate e carne moida com toque de queijo ralado",
                ingredientes: [
                 Ingrediente(quantidade: "150g", alimento: "macarrão"),
                 Ingrediente(quantidade: "100g", alimento: "carne moída"),
@@ -86,17 +85,16 @@ class AllRecipes: ObservableObject {
         
         Recipe(name: "Omelete de queijo e presunto",
                image: "omelete",
-               description: "ovos batidos",
-               //               ingredients: ["- 3 fatias de queijo", "- 2 fatias de presunto", "- 2 ovos", "- 2 colheres de manteiga", "- 1 colher de chá de orégano (opcional)", "- 1 colher de café de sal"],
+               description: "Ovos batidos fritados na manteiga com fatias de queijo e presunto",
                ingredientes: [
                 Ingrediente(quantidade: "3 fatias", alimento: "queijo"),
                 Ingrediente(quantidade: "2 fatias", alimento: "presunto"),
-                Ingrediente(quantidade: "2", alimento: "ovos",separador:  ""),
+                Ingrediente(quantidade: "2", alimento: " ovos",separador:  ""),
                 Ingrediente(quantidade: "2 colheres", alimento: "manteiga"),
                 Ingrediente(quantidade: "1 colher de chá", alimento: "orégano (opcional)"),
                 Ingrediente(quantidade: "1 colher de café", alimento: "sal"),
                ],
-               recipeTime: "45 min",
+               recipeTime: "10 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -147,18 +145,17 @@ class AllRecipes: ObservableObject {
         
         Recipe(name: "Crepioca de Frango",
                image: "crepioca de frango",
-               description: "tapioca batida com ovo",
-               //               ingredients: ["Massa:", "- 1 ovo", "- 1 clara de ovo", "- 2 colheres de sopa de tapioca", "- 1 colher de sopa de leite", "Recheio:", "- 1 filé de peito de frango", "- 2 colheres de sopa cheias de requeijão", "- 1/2 cebola picada", "- 1 colher de chá de pimenta", "- 2 colheres de chá de sal", "- 2 colheres de chá de orégano", "- 2 colheres de chá de azeite"],
+               description: "Massa a base de tapioca batida com ovos, recheada de frango",
                ingredientes: [
                 Ingrediente(parte: "Massa:"),
-                Ingrediente(quantidade: "1", alimento: "ovo", separador:  ""),
+                Ingrediente(quantidade: "1", alimento: " ovo", separador:  ""),
                 Ingrediente(quantidade: "1", alimento: " clara de ovo", separador:  ""),
                 Ingrediente(quantidade: "2 colheres de sopa", alimento: "tapioca"),
                 Ingrediente(quantidade: "1 colher de sopa", alimento: "leite"),
                 Ingrediente(parte: "Recheio:"),
                 Ingrediente(quantidade: "1 filé", alimento: "peito de frango"),
                 Ingrediente(quantidade: "2 colheres de sopa cheias", alimento: "requeijão"),
-                Ingrediente(quantidade: "1/2", alimento: "cebola picada",separador:  ""),
+                Ingrediente(quantidade: "1/2", alimento: " cebola picada",separador:  ""),
                 Ingrediente(quantidade: "1 colher de chá", alimento: "pimenta"),
                 Ingrediente(quantidade: "2 colheres de chá", alimento: "sal"),
                 Ingrediente(quantidade: "2 colheres de chá", alimento: "orégano"),
@@ -236,8 +233,7 @@ class AllRecipes: ObservableObject {
         
         Recipe(name: "Sopa de legumes",
                image: "sopa de legumes",
-               description: "caldo com diversos legumes",
-               //              ingredients: ["- 1 colher de chá de óleo", "- 1/4 de cebola ralada", "- 1/2 dente de alho amassado", "- 1/4 cenoura média em rodelas", "- 1 batatas em cubos", "- 1/2 tomates sem pele e sem sementes picados", "- 1/2 envelope de MAGGI® Sopa de Carne com Conchinhas", "- 1/2 xícara de água fria"],
+               description: "caldo com legumes diversos",
                ingredientes: [
                 Ingrediente(quantidade: "1 colher de chá", alimento: "óleo"),
                 Ingrediente(quantidade: "1/4", alimento: "cebola ralada"),
@@ -248,7 +244,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "1/2 envelope", alimento: "MAGGI® Sopa de Carne"),
                 Ingrediente(quantidade: "1/2 xícara", alimento: "água fria")
                ],
-               recipeTime: "15 min",
+               recipeTime: "30 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -279,8 +275,7 @@ class AllRecipes: ObservableObject {
         
         Recipe(name: "Strogonoff de Frango",
                image: "strogonoff de frango",
-               description: "frangos ",
-               //               ingredients: ["Strogonoff:", "- 100g de peito de frango cortado em cubos ou tiras", "- 1/4 de cebola picada", "- 1/2 dente de alho picado", "- 1/2 colher de sopa de manteiga", "- 1/2 caixa de creme de leite", "- 1 colher de sopa de mostarda (opcional)", "- 1 colher de sopa de molho de tomate", "- 2 colheres de sopa de ketchup", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho picada", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz", "extra:", "- batata palha"],
+               description: "Frango picado com creme de leite e molho de tomete acompanhado de arroz branco e batata palha",
                ingredientes: [
                 Ingrediente(parte: "Srogonoff:"),
                 Ingrediente(quantidade: "100g", alimento: "peito de frango cortado em cubos ou tiras"),
@@ -298,11 +293,11 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "1/2 dente", alimento: "alho picada"),
                 Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
                 Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
-                Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: "",separador:  ""),
+                Ingrediente(quantidade: "", alimento: "Água suficiente para cobrir o arroz",separador:  ""),
                 Ingrediente(parte: "Extra:"),
                 Ingrediente(quantidade: "", alimento: "batata palha",separador:  ""),
                ],
-               recipeTime: "15 min",
+               recipeTime: "40 min",
                level: .easy,
                instructions: [
                 PageViewContent(
@@ -363,14 +358,13 @@ class AllRecipes: ObservableObject {
     @Published var  mediumRecipe : [Recipe] = [
         Recipe(name: "Bife c/ molho madeira e arroz à piamontese",
                image: "bife molho madeira",
-               description: "carne e cebola",
-               //               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho", "- 1/4 de cebola", "- 1 xícara de arroz", "- Água suficiente para cobrir o arroz", "- 1/2 caixa de creme de leite", "- 50g de queijo mussarela", "- 1 colher de chá noz moscada", "- 25 g de queijo parmesão", "Bife:", "- 1 colher de sopa de manteiga", "- 1 file mignon grande", "- 1 colher de chá de pimenta", "- 1 colher de chá de sal", "Molho madeira:", "- 40 g de farinha de trigo", "- 1 colher de sopa de manteiga", "- 1 colher de chá de sal", "- 80 ml de vinho madeira", "- 250 ml de caldo de carne", "- 1 colher de chá de mostarda", "- champignon (opcional)"],
+               description: "Arroz à base de creme de leite e queijo, acompanhado de carne bovina com molho do vinho madeira",
                ingredientes: [Ingrediente(parte: "Arroz:"),
                               Ingrediente(quantidade: "2 colheres de sopa", alimento: "azeite"),
                               Ingrediente(quantidade: "1/2 dente", alimento: "alho"),
                               Ingrediente(quantidade: "1/4", alimento: "cebola"),
                               Ingrediente(quantidade: "1 xícara", alimento: "arroz"),
-                              Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
+                              Ingrediente(quantidade: "", alimento: "Água suficiente para cobrir o arroz", separador: ""),
                               Ingrediente(quantidade: "1/2 caixa", alimento: "creme de leite"),
                               Ingrediente(quantidade: "50g", alimento: "queijo mussarela"),
                               Ingrediente(quantidade: "1 colher de chá", alimento: "noz moscada"),
@@ -468,7 +462,7 @@ class AllRecipes: ObservableObject {
         
         Recipe(name: "Salmão Grelhado",
                image: "salmão",
-               description: "salmao",
+               description: "Filé de salmão grelhado com arroz com pedaços de brócolis",
                ingredientes: [Ingrediente(parte:"Salmão:"),
                               Ingrediente(quantidade: "1 filé", alimento: "salmão sem pele"),
                               Ingrediente(quantidade: "1 colher de chá", alimento: "Azeite"),
@@ -481,9 +475,9 @@ class AllRecipes: ObservableObject {
                               Ingrediente(quantidade: "1/2 dente", alimento: "alho picado"),
                               Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
                               Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
-                              Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
+                              Ingrediente(quantidade: "", alimento: "Água suficiente para cobrir o arroz",separador: ""),
                               Ingrediente(quantidade: "1/2 maço", alimento: "brócolis")],
-               recipeTime: "2h e 30 min",
+               recipeTime: "70 min",
                level: .medium,
                instructions: [
                 PageViewContent(
@@ -550,10 +544,9 @@ class AllRecipes: ObservableObject {
         
         Recipe(name: "Brownie",
                image: "brownie",
-               description: "bolo ",
-               //               ingredients: ["- 3 ovos","- 100g de manteiga", "- 180g de açúcar", "- 250g de Nescau", "- 1 xícara de farinha de trigo"],
+               description: "Bolo, geralmente achatado, denso e rico em chocolate",
                ingredientes: [
-                Ingrediente(quantidade: "3", alimento: "ovos", separador: ""),
+                Ingrediente(quantidade: "3", alimento: " ovos", separador: ""),
                 Ingrediente(quantidade: "100g", alimento: "manteiga"),
                 Ingrediente(quantidade: "180g", alimento: "açúcar"),
                 Ingrediente(quantidade: "250g", alimento: "Nescau"),
@@ -592,18 +585,18 @@ class AllRecipes: ObservableObject {
                     showsDismissButton: true)
                ]),
     ]
+    
     @Published var hardRecipe: [Recipe] = [
         Recipe(name: "Bife acebolado",
                image: "bife acebolado",
-               description: "bife com cebola",
-               //               ingredients: ["Arroz:", "- 2 colheres de sopa de azeite", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1/2 xícara de arroz", "- Água suficiente para cobrir o arroz" ,"Feijão:" ,"- 50 g de feijão-preto", "- 1/2 colheres de sopa de óleo", "- 1/4 cebola picada", "- 1/2 dentes de alho amassados", "- 1 xícaras chá de água (200 ml)", "- 1/2 sachê de Tempero de sua escolha", "- 1 colher de chá de sal", "Couve refogada:", "- 50g de couve", "- 1/2 dente de alho picado", "- 1/4 de cebola picada", "- 1 colher sopa cheia de óleo", "- 1 colher de chá de sal", "Farofa:", "- 100g de farinha de mandioca", "- 1/2 kg cebola grande fatiada", "- 50g colheres de manteiga", "- 1 colher de chá de sal", "- 1 colher de chá de pimenta", "Bife acebolado:", "- 100g de contrafilé (ou outro bife de sua preferência)", "- 1/2 tablete de caldo de carne", "- 1/2 xícara de chá de água quente", "- 1 colher de chá de azeite", "- 1/4 de cebola em rodelas"],
+               description: "bife grelhado com cebola acompanhados de arroz, feijão, couve refogada e farofa de cebola",
                ingredientes: [
                 Ingrediente(parte:"Arroz:"),
                 Ingrediente(quantidade: "2 colheres de sopa", alimento: "azeite"),
                 Ingrediente(quantidade: "1/2 dente", alimento: "alho picado"),
                 Ingrediente(quantidade: "1/4", alimento: "cebola picada"),
                 Ingrediente(quantidade: "1/2 xícara", alimento: "arroz"),
-                Ingrediente(quantidade: "Água suficiente para cobrir o arroz", alimento: ""),
+                Ingrediente(quantidade: "", alimento: "Água suficiente para cobrir o arroz", separador: ""),
                 Ingrediente(parte: "Feijão:"),
                 Ingrediente(quantidade: "50 g", alimento: "feijão-preto"),
                 Ingrediente(quantidade: "1/2 colheres de sopa", alimento: "óleo"),
@@ -631,7 +624,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "1 colher de chá", alimento: "azeite"),
                 Ingrediente(quantidade: "1/4", alimento: "cebola em rodelas")
                ],
-               recipeTime: "1h e 20 min",
+               recipeTime: "80 min",
                level: .hard,
                instructions: [
                 PageViewContent(
@@ -766,12 +759,11 @@ class AllRecipes: ObservableObject {
         
         Recipe(name: "Empadão de Frango",
                image: "empadao",
-               description: "massa de empada",
-               //               ingredients: ["Massa:" ,"- 140g de manteiga", "- 1 ovo", "- 220g de farinha de trigo", "- 2g de fermento em pó", "Recheio:", "- 650g de peito de frango cozido e desfiado", "- 1 lata de molho de tomate", "- ¼ xícara de azeitonas pretas picadas (opcional)", "- 1 cebola média fatiada", "- 1 colher de sopa de azeite", "- 2 colheres de Sal", "- 2 colheres de pimenta", "- 1 tablete de galinha", "- 2 dentes de alho amassados", "- 400g de requeijão", "Finalização:", "- 1 ovo batido"],
+               description: "massa estilo de empada recheada de frango desfiado com requeijão ",
                ingredientes: [
                 Ingrediente(parte: "Massa:"),
                 Ingrediente(quantidade: "140g", alimento: "manteiga"),
-                Ingrediente(quantidade: "1", alimento: "ovo",separador: ""),
+                Ingrediente(quantidade: "1", alimento: " ovo",separador: ""),
                 Ingrediente(quantidade: "220g", alimento: "farinha de trigo"),
                 Ingrediente(quantidade: "2g", alimento: "fermento em pó"),
                 Ingrediente(parte: "Recheio"),
@@ -786,7 +778,7 @@ class AllRecipes: ObservableObject {
                 Ingrediente(quantidade: "2 dentes", alimento: "alho amassados"),
                 Ingrediente(quantidade: "400g", alimento: "requeijão"),
                 Ingrediente(parte: "Finalização:"),
-                Ingrediente(quantidade: "1", alimento: "ovo batido",separador: "")
+                Ingrediente(quantidade: "1", alimento: " ovo batido",separador: "")
                ],
                recipeTime: "2h",
                level: .hard,
