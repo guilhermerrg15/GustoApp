@@ -18,7 +18,7 @@ struct EditProfileView: View {
     var body: some View {
         
             ZStack{
-                Color(red: 1, green: 247/255,blue: 238/255)
+                Color.corDeFundo
                     .ignoresSafeArea()
                 VStack{
                     
@@ -40,6 +40,7 @@ struct EditProfileView: View {
                                     .clipShape(Circle())
                             }
                         })
+                        .buttonStyle(.plain)
                         Image(systemName: "pencil")
                             .frame(width: 60, height: 30)
                             .foregroundColor(.white)
@@ -59,8 +60,8 @@ struct EditProfileView: View {
                         Group{
                             VStack{
                                 Text("Nome")
-                                    .foregroundColor(Color("ColorWine"))
-                                    .font(Font.custom("Futura",size: 20))
+                                    .foregroundColor(Color.corRosa)
+                                    .font(.custom("SulSansTest-Bold", size: 20, relativeTo:.largeTitle))
                                 TextField("Digite seu nome", text: $username)
                                     .padding()
                                     .frame(width: 300, height: 50)
@@ -78,12 +79,12 @@ struct EditProfileView: View {
                 }
                 .safeAreaInset(edge: .top){
                     ZStack {
-                        Color("ColorWine")
+                        Color.corRosa
                             .ignoresSafeArea(edges: .top)
                             .padding(.bottom)
                         Text("Editar Perfil")
                             .font(Font.custom("Futura",size: 35))
-                            .foregroundColor(Color("ColorYellow"))
+                            .foregroundColor(Color.corAmarela)
                             .padding(20)
                     }.frame(height: 35)
                 }

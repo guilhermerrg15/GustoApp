@@ -26,12 +26,12 @@ struct SearchView: View {
                     ToolbarItem(placement: .principal) {
                         Text("Busca")
                             .font(.custom("SulSansTest-Bold", size: 35, relativeTo:.largeTitle))
-                            .foregroundColor(Color("ColorWine"))
+                            .foregroundColor(Color.corRosa)
                     }
                 }.frame(maxWidth: .infinity)
                     .background(.white)
                     .toolbarBackground(
-                        Color("ColorYellow"),
+                        Color.corAmarela,
                         for: .navigationBar)
                     .toolbarBackground(.visible, for: .navigationBar)
             }

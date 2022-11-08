@@ -38,12 +38,12 @@ struct PassoaPasso: View{
                         flowOrganizer.dismiss()
                         print("Click")
                     } label: {
-                        Image(systemName: "xmark")
+                        Image(systemName: "xmark.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.corTextoPasso)
-                        
+                            .frame(width: 40, height: 40)
+                            .foregroundStyle(Color.corDeFundo, Color.corTextoPasso)
+                            
                     }
                     .buttonStyle(.plain)
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -87,7 +87,6 @@ struct PageView: View{
             if content.showsDismissButton{
                 Button(action: {
                     finalizar.toggle()
-                    print("AAA")
                 }, label: {
                     Text("Terminar Receita")
                         .font(.custom("SulSansTest-Bold", size: 20, relativeTo: .title))
@@ -128,14 +127,8 @@ struct ParabensView: View {
                     .padding(.top,-10)
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color.corRosa)
-                Image("profile")
-                    .resizable()
-                    .frame(width: 120, height: 120)
-                    .clipShape(Circle())
-//                Image(uiImage: imageSelect)
-//                    .resizable()
-//                    .frame(width: 120, height: 120)
-//                    .clipShape(Circle())
+                    .padding(.bottom)
+
             
                 Text("Você concluiu a receita!")
                     .font(.custom("SulSansTest-Regular", size: 25, relativeTo: .headline))
@@ -152,6 +145,7 @@ struct ParabensView: View {
                             Image(uiImage: imageSelected)
                                 .resizable()
                                 .scaledToFit()
+                                .padding(.horizontal)
                         } else {
                             Image("tirar foto")
                                 .resizable()
@@ -160,7 +154,7 @@ struct ParabensView: View {
                         }
                     }.buttonStyle(.plain)
                 }
-                .sheet(isPresented: $openCamera){
+                .fullScreenCover(isPresented: $openCamera){
                     ImagePicker(image: $imageSelected, sourceType: .camera)
                         .ignoresSafeArea()
                         .onDisappear {
@@ -179,10 +173,10 @@ struct ParabensView: View {
                 if !jaGanhou {
                     Text("Tire uma foto do prato e ganhe seu prêmio")
                         .font(.custom("SulSansTest-Regular", size: 25, relativeTo: .headline))
-                        .padding(.horizontal,20)
+                        .padding(.horizontal,UIScreen.main.bounds.width / 8)
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color.corRosa)
-                        .padding(.bottom,50 )
+                        .padding(.bottom,50)
                     
                     
                 }else{

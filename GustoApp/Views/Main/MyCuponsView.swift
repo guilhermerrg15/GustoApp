@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct MyCuponsView: View {
-//    @StateObject var wallet: Wallet =  Wallet.instance
     @State private var showingAlert = false
     @State var shouldShowOnboarding: Bool = false
     @Environment(\.dismiss) private var dismiss
     @Binding var geraCupom: [Int]
     var body: some View {
             ZStack{
-                Color(red: 1, green: 247/255,blue: 238/255)
+                Color.corDeFundo
                     .ignoresSafeArea()
                 VStack(spacing: 25){
                     ZStack{
@@ -24,58 +23,68 @@ struct MyCuponsView: View {
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5 )
                         Text("Você realizou \(Wallet.instance.getReceita()) receitas, seu saldo é de \(Wallet.instance.getCoins()) moedas. Troque por mais cupons da próxima vez que usar o Gustô!")
-                            .foregroundColor(Color("ColorWine"))
-                            .font(Font.headline.weight(.bold))
+                            .foregroundColor(Color.corRosa)
+                            .font(.custom("SulSansTest-Medium", size: 18, relativeTo: .title))
+
                             .padding()
                         
                     }
-                    ForEach(geraCupom, id: \.self) { cupom in
-                        CupomPreviewView(showingAlert: .constant(false), geraCupom: .constant([]), cupom: Cupom.allCupons[0]) //Valor de teste... array com 1 elemento ???????????)
-                    }
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(.white)
-                            .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
-                            .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 7.5 )
-                            .overlay(alignment: .bottomTrailing){
+                    ScrollView {
+                        ForEach(geraCupom, id: \.self) { value in
+                            if (value == 1) {
+                                CupomPreviewView(geraCupom: .constant([]), cupom: Cupom.allCupons[0])
+                            } else {
+                                CupomPreviewView(geraCupom: .constant([]), cupom: Cupom.allCupons[1])
                             }
-                        HStack{
-                            Image("coin")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                            Group{
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
-                                        .frame(width: UIScreen.main.bounds.width/1.9, height: UIScreen.main.bounds.height / 11 )
+                        }
+                        .disabled(true)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(.white)
+                                .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
+                                .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height / 7.5 )
+                                .overlay(alignment: .bottomTrailing){
+                                }
+                            HStack{
+                                Image("coin")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                Group{
                                     ZStack{
                                         RoundedRectangle(cornerRadius: 10)
-                                            .foregroundColor(Color(red: 215/255, green: 153/255, blue: 177/255))
-                                            .frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height / 12 )
-                                        VStack{
-                                            Text("\(Wallet.instance.getCoins()) moedas")
-                                                .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
-                                                .font(Font.custom("Futura",size: 22))
-                                            Text("(\(Wallet.instance.getReceita()) receitas realizadas)")
-                                                .foregroundColor(Color(red: 169/255, green: 38/255, blue: 87/255))
-                                                .font(Font.custom("Futura",size: 16))
+                                            .foregroundColor(Color.corRosa)
+                                            .frame(width: UIScreen.main.bounds.width/1.9, height: UIScreen.main.bounds.height / 11 )
+                                        ZStack{
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .foregroundColor(Color.corRosaClara)
+                                                .frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height / 12 )
+                                            VStack{
+                                                Text("\(Wallet.instance.getCoins()) moedas")
+                                                    .foregroundColor(Color.corRosa)
+                                                    .font(.custom("SulSansTest-Medium", size: 22, relativeTo: .title))
+                                                Text("(\(Wallet.instance.getReceita()) receitas realizadas)")
+                                                    .foregroundColor(Color.corRosa)
+                                                    .font(.custom("SulSansTest-Medium", size: 16, relativeTo: .title))
+                                            }
                                         }
                                     }
                                 }
-                            }
-                        } .padding(.trailing, 30)
+                            } .padding(.trailing, 30)
+                    }
+                   
+  
                     }
                     
                     Spacer()
                 } .padding(.top, 20)
                     .safeAreaInset(edge: .top) {
                         ZStack {
-                            Color("ColorWine")
+                            Color.corAmarela
                                 .ignoresSafeArea(edges: .top)
                                 .padding(.bottom)
                             Text("Meus Cupons")
-                                .font(Font.custom("Futura",size: 35))
-                                .foregroundColor(Color("ColorYellow"))
+                                .font(.custom("SulSansTest-Medium", size: 35, relativeTo: .title))
+                                .foregroundColor(Color.corRosa)
                                 .padding(20)
                         }.frame(height: 35)
                     }

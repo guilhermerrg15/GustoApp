@@ -12,12 +12,10 @@ struct HomeView: View {
     @EnvironmentObject var flowOrganizer: FlowOrganizer
     
      var isMediumActive: Bool {
-        print("AA")
         return recipes.easyRecipe.filter({$0.hasCompleted == true}).count >= 1
     }
     
      var isHardActive: Bool {
-        print("BB")
         return recipes.mediumRecipe.filter({$0.hasCompleted == true}).count >= 1
     }
     
@@ -27,10 +25,10 @@ struct HomeView: View {
             ScrollView{
                 VStack{
                     ZStack {
-                        Color("ColorYellow")
+                        Color.corAmarela
                         Text("Básico")
-                            .foregroundColor(Color("ColorWine"))
-                            .font(Font.custom("Futura",size: 25))
+                            .foregroundColor(Color.corRosa)
+                            .font(.custom("SulSansTest-Bold", size: 25, relativeTo:.largeTitle))
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding(.leading)
                     }.frame(height: 50)
@@ -45,10 +43,10 @@ struct HomeView: View {
                     }
                     
                     ZStack {
-                        Color("ColorYellow")
+                        Color.corAmarela
                         Text("Intermediário")
-                            .foregroundColor(Color("ColorWine"))
-                            .font(Font.custom("Futura",size: 25))
+                            .foregroundColor(Color.corRosa)
+                            .font(.custom("SulSansTest-Bold", size: 25, relativeTo:.largeTitle))
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding(.leading)
                     }.frame(height: 50)
@@ -62,10 +60,10 @@ struct HomeView: View {
                         .padding()
                     }
                     ZStack {
-                        Color("ColorYellow")
+                        Color.corAmarela
                         Text("Avançado")
-                            .foregroundColor(Color("ColorWine"))
-                            .font(Font.custom("Futura",size: 25))
+                            .foregroundColor(Color.corRosa)
+                            .font(.custom("SulSansTest-Bold", size: 25, relativeTo:.largeTitle))
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding(.leading)
                     }.frame(height: 50)
@@ -82,12 +80,12 @@ struct HomeView: View {
             .safeAreaInset(edge: .top) {
                 
                 ZStack {
-                    Color("ColorWine")
+                    Color.corRosa
                         .ignoresSafeArea(edges: .top)
                         .padding(.bottom)
                     Text("Receitas")
-                        .font(Font.custom("Futura",size: 35))
-                        .foregroundColor(Color("ColorYellow"))
+                        .font(.custom("SulSansTest-Bold", size: 35, relativeTo:.largeTitle))
+                        .foregroundColor(Color.corAmarela)
                         .padding(20)
                 }.frame(height: 65)
             }

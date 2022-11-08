@@ -11,6 +11,7 @@
 		8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2B290086EF004BFFFA /* ReceitasView.swift */; };
 		8A81E40A29104F850089E56D /* FlowOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81E40929104F850089E56D /* FlowOrganizer.swift */; };
 		8A81E40C29106C910089E56D /* AllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81E40B29106C910089E56D /* AllRecipes.swift */; };
+		8AAB9FAD291ADC0400BA7B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB9FAC291ADC0400BA7B6B /* Assets.xcassets */; };
 		8AF8B9392903261A00E903CB /* SulSansTest-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */; };
 		8AF8B93A2903261A00E903CB /* SulSansTest-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9302903261A00E903CB /* SulSansTest-Medium.otf */; };
 		8AF8B93B2903261A00E903CB /* SulSansTest-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8B9312903261A00E903CB /* SulSansTest-Regular.otf */; };
@@ -24,7 +25,6 @@
 		8AF8B946290704C100E903CB /* PageViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8B945290704C100E903CB /* PageViewContent.swift */; };
 		E31AF6D528FDB931002DE056 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31AF6D428FDB931002DE056 /* RecipeModel.swift */; };
 		E34AF7CD28F5FA6B00FFE597 /* GustoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */; };
-		E34AF7D128F5FA6C00FFE597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */; };
 		E34AF7D428F5FA6C00FFE597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */; };
 		E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3CC28FE40E000EB7B27 /* MainView.swift */; };
 		E3ECA3D128FF97F200EB7B27 /* RecipeCard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECA3D028FF97F200EB7B27 /* RecipeCard2.swift */; };
@@ -56,6 +56,7 @@
 		8A35DC2B290086EF004BFFFA /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
 		8A81E40929104F850089E56D /* FlowOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowOrganizer.swift; sourceTree = "<group>"; };
 		8A81E40B29106C910089E56D /* AllRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipes.swift; sourceTree = "<group>"; };
+		8AAB9FAC291ADC0400BA7B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AF8B92F2903261A00E903CB /* SulSansTest-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-LightItalic.otf"; sourceTree = "<group>"; };
 		8AF8B9302903261A00E903CB /* SulSansTest-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Medium.otf"; sourceTree = "<group>"; };
 		8AF8B9312903261A00E903CB /* SulSansTest-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SulSansTest-Regular.otf"; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		E31AF6D428FDB931002DE056 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		E34AF7C928F5FA6B00FFE597 /* Gustô.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gustô.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GustoAppApp.swift; sourceTree = "<group>"; };
-		E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34AF7D328F5FA6C00FFE597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E3ECA3CC28FE40E000EB7B27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E3ECA3D028FF97F200EB7B27 /* RecipeCard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard2.swift; sourceTree = "<group>"; };
@@ -205,11 +205,11 @@
 				E34AF7CC28F5FA6B00FFE597 /* GustoAppApp.swift */,
 				E31AF6D328FDB8FA002DE056 /* Models */,
 				E31AF6C328FDB714002DE056 /* Views */,
-				E34AF7D028F5FA6C00FFE597 /* Assets.xcassets */,
 				E3ECA3FC290B052E00EB7B27 /* FlowInterface.swift */,
 				E3ECA402290B098100EB7B27 /* ProfileImagePicker.swift */,
 				E3ECA3FD290B052E00EB7B27 /* ImagePicker.swift */,
 				8A35DC2928FF4ECA004BFFFA /* Cores.swift */,
+				8AAB9FAC291ADC0400BA7B6B /* Assets.xcassets */,
 				E34AF7D228F5FA6C00FFE597 /* Preview Content */,
 				8AF8B9442903285500E903CB /* Fontes */,
 			);
@@ -293,12 +293,12 @@
 				8AF8B9392903261A00E903CB /* SulSansTest-LightItalic.otf in Resources */,
 				8AF8B93C2903261A00E903CB /* SulSansTest-BlackItalic.otf in Resources */,
 				E34AF7D428F5FA6C00FFE597 /* Preview Assets.xcassets in Resources */,
-				E34AF7D128F5FA6C00FFE597 /* Assets.xcassets in Resources */,
 				8AF8B93D2903261A00E903CB /* SulSansTest-MediumItalic.otf in Resources */,
 				8AF8B93E2903261A00E903CB /* SulSansTest-Black.otf in Resources */,
 				8AF8B9402903261A00E903CB /* SulSansTest-BoldItalic.otf in Resources */,
 				8AF8B9422903261A00E903CB /* SulSansTest-Italic.otf in Resources */,
 				8AF8B93F2903261A00E903CB /* SulSansTest-Light.otf in Resources */,
+				8AAB9FAD291ADC0400BA7B6B /* Assets.xcassets in Resources */,
 				8AF8B9412903261A00E903CB /* SulSansTest-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
