@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeCard2: View {
     
-    @StateObject var recipe : Recipe
+    @State var recipe : Recipe
     @State var showRecipe: Bool = false
     @State var opacity: Bool = false
     var active: Bool = true

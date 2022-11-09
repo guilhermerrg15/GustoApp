@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CoinView: View {
     @Binding var fechar: Bool
-    @ObservedObject var wallet: Wallet =  Wallet.instance
     var body: some View {
         ZStack{
             Color.corRosa
@@ -23,15 +22,14 @@ struct CoinView: View {
                         .font(.custom("SulSansTest-Bold", size: 55, relativeTo: .title))
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color.corAmarela)
-                        .padding(.horizontal)
+                        .padding(.horizontal, UIScreen.main.bounds.width / 15)
                 
                     Button {
                         fechar.toggle()
-                        wallet.addFiveCoins()
-                        wallet.addReceita()
+                        Wallet.instance.addFiveCoins()
+                        Wallet.instance.addReceita()
                     } label: {
                         Text("Fechar")
-                            
                             .font(.custom("SulSansTest-Medium", size: 20, relativeTo: .title))
                             .foregroundColor(Color.corRosa)
                             .padding(.horizontal, 120)

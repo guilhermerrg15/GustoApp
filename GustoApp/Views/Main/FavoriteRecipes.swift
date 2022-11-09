@@ -13,14 +13,14 @@ struct FavoriteRecipes: View {
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         ZStack{
-            Color(red: 1, green: 247/255,blue: 238/255)
+            Color.corDeFundo
             ScrollView{
                 VStack{
                     ZStack {
-                        Color("ColorYellow")
+                        Color.corAmarela
                         Text("Básico")
-                            .foregroundColor(Color("ColorWine"))
-                            .font(Font.custom("Futura",size: 25))
+                            .foregroundColor(Color.corRosa)
+                            .font(.custom("SulSansTest-Medium", size: 25, relativeTo: .title))
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding(.leading)
                     }.frame(height: 50)
@@ -36,10 +36,10 @@ struct FavoriteRecipes: View {
                     }
                     
                     ZStack {
-                        Color("ColorYellow")
+                        Color.corAmarela
                         Text("Intermediário")
-                            .foregroundColor(Color("ColorWine"))
-                            .font(Font.custom("Futura",size: 25))
+                            .foregroundColor(Color.corRosa)
+                            .font(.custom("SulSansTest-Medium", size: 25, relativeTo: .title))
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding(.leading)
                     }.frame(height: 50)
@@ -55,10 +55,10 @@ struct FavoriteRecipes: View {
                         .padding()
                     }
                     ZStack {
-                        Color("ColorYellow")
+                        Color.corAmarela
                         Text("Avançado")
-                            .foregroundColor(Color("ColorWine"))
-                            .font(Font.custom("Futura",size: 25))
+                            .foregroundColor(Color.corRosa)
+                            .font(.custom("SulSansTest-Medium", size: 25, relativeTo: .title))
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding(.leading)
                     }.frame(height: 50)
@@ -77,12 +77,12 @@ struct FavoriteRecipes: View {
             .safeAreaInset(edge: .top) {
                 
                 ZStack {
-                    Color("ColorWine")
+                    Color.corRosa
                         .ignoresSafeArea(edges: .top)
                         .padding(.bottom)
                     Text("Minhas Receitas")
-                        .font(Font.custom("Futura",size: 35))
-                        .foregroundColor(Color("ColorYellow"))
+                        .font(.custom("SulSansTest-Medium", size: 25, relativeTo: .title))
+                        .foregroundColor(Color.corAmarela)
                         .padding(20)
                 }.frame(height: 65)
             }
