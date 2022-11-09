@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CupomPreviewView: View {
-    @Binding var showingAlert: Bool
+    @State var showingAlert: Bool = false
     @Binding var geraCupom: [Int]
     var cupom: Cupom
     var body: some View {
@@ -20,23 +20,27 @@ struct CupomPreviewView: View {
                 .overlay(alignment: .bottomLeading){
                     HStack{
                         Text(cupom.name)
-                            .font(Font.custom("Futura",size: 14))
+                            .font(.custom("SulSansTest-Bold", size: 14, relativeTo: .title))
                             .foregroundColor(.gray)
                     } .padding(.leading, 30)
                 }
             Group{
                 VStack{
                     RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
+                        .foregroundColor(Color.corAmarela)
                         .frame(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height / 8 )
                 }
                 VStack{
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color(red: 251/255, green: 216/255, blue: 141/255))
+                            .foregroundColor(Color.corAmarelaClara)
                             .frame(width: UIScreen.main.bounds.width/1.55, height: UIScreen.main.bounds.height / 8.5 )
-                        Button(cupom.texto){
-                            geraCupom.append(0)
+                        Button(cupom.texto) {
+                            if (cupom.valor == 12) {
+                                geraCupom.append(0)
+                            } else {
+                                geraCupom.append(1)
+                            }
                             showingAlert = true
                             
                         } .alert("Confirmação", isPresented: $showingAlert){
@@ -48,8 +52,8 @@ struct CupomPreviewView: View {
                                 
                             }
                         }
-                            .foregroundColor(Color(red: 247/255, green: 179/255, blue: 32/255))
-                            .font(Font.custom("Futura",size: 35))
+                            .foregroundColor(Color.corAmarela)
+                            .font(.custom("SulSansTest-Bold", size: 35, relativeTo: .title))
                             .padding()
                             .buttonStyle(.plain)
                             .disabled(!Wallet.instance.hasMoney(for: cupom))

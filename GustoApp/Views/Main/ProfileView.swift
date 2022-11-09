@@ -16,7 +16,7 @@ struct ProfileView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color(red: 1, green: 247/255,blue: 238/255)
+                Color.corDeFundo
                     .ignoresSafeArea()
                 VStack{
                     ZStack{
@@ -38,8 +38,8 @@ struct ProfileView: View {
                             }
                             VStack{
                                 Text(username)
-                                    .foregroundColor(Color("ColorWine"))
-                                    .font(Font.custom("Futura",size: 20))
+                                    .foregroundColor(Color.corRosa)
+                                    .font(.custom("SulSansTest-Medium", size: 20, relativeTo: .title))
                             }
                         }
                     }
@@ -54,11 +54,11 @@ struct ProfileView: View {
                                 HStack{
                                     NavigationLink(destination: EditProfileView(username: $username, imageSelect: self.$imageSelect), label: {
                                         Image(systemName: "person")
-                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                            .font(.system(size: 35))
+                                            .foregroundColor(Color.corTextoPasso)
+                                            .font(.custom("SulSansTest-Medium", size: 35, relativeTo: .title))
                                         Text("Editar Perfil")
-                                            .font(Font.custom("Futura",size: 27))
-                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .font(.custom("SulSansTest-Medium", size: 27, relativeTo: .title))
+                                            .foregroundColor(Color.corTextoPasso)
                                     }).buttonStyle(.plain)
                                 }
                                 .padding(.leading)
@@ -73,11 +73,11 @@ struct ProfileView: View {
                                 HStack{
                                     NavigationLink(destination: CuponsView(), label: {
                                         Image(systemName: "ticket")
-                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .foregroundColor(Color.corTextoPasso)
                                             .font(.system(size: 25))
                                         Text("Cupons")
-                                            .font(Font.custom("Futura",size: 27))
-                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .font(.custom("SulSansTest-Medium", size: 27, relativeTo: .title))
+                                            .foregroundColor(Color.corTextoPasso)
                                     }) .buttonStyle(.plain)
                                 }
                                 .padding(.leading)
@@ -93,11 +93,11 @@ struct ProfileView: View {
                                 HStack{
                                     NavigationLink(destination: FavoriteRecipes(), label: {
                                         Image(systemName: "fork.knife")
-                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .foregroundColor(Color.corTextoPasso)
                                             .font(.system(size: 35))
                                         Text("Minhas Receitas")
-                                            .font(Font.custom("Futura",size: 27))
-                                            .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                            .font(.custom("SulSansTest-Medium", size: 27, relativeTo: .title))
+                                            .foregroundColor(Color.corTextoPasso)
                                     }) .buttonStyle(.plain)
                                 }
                                 .padding(.leading)
@@ -111,11 +111,11 @@ struct ProfileView: View {
                                     .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
                                 HStack{
                                     Image(systemName: "doc.text")
-                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
-                                        .font(.system(size: 35))
+                                        .foregroundColor(Color.corTextoPasso)
+                                        .font(.custom("SulSansTest-Medium", size: 35, relativeTo: .title))
                                     Text("Termos de uso")
-                                        .font(Font.custom("Futura",size: 27))
-                                        .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                                        .font(.custom("SulSansTest-Medium", size: 27, relativeTo: .title))
+                                        .foregroundColor(Color.corTextoPasso)
                                 }
                                 .padding(.leading)
                                 .padding(.top)
@@ -130,12 +130,12 @@ struct ProfileView: View {
             
             .safeAreaInset(edge: .top) {
                 ZStack {
-                    Color("ColorWine")
+                    Color.corRosa
                         .ignoresSafeArea(edges: .top)
                         .padding(.bottom)
                     Text("Perfil")
-                        .font(Font.custom("Futura",size: 35))
-                        .foregroundColor(Color("ColorYellow"))
+                        .font(.custom("SulSansTest-Medium", size: 35, relativeTo: .title))
+                        .foregroundColor(Color.corAmarela)
                         .padding(20)
                 }.frame(height: 35)
             }

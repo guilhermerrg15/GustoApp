@@ -64,7 +64,7 @@ struct RecipeCardSearch: View {
                     .onTapGesture {
                         recipe.favorites.toggle()
                     }
-                    .foregroundColor(Color(red: 105/255, green: 34/255, blue: 98/255))
+                    .foregroundColor(Color.corTextoPasso)
                     .padding(.top, 5)
                     .padding(.trailing, 10)
                     .font(.system(size: 20))

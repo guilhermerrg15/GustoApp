@@ -21,6 +21,7 @@ struct Cupom: Identifiable {
     }
     
     static let allCupons: [Cupom] = [
-        Cupom(id: 0, valor: 5, custo: 10, validoAPartirDe: Date(), name: "Desconto de R$5, a partir de compras de R$40")
+        Cupom(id: 0, valor: 5, custo: 10, validoAPartirDe: Date(), name: "Desconto de R$5, a partir de compras de R$50"),
+        Cupom(id: 1, valor: 12, custo: 20, validoAPartirDe: Date(), name: "Desconto de R$12, a partir de compras de R$100")
     ]
 }
