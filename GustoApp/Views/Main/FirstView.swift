@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FirstView: View {
+    @State var shouldShowOnboarding: Bool = false
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         NavigationView{
             ZStack{
@@ -25,11 +27,12 @@ struct FirstView: View {
                             .frame(width: 300, height: 50)
                             .background(Color.corAmarela)
                             .cornerRadius(10)
+
                         
                     })
                 }
             }
-        }
+        } .navigationBarBackButtonHidden(true)
     }
 }
 

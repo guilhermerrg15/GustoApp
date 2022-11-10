@@ -123,6 +123,7 @@ struct ProfileView: View {
                         }
                     }
                     Spacer()
+
                 }
             }
             

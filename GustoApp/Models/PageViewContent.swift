@@ -9,7 +9,7 @@ import Foundation
 
 struct PageViewContent: Identifiable, Codable {
     // TODO:  Resolver
-    let id = UUID()
+    var id = UUID()
     let title: String
     let showsDismissButton: Bool
     

@@ -19,8 +19,8 @@ struct GustoAppApp: App {
     }
     var body: some Scene {
         WindowGroup {
-//            ReceitasView(recipe: Recipe.EasyRecipes[0])
             MainView()
+                .preferredColorScheme(.dark)
                 .environmentObject(recipes)
                 .environmentObject(flowOrganizer)
                 .onChange(of: scenePhase) { newPhase in

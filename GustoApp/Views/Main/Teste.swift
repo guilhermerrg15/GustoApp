@@ -36,8 +36,3 @@ struct Teste: View {
     }
 }
 
-//struct Teste_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Teste()
-//    }
-//}

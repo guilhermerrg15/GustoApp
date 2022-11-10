@@ -102,7 +102,7 @@ struct FavoriteRecipes: View {
                         .foregroundStyle(Color.corRosa, Color.corDeFundo)
                         
                         .padding(.leading, 20)
-                        .padding(.top, 20)
+                        .padding(.top, 15)
                     Spacer()
                 }
                 .buttonStyle(.plain)

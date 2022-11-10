@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeCardSearch: View {
-    @StateObject var recipe : Recipe
+    @ObservedObject var recipe : Recipe
     @State var showRecipe: Bool = false
     
     var body: some View {
@@ -79,8 +79,3 @@ struct RecipeCardSearch: View {
     
 }
 
-//struct RecipeCardSearch_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecipeCardSearch(recipe: Recipe.easyRecipes[1])
-//    }
-//}

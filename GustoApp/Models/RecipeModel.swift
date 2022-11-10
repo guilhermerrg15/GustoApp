@@ -28,7 +28,7 @@ class Recipe: ObservableObject, Identifiable {
     let level : Level
     var instructions: [PageViewContent] = []
     @Published var favorites : Bool
-    var hasCompleted: Bool //= false
+    var hasCompleted: Bool
     
     
     init(id:Int = Recipe.lastId,

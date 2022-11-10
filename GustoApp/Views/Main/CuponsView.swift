@@ -12,9 +12,7 @@ struct CuponsView: View {
     @Environment(\.dismiss) private var dismiss
     @State var geraCupom: [Int] = []
     
-    //    @State private var showingAlert = false
     var body: some View {
-        
         ZStack{
             Color.corDeFundo
                 .ignoresSafeArea()

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeCard2: View {
     
-    @State var recipe : Recipe
+    @ObservedObject var recipe : Recipe
     @State var showRecipe: Bool = false
     @State var opacity: Bool = false
     var active: Bool = true
@@ -77,7 +77,7 @@ struct RecipeCard2: View {
                     .padding(.top,8)
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color.corDeFundo)
-                    .frame(width: UIScreen.main.bounds.width/11, height: UIScreen.main.bounds.height / 28 )
+                    .frame(width: UIScreen.main.bounds.width/11, height: UIScreen.main.bounds.height / 25 )
                     .padding(.top, 15)
                     .padding(.trailing, 8)
                 Image(systemName:recipe.favorites ? "heart.fill" : "heart")
@@ -93,9 +93,3 @@ struct RecipeCard2: View {
     }
 }
     
-//    struct RecipeCard2_Previews: PreviewProvider {
-//        static var previews: some View {
-//            RecipeCard2(recipe: Recipe.MediumRecipes[0])
-//        }
-//    }
-//}

@@ -64,9 +64,3 @@ struct CupomPreviewView: View {
         }
     }
 }
-//
-//struct CupomPreviewView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CupomPreviewView()
-//    }
-//}

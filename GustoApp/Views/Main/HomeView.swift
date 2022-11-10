@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var recipes:AllRecipes
     @EnvironmentObject var flowOrganizer: FlowOrganizer
     
+    
      var isMediumActive: Bool {
         return recipes.easyRecipe.filter({$0.hasCompleted == true}).count >= 1
     }
@@ -89,7 +90,7 @@ struct HomeView: View {
                         .padding(20)
                 }.frame(height: 65)
             }
-        }
+        } 
         
     }
 }

@@ -113,10 +113,4 @@ struct MyCuponsView: View {
         }
 
 }
-//
-//struct MyCuponsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyCuponsView()
-//    }
-//}
-//
+
