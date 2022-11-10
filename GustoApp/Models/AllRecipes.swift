@@ -353,6 +353,120 @@ class AllRecipes: ObservableObject {
                     //imageName: "",
                     showsDismissButton: true)
                ]),
+        
+        Recipe(name: "Mousse de maracujá",
+               image: "mousse",
+               description: "Sobremesa cremosa feita com suco de maracujá",
+               ingredientes: [
+                Ingrediente(quantidade: "1 lata", alimento: "leite condensado"),
+                Ingrediente(quantidade: "320ml", alimento: "suco de maracujá"),
+                Ingrediente(quantidade: "1 lata", alimento: "creme de leite"),
+               ],
+               recipeTime: "5 min",
+               level: .easy,
+               instructions: [
+                PageViewContent(
+                    title: "Em um liquidificador, bata o creme de leite, o leite condensado e o suco  de maracujá",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Em uma tigela, despeje a mistura e leve à geladeira por, no mínimo, 4 horas.",
+                    //imageName: "",
+                    showsDismissButton: true)
+               ]),
+        
+        Recipe(name: "Queijo quente",
+               image: "queijo",
+               description: "Queijo-quente é um sanduíche feito com recheio de queijo (mozzarella, prato, cheddar ou outro tipo) no pão de forma",
+               ingredientes: [
+                Ingrediente(quantidade: "2 fatias", alimento: "pão de forma"),
+                Ingrediente(quantidade: "50g", alimento: "queijo cremoso"),
+                Ingrediente(quantidade: "50g", alimento: "queijo muçarela ralada"),
+                Ingrediente(quantidade: "50g", alimento: "queijo gorgonzola ralada"),
+                Ingrediente(quantidade: "10g", alimento: "manteiga"),
+               ],
+               recipeTime: "20 min",
+               level: .easy,
+               instructions: [
+                PageViewContent(
+                    title: "Pegue duas fatias de pão de forma e recheie com um pouco de queijo cremoso, muçarela e gorgonzola. ",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Passe manteiga do lado de fora do pão.",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Numa frigideira em fogo baixo, coloque o sanduíche e deixe tostar dos dois lados.",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Retire e reserve.",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Na mesma frigideira coloque muçarela ralada no ralo grosso, leve ao fogo baixo até derreter.",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Coloque o sanduíche novamente na frigideira, sobre a muçarela derretida ",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Deixe tostar para formar uma crosta de queijo sobre o pão. ",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Retire do fogo, corte e sirva",
+                    //imageName: "",
+                    showsDismissButton: true)
+               ]),
+        
+        Recipe(name: "Focaccia",
+               image: "focaccia",
+               description: "Pão de origem italiana, achatado e macio, coberto com sal grosso, azeite e alecrim",
+               ingredientes: [
+                Ingrediente(quantidade: "1 xícara", alimento: "farinha de trigo"),
+                Ingrediente(quantidade: "5g", alimento: "fermento biológico seco"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "sal"),
+                Ingrediente(quantidade: "1 colher de sopa", alimento: "manteiga"),
+                Ingrediente(quantidade: "150ml", alimento: "água"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "azeite"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "sal grosso"),
+                Ingrediente(quantidade: "1 colher de chá", alimento: "alecrim"),
+               ],
+               recipeTime: "90 min",
+               level: .easy,
+               instructions: [
+                PageViewContent(
+                    title: "Junte a farinha, fermento, sal, manteiga e água ",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Bata à mão por 10 minutos",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Cubra com pano e deixe descansar por 20 minutos",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Unte a forma com azeite e coloque a massa, apertando com os dedos para tirar o ar",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Deixe descansar por 30 minutos",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Salpique o sal grosso e o azeite",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "Asse em forno pré-aquecido a 200 graus por 20 minutos",
+                    //imageName: "",
+                    showsDismissButton: true)
+               ]),
     ]
     
     @Published var  mediumRecipe : [Recipe] = [
@@ -581,6 +695,48 @@ class AllRecipes: ObservableObject {
                     showsDismissButton: false),
                 PageViewContent(
                     title: "Após o tempo retire do forno deixe-o esfriar e está pronto",
+                    //imageName: "",
+                    showsDismissButton: true)
+               ]),
+        
+        Recipe(name: "",
+               image: "",
+               description: "",
+               ingredientes: [
+                Ingrediente(parte: ""),
+                Ingrediente(quantidade: "", alimento: ""),
+                Ingrediente(quantidade: "", alimento: ".",separador:  ""),
+               ],
+               recipeTime: " min",
+               level: .medium,
+               instructions: [
+                PageViewContent(
+                    title: "",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "",
+                    //imageName: "",
+                    showsDismissButton: true)
+               ]),
+        
+        Recipe(name: "",
+               image: "",
+               description: "",
+               ingredientes: [
+                Ingrediente(parte: ""),
+                Ingrediente(quantidade: "", alimento: ""),
+                Ingrediente(quantidade: "", alimento: ".",separador:  ""),
+               ],
+               recipeTime: " min",
+               level: .medium,
+               instructions: [
+                PageViewContent(
+                    title: "",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "",
                     //imageName: "",
                     showsDismissButton: true)
                ]),
@@ -871,7 +1027,28 @@ class AllRecipes: ObservableObject {
                     title: "Retire do forno e sirva",
                     //imageName: "",
                     showsDismissButton: true)
-               ])
+               ]),
+        
+        Recipe(name: "",
+               image: "",
+               description: "",
+               ingredientes: [
+                Ingrediente(parte: ""),
+                Ingrediente(quantidade: "", alimento: ""),
+                Ingrediente(quantidade: "", alimento: ".",separador:  ""),
+               ],
+               recipeTime: " min",
+               level: .hard,
+               instructions: [
+                PageViewContent(
+                    title: "",
+                    //imageName: "",
+                    showsDismissButton: false),
+                PageViewContent(
+                    title: "",
+                    //imageName: "",
+                    showsDismissButton: true)
+               ]),
     ]
     
     @Published var coins : Int = 0

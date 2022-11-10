@@ -92,4 +92,6 @@ struct RecipeCard2: View {
         }
     }
 }
+
+ 
     
