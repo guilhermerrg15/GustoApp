@@ -89,6 +89,7 @@ struct ContentCell: View {
                         .font(.custom("SulSansTest-Bold", size: 20, relativeTo: .title))
                         .foregroundColor(Color.corTextoPasso)
                         .padding (.leading, 16)
+                        .padding(.top)
                     Spacer()
                     
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
@@ -120,7 +121,11 @@ struct ScrollCell: ViewModifier{
     func body(content: Content) -> some View {
         Group{
             content
-            Divider()
+            //Divider()
+            Rectangle()
+                .fill(Color.corDeFundo)
+                .frame(width:.infinity)
+                
         }
     }
 }
