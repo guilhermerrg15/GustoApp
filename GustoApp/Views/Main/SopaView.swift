@@ -31,7 +31,7 @@ struct SopaView: View {
                         }
                         .animation(.easeInOut(duration: 0.2))
                         .padding(.vertical,2)
-                }
+                }.background(.white)
             }
             .frame(maxWidth: .infinity)
             .padding(.top,10)
@@ -80,42 +80,40 @@ struct ContentCell: View {
     let isExpanded: Bool
     
     var body: some View {
-        ZStack{
-            Color.white
-            HStack {
-                VStack(alignment: .leading) {
-                    
-                    HStack {
-                        
-                        Text (dados.titulo)
-                            .font(.custom("SulSansTest-Bold", size: 20, relativeTo: .title))
-                            .foregroundColor(Color.corTextoPasso)
-                            .padding (.leading, 16)
-                        Spacer()
-                        
-                        Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                            .foregroundColor(Color.corTextoPasso)
-                            .font(.system(size: 22, weight: .regular))
-                            .padding(.trailing, 16)
-                    }
-                    if isExpanded {
-                        VStack(alignment: .leading){
-                            Text (dados.descricao)
-                                .font(.custom("SulSansTest-Regular", size: 16, relativeTo: .title))
-                                .foregroundColor(Color.corRosa)
-                                .multilineTextAlignment (.leading)
-                                .lineLimit(nil)
-                                .padding(. top, 16)
-                                .padding (.horizontal, 16)
-                        }
-                    }
-                    Spacer()
-                }.contentShape(Rectangle())
+        HStack {
+            VStack(alignment: .leading) {
                 
-            }
+                HStack {
+                    
+                    Text (dados.titulo)
+                        .font(.custom("SulSansTest-Bold", size: 20, relativeTo: .title))
+                        .foregroundColor(Color.corTextoPasso)
+                        .padding (.leading, 16)
+                    Spacer()
+                    
+                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                        .foregroundColor(Color.corTextoPasso)
+                        .font(.system(size: 22, weight: .regular))
+                        .padding(.trailing, 16)
+                }
+                if isExpanded {
+                    VStack(alignment: .leading){
+                        Text (dados.descricao)
+                            .font(.custom("SulSansTest-Regular", size: 16, relativeTo: .title))
+                            .foregroundColor(Color.corRosa)
+                            .multilineTextAlignment (.leading)
+                            .lineLimit(nil)
+                            .padding(. top, 16)
+                            .padding (.horizontal, 16)
+                    }
+                }
+                Spacer()
+            }.contentShape(Rectangle())
+            
         }
     }
 }
+
 
 
 struct ScrollCell: ViewModifier{
