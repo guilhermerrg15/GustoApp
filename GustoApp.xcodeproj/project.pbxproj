@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A35DC2A28FF4ECA004BFFFA /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2928FF4ECA004BFFFA /* Cores.swift */; };
 		8A35DC2C290086EF004BFFFA /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35DC2B290086EF004BFFFA /* ReceitasView.swift */; };
+		8A5C2949291DB4BD002CA04C /* SopaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5C2948291DB4BD002CA04C /* SopaView.swift */; };
 		8A81E40A29104F850089E56D /* FlowOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81E40929104F850089E56D /* FlowOrganizer.swift */; };
 		8A81E40C29106C910089E56D /* AllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81E40B29106C910089E56D /* AllRecipes.swift */; };
 		8AAB9FAD291ADC0400BA7B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB9FAC291ADC0400BA7B6B /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		8A35DC2928FF4ECA004BFFFA /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
 		8A35DC2B290086EF004BFFFA /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
+		8A5C2948291DB4BD002CA04C /* SopaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SopaView.swift; sourceTree = "<group>"; };
 		8A81E40929104F850089E56D /* FlowOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowOrganizer.swift; sourceTree = "<group>"; };
 		8A81E40B29106C910089E56D /* AllRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipes.swift; sourceTree = "<group>"; };
 		8AAB9FAC291ADC0400BA7B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				E3ECA3F82909CD2C00EB7B27 /* MyCuponsView.swift */,
 				8A35DC2B290086EF004BFFFA /* ReceitasView.swift */,
 				E3ECA3EF290721C600EB7B27 /* FavoriteRecipes.swift */,
+				8A5C2948291DB4BD002CA04C /* SopaView.swift */,
 				E3ECA3DC2901B68100EB7B27 /* ProfileView.swift */,
 				E3ECA3D2290065B500EB7B27 /* TabBarView.swift */,
 			);
@@ -317,6 +320,7 @@
 				E3ECA3F72909AED300EB7B27 /* EditProfileView.swift in Sources */,
 				E3ECA3D3290065B500EB7B27 /* TabBarView.swift in Sources */,
 				E3ECA403290B098100EB7B27 /* ProfileImagePicker.swift in Sources */,
+				8A5C2949291DB4BD002CA04C /* SopaView.swift in Sources */,
 				E3ECA3FE290B052F00EB7B27 /* FlowInterface.swift in Sources */,
 				8A81E40A29104F850089E56D /* FlowOrganizer.swift in Sources */,
 				E3ECA3CD28FE40E000EB7B27 /* MainView.swift in Sources */,

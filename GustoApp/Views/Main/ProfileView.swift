@@ -104,6 +104,26 @@ struct ProfileView: View {
                                 .padding(.top)
                             }
                             ZStack(alignment: .leading){
+                                
+                                RoundedRectangle(cornerRadius: 20)
+                                    .padding(.top,20)
+                                    .foregroundColor(.white)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 5)
+                                    .frame(width: UIScreen.main.bounds.width/1.05, height: UIScreen.main.bounds.height / 9 )
+                                HStack{
+                                    NavigationLink(destination: SopaView(), label: {
+                                        Image(systemName: "text.book.closed")
+                                            .foregroundColor(Color.corTextoPasso)
+                                            .font(.system(size: 35))
+                                        Text("Sopa de Letrinhas")
+                                            .font(.custom("SulSansTest-Medium", size: 27, relativeTo: .title))
+                                            .foregroundColor(Color.corTextoPasso)
+                                    }) .buttonStyle(.plain)
+                                }
+                                .padding(.leading)
+                                .padding(.top)
+                            }
+                            ZStack(alignment: .leading){
                                 RoundedRectangle(cornerRadius: 20)
                                     .padding(.top,20)
                                     .foregroundColor(.white)
